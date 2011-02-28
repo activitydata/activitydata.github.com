@@ -4,9 +4,5 @@ layout: none
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
   <ModulePrefs title="hello world example" /> 
-  <Content type="html">
-     <![CDATA[ 
-      Goodbye, cruel world
-     ]]>
-  </Content> 
+  <Content type="url" href="http://activitydata.github.com/navbar.html" />
 </Module>
