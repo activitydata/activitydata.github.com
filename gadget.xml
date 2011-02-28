@@ -6,7 +6,7 @@ layout: none
   <ModulePrefs title="hello world example" /> 
   <Content type="html">
      <![CDATA[ 
-       Hello, world!
+      Goodbye, cruel world
      ]]>
   </Content> 
 </Module>
