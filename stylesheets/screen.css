@@ -10,5 +10,19 @@ body {
 }
 
 nav a {
-  width: 40px;
+background: lightBlue;
+border: 1px solid lightGrey;
+color: black;
+display: block;
+float: left;
+height: 20px;
+margin-right: 5px;
+padding: 5px 0px;
+text-align: center;
+text-decoration: none;
+width: 80px;
+}
+
+nav a:hover {
+  background: #6BD;
 }
