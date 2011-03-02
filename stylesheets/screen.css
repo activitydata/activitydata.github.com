@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  background: #6BD;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#6BD), to(white)) no-repeat white;
   background: -moz-linear-gradient(top, #6BD, white) no-repeat white;
 }
