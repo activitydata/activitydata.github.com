@@ -6,4 +6,9 @@ body {
   background: white;
   margin-top: 30px;
   border: 1px solid lightgrey;
+  padding: 10px;
+}
+
+nav a {
+  width: 40px;
 }
