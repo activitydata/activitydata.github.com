@@ -1,9 +1,35 @@
+html {
+  height: 100%;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#6BD), to(white)) no-repeat white;
+  background: -moz-linear-gradient(top, #6BD, white) no-repeat white;
+}
+
 body {
-  background: #6BD none repeat scroll 0% 0%;
+  background: transparent;
 }
 
 .container {
+  margin-top: 30px;
   background: white;
-  margin-top: 20px;
   border: 1px solid lightgrey;
+  padding: 10px 10px 10px;
+}
+
+nav a {
+background: lightBlue;
+border: 1px solid lightGrey;
+color: black;
+display: block;
+float: left;
+height: 20px;
+margin-right: 5px;
+padding: 5px 0px;
+text-align: center;
+text-decoration: none;
+width: 80px;
+}
+
+nav a:hover {
+  background: #6BD;
+  color: black;
 }
