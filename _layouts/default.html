@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ActivityData.org - {{ page.title }}</title>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta name="robots" content="index,follow"/>
-    <meta name="mssmarttagspreventparsing" content="true"/>
-    <link rel="shortcut icon" href="/images/favicon.gif" type="image/gif" /> 
-    <link media="screen, projection" rel="stylesheet" type="text/css" href="/stylesheets/blueprint/screen.css" />
-    <link media="print" rel="stylesheet" type="text/css" href="/stylesheets/blueprint/print.css" />
-    <!--[if lt IE 8]>
+<head>
+<title>{{ page.title }} | Activity Data Synthesis</title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta name="robots" content="index,follow"/>
+<meta name="mssmarttagspreventparsing" content="true"/>
+<link rel="shortcut icon" href="/images/favicon.gif" type="image/gif" />
+<link media="screen, projection" rel="stylesheet" type="text/css" href="/stylesheets/blueprint/screen.css" />
+<link media="print" rel="stylesheet" type="text/css" href="/stylesheets/blueprint/print.css" />
+<!--[if lt IE 8]>
       <link media="screen, projection" rel="stylesheet" type="text/css" href="/stylesheets/blueprint/ie.css" />
     <![endif]-->
-    <link media="screen, projection" rel="stylesheet" type="text/css" href="/stylesheets/screen.css" />
-  </head>
-  <body>
-      <div class="container">
-        <header class="span-24 last">
-          <nav class="span-12">
-            <a href="/">Home</a>
-            <a href="http://blog.activitydata.org">Blog</a>
-            <a href="/resources.html">Resources</a>
-            <a href="/about.html">About</a>
-          </nav>
-        </header>
-        <section>
-          {{ content }}
-        </section>
-        <footer>
-
-        </footer>
-      </div>
-  </body>
+<link media="screen, projection" rel="stylesheet" type="text/css" href="/stylesheets/screen.css" />
+</head>
+<body>
+<div id="wrap_head">
+  <header>
+    <h1><a href="/"> Activity Data Synthesis </a></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="http://blog.activitydata.org">Blog</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/about.html">About</a></em> </li>
+      </ul>
+    </nav>
+  </header>
+</div>
+<div id="wrap_content">
+  <div id="center_content">
+    <section id="content"> {{ content }} </section>
+  </div>
+</div>
+<div id="wrap_foot">
+  <footer>
+  	<div id="foot_left">
+    	&copy; 2011 Activity Data Synthesis
+    </div>
+    <div id="foot_right">
+    	Partners:
+		<a href="http://www.sero.co.uk" target="_blank">
+        	<img src="/images/partner_sero.png" alt="Sero Consulting Ltd">
+        </a> 
+        		<a href="http://www.cs.manchester.ac.uk/" target="_blank">
+        	<img src="/images/partner_manchester.png" alt="The University of Manchester">
+        </a> 
+    </div>        
+  </footer>
+</div>
+</div>
+</body>
 </html>
