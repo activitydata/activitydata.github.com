@@ -69,10 +69,18 @@ footer { color: white; }
 #foot_right { float: right; width: 474px; text-align: right; }
 #foot_right img { float: right; margin-left: 30px; }
 
+/******* HOME PAGE *******/
+
 #projects { float: left; width: 756px; margin: 0; padding: 0; }
-#projects li { display: block; list-style: none; width: 192px; margin: 15px 30px 15px 0; float: left; padding: 15px; height: 110px; background: rgb(220,220,220);  }
+#projects li { display: block; list-style: none; width: 192px; margin: 15px 30px 15px 0; float: left; padding: 15px; height: 110px; background: rgb(240,240,240);  }
 #projects li strong { font-family: Rockwell, Georgia, Serif; font-size: 20px; display: block; width: 100%; margin-bottom: 7px; }
 #projects li em { font-style: normal; font-size: 0.8em; line-height: normal; display: block; width: 100%; margin-top: 7px; }
 
 #blog { float: right; padding: 15px; color: white; width: 192px; height: 450px; background: rgb(0,160,230); margin: 15px 0; color: white; }
 #blog a { color: white; font-weight: bold; }
+
+/******* BLOGGER *******/
+
+.main { background: white; }
+.right-side { background: rgb(240,240,240) }
+
