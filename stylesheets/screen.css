@@ -72,7 +72,7 @@ footer { color: white; }
 /******* HOME PAGE *******/
 
 #projects { float: left; width: 756px; margin: 0; padding: 0; }
-#projects li { display: block; list-style: none; width: 192px; margin: 15px 30px 15px 0; float: left; padding: 15px; height: 110px; background: rgb(230,230,230);  }
+#projects li { display: block; list-style: none; width: 192px; margin: 15px 30px 15px 0; float: left; padding: 15px; height: 110px; background: rgb(225,225,225);  }
 #projects li strong { font-family: Rockwell, Georgia, Serif; font-size: 20px; display: block; width: 100%; margin-bottom: 7px; }
 #projects li em { font-style: normal; font-size: 0.8em; line-height: normal; display: block; width: 100%; margin-top: 7px; }
 
@@ -82,5 +82,5 @@ footer { color: white; }
 /******* BLOGGER *******/
 
 .main { background: white; }
-.right-side { background: rgb(230,230,230) }
-.hentry { padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px dashed rgb(230,230,230) }
+.right-side { background: rgb(225,225,225); float: right; padding: 15px; width: 192px; }
+.hentry { padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px dashed rgb(225,225,225) }
