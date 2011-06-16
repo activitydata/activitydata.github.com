@@ -84,4 +84,6 @@ footer { color: white; }
 
 .main { background: white; }
 .right-side { background: rgb(225,225,225); float: right; padding: 15px; width: 192px; }
-.hentry { padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px dashed rgb(225,225,225) }
+.right-side h2 { line-height: 0.95em; margin-top: 15px; }
+.hentry { padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px dashed rgb(225,225,225); }
+
