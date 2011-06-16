@@ -13,7 +13,47 @@
         <![endif]-->
         <link media="screen, projection" rel="stylesheet" type="text/css" href="/stylesheets/screen.css" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-        <script type="text/javascript" src="/js/jquery.simplerss-0.1.0.js"></script>
+        <script type="text/javascript" src="/js/jquery.jfeed.pack.js"></script>
+        <script type="text/javascript">
+		jQuery(function() {
+			jQuery.getFeed({
+				url: 'http://blog.activitydata.org/atom.xml',
+				success: function(feed) {
+					jQuery('#blog').append('<h3>'
+					+ '<a href="'
+					+ feed.link
+					+ '">Blog</a>'
+					+ '</h3>');
+					var html = '';
+					
+					for(var i = 0; i < feed.items.length && i < 5; i++) {
+					
+						var item = feed.items[i];
+						
+						html += '<h4>'
+						+ '<a href="'
+						+ item.link
+						+ '">'
+						+ item.title
+						+ '</a>'
+						+ '</h4>';
+						
+						html += '<div class="updated">'
+						+ item.updated
+						+ '</div>';
+						
+						html += '<div>'
+						+ item.description
+						+ '</div>';
+					}
+					
+					jQuery('#blog').append(html);
+				}    
+			});
+		});
+		
+		</script>
+
     </head>
     <body>
         <div id="wrap_head">
