@@ -77,7 +77,8 @@ footer { color: white; }
 #projects li em { font-style: normal; font-size: 0.8em; line-height: normal; display: block; width: 100%; margin-top: 7px; }
 
 #blog { float: right; padding: 15px; color: white; width: 192px; height: 450px; background: rgb(0,160,230); margin: 15px 0; color: white; }
-#blog a { color: white; font-weight: bold; }
+#blog span { display: block; float: left; width: 100%; }
+#blog span a { display: block; float: left; width: 100%; color: white; font-weight: bold; }
 
 /******* BLOGGER *******/
 
