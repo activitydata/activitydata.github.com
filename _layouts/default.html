@@ -15,43 +15,18 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
         <script type="text/javascript" src="/js/jquery.jfeed.pack.js"></script>
         <script type="text/javascript">
-		jQuery(function() {
-			jQuery.getFeed({
-				url: 'http://blog.activitydata.org/atom.xml',
-				success: function(feed) {
-					jQuery('#blog').append('<h3>'
-					+ '<a href="'
-					+ feed.link
-					+ '">Blog</a>'
-					+ '</h3>');
-					var html = '';
-					
-					for(var i = 0; i < feed.items.length && i < 5; i++) {
-					
-						var item = feed.items[i];
-						
-						html += '<h4>'
-						+ '<a href="'
-						+ item.link
-						+ '">'
-						+ item.title
-						+ '</a>'
-						+ '</h4>';
-						
-						html += '<div class="updated">'
-						+ item.updated
-						+ '</div>';
-						
-						html += '<div>'
-						+ item.description
-						+ '</div>';
+			jQuery(function() {
+			
+				jQuery.getFeed({
+					url:'http://blog.activitydata.org/atom.xml',
+					success: function(feed) {
+					   jQuery('#result').append('<h3>' +
+						'<a href="' + feed.link  + '">'
+						+ feed.title
+						+ '</h3>' + '<br>' + feed.updated );
 					}
-					
-					jQuery('#blog').append(html);
-				}    
-			});
-		});
-		
+				}); 
+			}); 				
 		</script>
 
     </head>
@@ -82,10 +57,10 @@
             <div id="foot_right">
                 Partners:
                 <a href="http://www.sero.co.uk" target="_blank">
-                    <img src="/images/partner_sero.png" alt="Sero Consulting Ltd">
+                    <img src="/images/partner_sero.png" alt="Sero Consulting Ltd" />
                 </a> 
                 <a href="http://www.cs.manchester.ac.uk/" target="_blank">
-                    <img src="/images/partner_manchester.png" alt="The University of Manchester">
+                    <img src="/images/partner_manchester.png" alt="The University of Manchester" />
                 </a> 
             </div>        
             </footer>
