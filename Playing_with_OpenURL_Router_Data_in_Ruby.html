@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Manipulating activity data using Ruby</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Processing_data.html">Processing data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Manipulating activity data using Ruby
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Playing_With_Largeish_CSV_Files.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Provide_course_based_recommendations.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Playing_with_OpenURL_Router_Data_in_Ruby"><span class=outlineNumberFirst></span><span class=topicLineFirst>Manipulating activity data using Ruby</span></h2>
+
+<div id="main_content"><div align="left"><b>Author</b></div>
+<div align="left">
+Mark van Harmelen writing at <a href=
+"http://hedtek.com/2011/playing-with-openurl-router-data/"><span>Hedtek's blog</span></a><span>
+.</span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+To demonstrate how scripts written in Ruby can be used to manipulate a activity data (in this case 
+OpenURL log file contents)</div>
+<div align="left"><b>Description</b></div>
+<div align="left">
+This is an alternative method to that used by Tony Hirst in <a href="Playing_With_Largeish_CSV_Files.html#Playing_With_Largeish_CSV_Files">
+<span>Playing With Large (ish) CSV Files, and 
+Using Them as a Database from the Command Line: EDINA OpenURL Logs </span></a><span>
+while experimenting 
+with processing a reasonably large data set with *NIX command line tools. The data set is the </span>
+<a href="http://openurl.ac.uk/doc/data/data.html"><span>recently published OpenURL Router Data </span></a><span>
+. Inspired by this post I wondered what I could hack up 
+in Ruby to process the same data, and if I could do this processing without a database. The 
+answer is that it is pretty simple to process.</span></div>
+<div align="left">
+First what is the OpenURL Router, and what is its data? What we need to know here is that the 
+Router effectively enables library services to find the URLs for online bibliographic resources (<a href="http://openurl.ac.uk/doc/data/data.html">
+<span>more detail </span></a><span>). A simplification is that the Router supply a translation from bibliographic data to the URL 
+in question. The OpenURL router is funded by </span><a href="http://www.jisc.ac.uk/">
+<span>JISC </span></a><span>and administered by </span><a href="http://edina.ac.uk/">
+<span>EDINA </span></a><span>in association 
+with </span><a href="http://ukoln.ac.uk/"><span>UKOLN </span></a><span>.</span></div>
+<div align="left">Suitably anonymised <a href=
+"http://openurl.ac.uk/doc/data/thedata.html"><span>OpenURL Router Data </span></a><span>
+has been published by </span><a href=
+"OpenURL.html#OpenURL"><span>Using OpenURL Activity Data </span></a>
+<span>Project. This project is participating in JISC&#8217;s Activity Data Programme where Hedtek is 
+collaborating in the synthesis of the outputs of the projects participating in this programme. Hence 
+my interest in the data and what can be done with it.</span></div>
+<div align="left">
+My initial interest was in who has what proportion referrals. Tony computed this, and I wanted to 
+replicate his results. In the end I had a slightly different set of results.</div>
+<div align="left"><a href=
+"http://openurl.ac.uk/doc/data/thedata.html"><span>Downloading </span></a><span>
+and decompressing this CSV data was pretty easy, as was honing in on one field of 
+interest, the source of the data being referred to. </span><a href="Playing_With_Largeish_CSV_Files.html#Playing_With_Largeish_CSV_Files">
+<span>Tony&#8217;s post</span></a><span> and the </span><a href="http://openurl.ac.uk/doc/data/whatare.html">
+<span>OpenURL Router Data documentation </span></a><span>made it pretty easy to hone in on the 40th field in each line of this CSV formatted 
+data.</span></div>
+<div align="left"></div>
+<div align="left">
+My first attempts were to use a ruby gem, CSV, from the ruby interpreter irb. This went well 
+enough but I soon discovered that CSV wouldn't handle fields with a double quote in them. 
+Resorting to the my OS X command line</div>
+<div align="left"><font face=
+"Courier New"><span> tr \" \' &lt; L2_2011.csv &gt; nice.csv</span></font></div>
+<div align="left">soon sorted that out.</div>
+<div align="left">
+It soon emerged that I needed to write a method, so I flipped to the excellent <a href="http://www.jetbrains.com/ruby/">
+<span>RubyMine </span></a><span>, and soon 
+hacked up a little script. Interestingly, I found that the representation of the site with the requested 
+resource often had a major component and a minor component, separated by a colon, thus</span></div>
+<div align="left"><font face=
+"Courier New"><span> EBSCO:edswah</span></font></div>
+<div align="left"><font face=
+"Courier New"><span> EBSCO:CINAHL with Full Text</span></font></div>
+<div align="left"> etc</div>
+<div align="left">
+Having been excited by previous mention of <a href="http://www.mendeley.com/">
+<span>Mendeley </span></a><span>by Tony and wanting to find out the 
+percentage of references to Mendeley&#8217;s data for another piece of work I am doing, I stripped out 
+the minor component, and came up with the following code</span></div>
+<div align="center"><img src="NotesImages/Topic151NotesImage20.jpg"
+align="bottom" width="448" height="274" border="0" alt=
+"graphic" /></div>
+<div align="left">
+While its open to a good refactoring, it did the job well enough, producing an unsorted list of 
+results. A quick refactor resulted in the following, which also coalesced both mendeley.com and 
+mendeley.com/mendeley into one result.</div>
+<div align="center"><img src="NotesImages/Topic151NotesImage21.jpg"
+align="bottom" width="660" height="325" border="0" alt=
+"graphic" /></div>
+<div align="left"></div>
+<div align="left">
+To sort the output I used a command line sort after the script invocation</div>
+<div align="left"><font face=
+"Courier New"><span> ruby totals.rb | sort -nr</span></font></div>
+<div align="left">
+and obtained the following, here only listing those sites with more than 1000 references</div>
+<div align="left"><font face=
+"Courier New"><span>99453 www.isinet.com</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>44870 EBSCO</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>34186 undefined</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>34004 mendeley.com</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>27545 OVID</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>9446 Elsevier</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>6938 CSA</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>6180 EI</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>4353 Ovid</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>3399 wiley.com</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>2558 jstor</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>2553 mimas.ac.uk</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>2175 summon.serialssolutions.com</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>2070 Dialog</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>1034 Refworks</span></font></div>
+<div align="left">
+The rest, working out percentages, is easy thanks to Excel, see the middle column</div>
+<div align="center"><img src="NotesImages/Topic151NotesImage22.jpg"
+align="bottom" width="388" height="309" border="0" alt=
+"graphic" /></div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

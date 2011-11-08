@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Recommendations Improve the Search Experience (RISE)</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Licensing_and_sharing_activity_data.html">Licensing and sharing activity data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Publishing.html">Publishing (anonymisation and sharing)</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Recommendations Improve the Search Experience (RISE)
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Publish_OpenURL.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Publish_SALT.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Publish_RISE"><span class=outlineNumberFirst></span><span class=topicLineFirst>Recommendations Improve the Search Experience (RISE)</span></h2>
+
+<div id="main_content"><div align="left">
+One of the aspirations of the <a href="RISE.html#RISE">
+<span>RISE project</span></a><span> is to be able to release the data in our 
+recommendations database openly. So we've been thinking recently about how we might go  about 
+that. A critical step will be for us to anonymise the data robustly before we make any  data openly 
+available and we will post about those steps at a later date. </span></div>
+<div align="left">
+RISE took the LIDP-like approach to anonymisation:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Remove user names.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Remove all records for courses with less than x students.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Replace the course code with a generic subject</li>
+</ul>
+<div align="left">
+Once we have a suitably anonymised dataset our current thinking is to make it available in  two 
+ways:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+ as an XML file; and,</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+as a prepopulated MySQL database. </li>
+</ul>
+<div align="left">
+The idea is that for people who are already working with activity data then an XML file is most 
+likely to be of use to them. For people who haven't been using activity data and want to start  using 
+the code that we are going to be releasing for RISE then providing a base level of data  may  be a 
+useful starting point for them. We &#8217;d be interested in thoughts from people working  with this  type 
+of data about what formats and structures would be most useful. </div>
+<div align="left">
+<b>XML format<br /></b>For the XML format we've taken as a starting point the work done by Mark van Harmelen for  the 
+<a href=
+"http://www.sero.co.uk/assets/090514%20MOSAIC%20data%20collection%20-%20A%20guide%20v01.pdf"
+   target="_blank"><span>MOSAIC project</span></a><font color=
+   "#0000FF"><span> </span></font>and were fortunately able to talk to him about the format when he visited  to do 
+   the Synthesis project &#8216;Recipes&#8217; work. We've kept as close to that original format as  possible  but 
+   there are some totally new elements that we are dealing with such as search  terms that we  need 
+   to include. The output in this format makes the assumption that re-users  of this data will  be able 
+   to make their own subject, relationship and search recommendations  by using the 
+   user/resource/search term relationship within the XML data.</div>
+<div align="left">
+Proposed RISE record XML format </div>
+<blockquote>
+<div id="main_content"><div align="left"><b>Start</b></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;useRecordCollection&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;useRecord&gt;</span></font></div>
+<div align="left">
+<b>Basic&#160;data:&#160;Institution,&#160;year&#160;and&#160;dates</b></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;from&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;institution&gt;Open&#160;University</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/institution&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;academicYear&gt;2010/2011</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/academicYear&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&#160;&lt;extractedOn&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;year&gt;2011&lt;/year&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;month&gt;4&lt;/month&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;day&gt;19&lt;/day&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/extractedOn&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;source&gt;OURISE</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/source&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/from&gt;</span></font></div>
+<div align="left"><b>Resource&#160;data&#160;</b></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;resource&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&#160;&lt;media&gt;Article</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/media&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;globalID&#160;type=&#8221;DOI&#8221;&gt;10.1007/s00521-009-0254-2</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/globaLID&gt;</span></font></div>
+<div align="left">or</div>
+<div align="left"><font face=
+"Courier New"><span>&lt;globalID&#160;type=&#8221;ISSN&#8221;&gt;09410643</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/globaLID&gt;</span></font></div>
+<div align="left">or</div>
+<div align="left"><font face=
+"Courier New"><span>&lt;globalID&#160;type=&#8221;EDSN&#8221;&gt;12345678&#160;[Ebsco&#160;Accession&#160;number]&lt;/globaLID&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;author&gt;Cyr,&#160;Andre</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/author&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&#160;&lt;title&gt;AI-SIMCOG:&#160;a&#160;simulator&#160;for&#160;spiking&#160;neurons&#160;and&#160;multiple&#160;
+animats&#8217;&#160;behaviours</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/title&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;resourceURL&gt;http://www.???.??/etc</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/resourceURL&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;journalTitle&gt;Nature</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/journalTitle&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;published&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;year&gt;2009&lt;/year&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/published&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;journalist&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;volume&gt;12&lt;/volume&gt;&#160;&lt;number&gt;3&lt;/number&gt;&#160;&lt;month&gt;6&lt;/month&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/journalData&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/resource&gt;</span></font></div>
+<div align="left"><b>User&#160;context&#160;data&#160;</b></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;context&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;user&gt;&#160;anonymised&#160;UserID</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/user&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;sequenceNumber&gt;1&#160;[Note:&#160;sequence&#160;number&#160;already&#160;stored&#160;within&#160;database]</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/sequenceNumber&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/useDate&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>For&#160;students:&#160;[propose&#160;to&#160;map&#160;to&#160;a&#160;subject&#160;]&#160;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;courseCode&#160;type=&#8221;subject&#8221;&gt;Engineering</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/courseCode&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;progression&gt;UG2&#160;[F,&#160;UG1,&#160;UG2,&#160;UG3,&#160;UG4,&#160;M,&#160;PhD1,&#160;PhD2,&#160;PhD3+&#160;(F&#160;is&#160;for&#160;
+&#160;foundation&#160;year)&#160;]&#160;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/progression&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>For&#160;staff</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;progression&gt;Staff</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/progression&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/context&gt;</span></font></div>
+<div align="left"><b>Retrieved&#160;from</b></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;retrievedFrom&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;searchTerm&gt;artificial&#160;intelligence</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/searchTerm&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/retrievedFrom&gt;</span></font></div>
+<div align="left">
+<b>End&#160;record,&#160;more&#160;records&#160;</b></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;/useRecord&gt;</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&lt;!&#8211;&#160;more&#160;useRecords&#160;here&#160;if&#160;need&#160;be&#160;&#8211;&gt;</span></font></div></div>
+</blockquote>
+<div align="left"></div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

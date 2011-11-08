@@ -1,0 +1,1111 @@
+/* Cascading Style Sheet for HTML export */
+
+/* Activity Data style */
+/* GLOBAL SYTLE global styling, sets overall style of page */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 15px;
+	line-height: 1.4em;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #000000;
+	margin: 0px; /* increase to have page float on background */
+	padding: 0px;
+	min-width: 1000px;
+}
+img {
+	border: 0; /* by default, images should not have a border */
+}
+.emptyImage {						/* used for special effects */
+	float:left;
+	margin: 0px;			/* distance to outline */
+}
+/* all headers in boxes */
+.header {
+	clear: both;    /* floating element below */
+}
+/* link styles */ 
+a {
+	text-decoration: underline; /* set to "none" to hide underlines on links */
+}
+a img {
+	text-decoration: none; /* set to "none" to hide underlines on links */
+}
+
+/* remove link underline from some special elements: Header and Overview Map */
+#mapPageHeader a, {
+ text-decoration: none; /* set to "none" to hide underlines on links */
+}
+a:link {
+	color: rgb(50,55,140);		/* STYLE */
+}
+a:visited {
+	color: #00008B;		/* STYLE */
+}
+/* Note: hover selector should be last in order to take precedence in :visited AND :hover situation */
+a:hover {
+	color: #CC0000;
+}
+/* special link styles */
+a.noHover:hover {
+	background-color:transparent;	/* If you don't want images wrapped in <a> to have hover effect, make it <a class="noHover"> */
+}
+a:active {
+	color: #FF3300;		/* STYLE */
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Rockwell, 'Josefin Slab', serif!important;
+	font-weight: normal;
+	line-height: 1em!important;
+}
+h1 {
+	float: left;
+	font-size: 3em;
+	display: block;
+	line-height: 0.85em!important;
+	width: 700px;
+	padding: 0 0 20px 0;
+	letter-spacing: -2px!important;	
+}
+#main {
+	float: right;
+	width: 730px;
+}
+#main_content {
+	width: 100%;
+	float: left;
+	padding-top: 10px;
+}
+#main_content a {
+	color: rgb(50,55,140)!important;
+}
+#main_content a:hover {
+	color: white!important;
+	background: rgb(50,55,140)!important;
+	text-decoration: none!important;
+}
+#main_content div {
+	max-width: 730px!important;
+	float: left;
+	margin-bottom: 10px;
+	width: 100%;
+}
+#main_content blockquote {
+	width:690px!important;
+    padding: 0 20px;
+	float: left;
+}
+#main_content blockquote.action {
+    padding: 20px 20px 10px 20px;
+	float: left;
+	margin: 10px 0 20px 0; 
+	background: rgb(235,235,235);
+}
+#main_content blockquote.action div {	
+	max-width: 100%!important;
+	}
+#main_content blockquote.action strong, #main_content blockquote.action b {	
+	font-size: 1.5em;
+	font-family: Rockwell, 'Josefin Slab', serif!important;
+	font-weight: normal;
+	line-height: 1em!important;
+	}
+#main_content table {
+	width: 100%!important;
+	float: left;
+	margin-bottom: 10px;
+}
+#main_content ul, #main_content ol {
+	padding: 0 20px!important;
+	width: 650px;
+	float: left;
+}
+
+#main_content blockquote.action ul {	
+	max-width: 100%!important;
+	padding: 0!important;
+	}
+
+
+#main_content ul ul, #main_content ol ol, #main_content ul ol, #main_content ol ul {
+	padding: 0 20px!important;
+	width: 570px;
+	float: left;
+}
+#main_content ul ul ul, #main_content ol ol ol, #main_content ul ol ul, #main_content ol ul ol, #main_content ul ul ol, #main_content ol ol ul, #main_content ul ol ol, #main_content ol ul ul {
+	padding: 0 20px!important;
+	width: auto;
+	float: left;
+}
+#main_content ul li, #main_content ol li {
+	margin-left: 20px!important;
+	padding-left: 20px!important;
+	margin-bottom: 10px;
+	color: black!important;
+}
+
+
+
+#main_content ul li {
+	list-style: disc;
+}
+.topicDivider {
+	border-top: 1px dashed Silver;				/* STYLE */
+	height: 0.1em;
+	font-size: 2pt;				/* I need a very narrow divider */
+}
+#main_content table, #main_content img {
+	max-width: 100%!important;
+}
+#main_content table td {
+	padding: 5px 10px!important;
+	border: 2px solid white!important;
+	vertical-align: top!important;
+}
+ #main_content table tr:nth-of-type(odd) td {
+background: rgb(235,235,235);
+}
+ #main_content table tr:nth-of-type(even) td {
+background: rgb(245,245,245);
+}
+#main_content table tr:first-of-type td {
+	background: black;
+	color: white;
+}
+#main_content table td div {
+	margin: 0!important;
+	padding: 0!important;
+	text-align: left;
+	width: 100%;
+}
+
+.breadcrumbs {
+	font-size: 7pt;						/* STYLE */
+	text-align: left;
+	width: 70%;
+	float: left;
+	color: #000099;
+	line-height: 1.5em;
+	padding-top: 8px;
+}
+.breadcrumbs a:visited {
+	color: #000099;						/* STYLE */ /* don't show visited colors for breadcrumbs */
+}
+.breadcrumbs .breadcrumb {
+	white-space: nowrap; /* set to "nowrap" to stop breadcrumbs from breaking in the middle */
+}
+/* move the previous / next links to the right side */
+.pageNavigation {
+	float: right;
+	text-align: right;
+	font-size: 7pt;
+	width: 30%;
+}
+.pageNavigation a:visited {
+	color: #000099;					/* STYLE */	/* don't show visited colors for prev/next navigation */
+}
+/*----------------------------------------------------------------------------------*/	
+/* MODULE: TOPIC ------------------------------------------------------------------ */
+/*----------------------------------------------------------------------------------*/	
+/*
+		tr.topic (0+)
+			td.main (colspan = 2)
+				tr.topicHeader
+					td.topicImageColumn
+					   img.topicImage
+					td.topicLineColumn
+						span.outlineNumber
+						span.topicLine
+						span.topicIcons
+							img.topicIcon
+				div.body
+				<partial map>
+					div.topicTextNotes
+					   div Notes
+				<callouts>
+				<task planning>
+				<data container>
+				<review comments>
+				<related>
+			td.right	
+*/
+
+.topic .main .body {
+	clear: both;
+}
+.topicHeader {
+	vertical-align: middle;
+	clear:both;
+	font-family: Rockwell;
+}
+.topicImageColumn {
+}
+.topicImage {
+	margin-right: 6px;			/* distance to outline */
+}
+.topicTopicLineColumn {
+}
+.outlineNumberFirst {			/* first topic on page */
+	display: none;         	/* set to none or visible to hide/show outlineNumbers   */
+	font-size: 0.9em;
+	margin-right: 0;
+}
+.outlineNumber {					/* other topics on page */
+	display: visible;         	/* set to none or visible to hide/show outlineNumbers   */
+	font-size:  0.9em;
+	font-weight: bold;
+	margin-right: 5px;
+}
+.topicLineFirst {					/* first topic on page */
+	font-size:  1.8em;
+	font-weight: normal;
+	line-height: 0.85em!important;
+}
+.topicLine {						/* other topics on page */
+	font-size:  1.4em;
+	font-weight: normal;
+	line-height: 0.85em!important;
+}
+/* group of icons */
+.topicIcons {
+	margin-left: 4px;				/* distance to topic text */
+	vertical-align: middle;	   /* center icons around text (important for single line callouts) */
+}
+/* single icons */
+.topicIcon {
+	margin-right: 3px;			/* distance between icons */
+}
+/* <div> around whole text notes */
+#breadcrumb_bar {
+	width: 100%;
+	float: left;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 3px dashed #eee;
+}
+#breadcrumb_bar a:link {
+	text-decoration: none!important;
+}
+#breadcrumb_bar a:hover {
+	text-decoration: underline!important;
+}
+.topicTextNotes div {
+	margin-bottom: 0.8em;						/* distance between paragraphs */
+}
+.topicTextNotes table {
+	margin-bottom: 0.7em;						/* some space below tables and before next paragraph starts */
+}
+.topicTextNotes table div {
+	margin-left: 0.3em;							/* some left and right cell padding */
+	margin-right: 0.3em;
+}
+.topicTextNotes .lastTableNotesDiv {
+	margin-bottom: 0em;						  /* no bottom margin for last paragraph in Notes */
+}
+/* <div> around whole text notes in callouts */
+.callouts .topicTextNotes {
+	font-size: 8pt;
+	margin-left: 0px;
+}
+/* single link, so far used in callout section */
+.topicHyperlink {
+	font-size: 8pt;
+}
+/* the icon behind the link */
+.topicHyperlinkIcon {
+	vertical-align: bottom;
+}
+/* commands: active buttons / hot spots or links */
+.command {
+	white-space: nowrap;
+	line-height: 1.5em;
+}
+.command img {
+	margin: 0 2px -4px 2px;
+}
+.command .label {
+	display: inline;  /* set to none or inline to hide or show command text labels */
+	vertical-align: middle;
+}
+/* MODULE: BOX - MAP GRAPHICS SNIPPET ---------------------------------------------------*/
+/*
+		div.partialMapArea
+		   table.partialMapTable
+				div.SubTopicItems
+				  div.subtopicitem
+				     img
+					  a
+				div.partialMap
+					img
+*/
+
+.partialMapArea {
+	vertical-align: top;
+	margin-bottom: 10px;    /* some distance below this block */
+}
+table#partialMapTable tr td {
+	padding: 0px;
+}
+.subTopicItems {
+	clear: both;
+	font-size: 8pt;
+	font-weight: normal;
+	margin-left:  10px;
+	margin-right:  50px;
+}
+.subtopicitem {
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+.partialMap {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: visible;           /* this value will be set during the export depending on user setting in property inspector */
+}
+/* MODULE: CALLOUT -SECTION---------------------------------------------------------------------*/
+/*
+		div.callouts
+			div.callout
+				div.calloutHeader
+				   span topicIcons 
+					   img.topicIcon
+				tr.calloutBody
+					div.calloutImage
+					   img.topicImage
+					div.topicTextNotes 
+					   div Notes
+					   span a.topicGyperlink a.topicHyperlinkIcon
+*/
+
+/* all callouts */
+.callouts {
+	background-color: #FAFAFA;			/* STYLE */
+	width: 360px;
+	margin-left: 30px;
+	margin-bottom: 8px;
+	border-top: 3px solid #0062BF;		/* STYLE */
+	border-bottom: 3px solid #0062BF;	/* STYLE */
+}
+/* single callout */
+.callout {
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-top: 0px;
+	margin-bottom: 3px;
+}
+/* topic text and icons */
+.calloutHeader {
+	font-size: 8pt;
+	font-weight: bold;
+	color: #2F4F4F;					/* STYLE */
+	padding-left: 4px;			/* align with text notes */
+}
+.calloutBody {
+	vertical-align: top;
+	text-align: left;
+}
+.calloutImage {
+	padding-left: 4px;  			/* align with text notes */
+}
+/* -----------------------------------------------------*/
+/* COLLAPSIBLE BOXES
+/*-------------------------------------------------------*/
+/*
+	div.<special box name>Area     (need "Area" string for collapse button script)		
+	  div.collapsiblebox (1+) 
+	    div.header
+			 span.title
+			img.expandOrCollapseButton
+		 div.body
+			(varies)
+*/
+
+/* the body class is important for the collapse script. It follows the initial .collapsiblebox statement */
+.body {
+	clear: both;
+}
+.clearFloat {
+	clear: both;	/* needed to hold down bottom border sometimes */
+}
+.collapsiblebox {
+	clear: both;
+	width: 360px;
+	padding-bottom: 0px;
+	background-color: #0062BF;				/* STYLE */
+	border: 1px solid #0062BF;				/* STYLE */   /* don't remove border for NS!! */
+	margin-bottom: 8px;
+	margin-left: 30px;
+}
+.legend .collapsiblebox {
+	margin-left: 0px;						/* overide for the legend box */
+}
+.collapsiblebox .title {
+	padding: 3px;
+	padding-left: 6px;
+	font-size: 8pt;
+	text-align: left;
+	font-weight: bold;
+	color: White;							/* STYLE */
+	float: left;
+}
+.collapsiblebox .expandOrCollapseButton {
+	float: right;
+	text-align: right;
+	margin-top: 2px;
+	margin-left: 8px;
+	margin-right: 4px;
+	vertical-align: middle;
+	display: inline; /* set to none to hide button(s); set to inline to show */
+}
+.collapsiblebox .body {
+	clear: both;
+	padding-bottom: 1px;
+	padding-left: 0px;
+	padding-right: 0px;
+	background-color: #EEEEEE;						/* STYLE */
+}
+/* generic style for lists in boxes e.g. task information or about box */
+.property {
+	clear: both;
+	height: 1em;				/* since I'm using spans, I need some more line spacing */
+}
+.property .label {
+	width: 15 em;
+	font-size: 7pt;
+	color: gray;								/* STYLE */
+	text-indent: 6px;
+}
+.property .value {
+	width: auto;
+	font-size: 8pt;
+	color: #2F4F4F;				/* STYLE */
+}
+/* MODULES:  BOX - TASK INFORMATION ---------------------------------------------------------- */
+.taskInformationArea .body {
+	display: none;				/* collapse when first shown */
+}
+/* MODULES:  BOX - TEXT MARKERS INFORMATION ---------------------------------------------------------- */
+.textMarkersArea .body {
+	display: none;
+}
+/* MODULES:  BOX - DATA CONTAINER ---------------------------------------------------------- */
+
+.dataContainerArea .body {
+	display: none;				/* collapse when first shown */
+}
+.dataContainerTable {
+	table-layout: fixed;
+	width: 100%;
+	clear: both;
+	height: 1em;				/* since I'm using spans, I need some more line spacing */
+}
+.dataContainerTableColumnHeader {
+	width: 15 em;
+	font-size: 7pt;
+	color: gray;								/* STYLE */
+	text-indent: 6px;
+}
+.dataContainerTableRowHeader {
+	width: 15 em;
+	font-size: 7pt;
+	color: gray;								/* STYLE */
+	text-indent: 6px;
+}
+.dataContainerTableCell {
+	width: auto;
+	font-size: 8pt;
+	color: #2F4F4F;				/* STYLE */
+}
+.dataContainerCustomProperties {
+	width: 100%;
+	clear: both;
+	height: 1em;				/* since I'm using spans, I need some more line spacing */
+}
+.dataContainerCustomPropertyGroup {
+	width: 15 em;
+	font-size: 7pt;
+	color: white;
+	background-color: gray;
+	text-indent: 6px;
+}
+.dataContainerCustomPropertyName {
+	width: 15 em;
+	font-size: 7pt;
+	color: gray;								/* STYLE */
+	text-indent: 6px;
+}
+.dataContainerCustomPropertyNameInGroup {
+	width: 15 em;
+	font-size: 7pt;
+	color: gray;								/* STYLE */
+	text-indent: 12px;
+}
+.dataContainerCustomPropertyValue {
+	width: auto;
+	font-size: 8pt;
+	color: #2F4F4F;				/* STYLE */
+}
+.dataContainerImage {
+	margin-right: 1px;			/* distance to outline */
+}
+/* MODULES:  BOX - REVIEW COMMMENT ---------------------------------------------------------- */
+.comment {
+	clear: both;
+}
+.commentsArea .body {
+	display: none;				/* collapse when first shown */
+	font-size: 8pt;
+	color: #2F4F4F;			/* STYLE */
+}
+.comment .userName {
+	font-weight: bold;
+	float: left;
+	margin-bottom: 0px;
+	padding-left: 6px;
+}
+.comment .date {
+	font-weight: bold;
+	float: right;
+	margin-bottom: 0px;
+	padding-right: 6px;
+}
+.comment .text {
+	clear: both;
+	padding-bottom: 4px;			/* makes bottom 'border' bigger on opera */
+	padding-right: 6px;
+	padding-left: 6px;
+}
+/* MODULE: RELATED SECTION  ----------------------------------------------------------------------*/
+/*
+		div.relatedSection
+			div.oneRelatedSection
+				a topicHyperlink
+			div.relatedSectionBody
+				div.relatedItem
+					span relatedItemBullet
+					a topicHyperlink
+					a topicHyperlink    (optional callout link)
+					img topicHyperlinkIcon 
+*/
+
+.relatedSection {
+}
+.oneRelatedSection {
+	margin-top: 16px;
+	margin-bottom: 8px;
+}
+.relatedSectionHeader {
+	font-size: 8pt;
+	font-weight: bold;
+	padding-left: 4px;			/* align with text notes */
+}
+.relatedItem {
+	font-size: 8pt;
+	margin-top: 1px;
+	margin-bottom: 2px;
+}
+.relatedItemBullet {
+	padding-left: 4px;			/* align with text notes */
+}
+/* the icon behind the link */
+.relatedItem .topicHyperlinkIcon {
+	vertical-align: middle;
+}
+/* MODULE: TOP COMMAND ----------------------------------------------------------*/
+.topCommand {
+	font-size: 7pt;
+	text-align: right;
+	margin-top: 20px;
+	padding-top: 10px;
+	border-top: 3px dashed #eee;
+	width: 100%;
+	float: left;
+}
+.topCommand a:link {
+	text-decoration: none; /* set to "none" to hide underlines on links */
+}
+.topCommand a:visited {
+	text-decoration: none; /* set to "none" to hide underlines on links */
+	color: #000099;					/* STYLE */	/* don't show visited colors for prev/next navigation */
+}
+.topCommand a:hover {
+	text-decoration: none; /* set to "none" to hide underlines on links */
+}
+.topCommand a:active {
+	text-decoration: none; /* set to "none" to hide underlines on links */
+}
+/**********************************************************************************************/
+/******** OTHER WINDOW LAYOUTS ****************************************************************/
+/**********************************************************************************************/
+/* WINDOW: LEGEND ------------------------------------------------------------- */
+/*
+	.div legend
+	   .div collapsiblebox
+		   .div body
+				.div legendGroup
+				.div legendItem
+					.div item
+					.div label
+*/
+
+.legend {
+	margin-left: 6px;
+	margin-top: 6px;
+	font-size: 8pt;
+	color: #000099;				/* STYLE */
+	width: 200px;
+}
+/* set with of both divs to avoid right border if text wraps */
+.legend .collapsiblebox {
+	width: 200px;
+}
+.legend .collapsiblebox .body {
+	width: 200px;
+	border: 1px solid #999999;
+}
+.legendGroup {
+	clear: both;
+	font-weight: bold;
+	float: left;
+	margin-top:  5px;
+	margin-bottom:  4px;
+	margin-left: 5px;
+}
+.legendItem {
+	clear: both;
+	margin-left: 5px;
+}
+.legendItem .item {
+	float: left;
+	margin-right: 6px;
+}
+.legendItem .label {
+	float: left;
+	margin-right: 2px;
+}
+/* WINDOW: CONTENT ------------------------------------------------------------- */
+/* 
+	div.Page
+		table.pageBody
+			col.TOCContents
+				div.body
+					div.contentItem1[1-9]
+						div.outlineNumber
+						div.topicLine
+							a topicHyperlink
+			col.TOCAbout
+				div.collapsiblebox
+					div.header
+					div.body
+						div.mapPreview
+							img
+						div.property
+							div.label
+							div.value
+
+*/
+
+.TOCContents {
+	text-align: left;
+	vertical-align: top;
+	width: 90%;
+}
+.TOCContents .body {
+	margin: 15px;
+	margin-right: 5px;
+	color: #000099;				/* STYLE */
+	font-size: 8pt;
+	font-weight: normal;
+}
+.TOCAbout {
+	text-align: right;
+	vertical-align: top;
+	width: 10%;
+}
+.TOCAbout .collapsiblebox {
+	margin: 15px;
+	margin-right: 5px;
+}
+.TOCAbout .property {
+	margin-top: 5px;
+}
+.TOCAbout .property .label {
+	float: left;
+	text-align: left;
+	width: 7.5em;
+}
+.TOCAbout .property .value {
+	float: left;
+	text-align: left;
+	margin-left: 1.0em;
+}
+.mapPreview {
+	padding-top: 10px;
+	padding-bottom: 16px;
+	text-align: center;
+	border-bottom: 1px solid #FFCC66;
+}
+.contentItem1 {
+	margin-top: 5px;
+	clear: both;
+}
+.contentItem2 {
+	margin-top: 3px;
+	margin-left: 2em;
+	clear: both;
+}
+.contentItem3 {
+	margin-left: 4em;
+	clear: both;
+}
+.contentItem4 {
+	margin-left: 6em;
+	clear: both;
+}
+.contentItem5 {
+	margin-left: 8em;
+	clear: both;
+}
+.contentItem6 {
+	margin-left: 10em;
+	clear: both;
+}
+.contentItem7 {
+	margin-left: 12em;
+	clear: both;
+}
+.contentItem8 {
+	margin-left: 14em;
+	clear: both;
+}
+.contentItem9 {
+	margin-left: 16em;
+	clear: both;
+}
+.contentItemX {
+	margin-left: 18em;
+	clear: both;
+}
+/* WINDOW: OVERVIEW MAP ------------------------------------------------------------- */
+/*
+		body overviewMapBody 
+			.div overviewDiv
+			   img mapOverview
+				img mapDetailed
+*/
+
+.overviewMapBody {
+	background-color: Gray;				/* STYLE */
+}
+.overviewDiv {
+	cursor: hand;
+	text-align: center;
+	margin-top: 10px;				/* remove once we can center horizontally */
+}
+img#mapOverview, img#mapDetailed {
+	margin: 0px;
+}
+body#mapPageFooter {
+	font-family: Verdana;
+	font-size: 8pt;
+	text-align: center;
+	padding-top: 3px;
+	vertical-align: middle;
+	color: white;								/* STYLE */
+	background-color: #0062BF; 			/* STYLE */
+}
+/* Home Page CSS */
+
+#map_head {
+	display: block;
+	font-size: 33px;
+	text-align: center;
+	width: 250px;
+	height: 200px;
+	position: absolute;
+	left: 375px;
+	top: 122px;
+	color: #000000;
+	z-index: 200;
+	letter-spacing: -2px!important;	
+	font-family: Rockwell, 'Josefin Slab', serif!important;
+	line-height: 1.4em;
+}
+#map_head .red {
+color: rgb(150,15,100);
+}
+#map_head .yellow {
+color: rgb(240,145,50);
+}
+#map_head .blue {
+color: rgb(50,55,140);
+}
+#map_head .green {
+color: rgb(145,200,70);
+}
+#map_wrap {
+	width: 1000px;
+	height: 438px;
+	background: white;
+	position: relative;
+	margin: 0 auto;
+}
+#map_img {
+	position: absolute;
+	top: 0;
+	left: 221px;
+}
+#map_links li {
+ list style: none;
+	position: absolute;
+	color: #000000;
+	font-family: "Century Gothic", Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	line-height: 1.1em;
+	display: block;
+	width: 221px;
+}
+#map_links li a {
+	color: #000000;
+	text-decoration: none;
+}
+#map_links li a:hover {
+	text-decoration: none;
+}
+#map_links li a.red:hover {
+	color: white;
+	padding: 0 3px;
+	background-color: rgb(150,15,100);
+}
+#map_links li a.yellow:hover {
+	color: white;
+	padding: 0 3px;
+	background-color: rgb(240,145,50);
+}
+#map_links li a.blue:hover {
+	color:white;
+	padding: 0 3px;
+	background-color: rgb(50,55,140);
+}
+#map_links li a.green:hover {
+	color: white;
+	padding: 0 3px;
+	background-color: rgb(145,200,70);
+}
+#map_1 {
+	top: 10px;
+	left : 0px;
+	text-align: right;
+}
+#map_2 {
+	top: 50px;
+	left : 0px;
+	text-align: right;
+}
+#map_3 {
+	top: 90px;
+	left : 0px;
+	text-align: right;
+}
+#map_4 {
+	top: 130px;
+	left : 0px;
+	text-align: right;
+}
+#map_5 {
+	top: 10px;
+	right : 0px;
+}
+#map_6 {
+	top: 50px;
+	right : 0px;
+}
+#map_7 {
+	bottom: 137px;
+	left : 0px;
+	text-align: right;
+}
+#map_8 {
+	bottom: 97px;
+	left : 0px;
+	text-align: right;
+}
+#map_9 {
+	bottom: 57px;
+	left : 0px;
+	text-align: right;
+}
+#map_10 {
+	bottom: 17px;
+	left : 0px;
+	text-align: right;
+}
+#map_11 {
+	bottom: 122px;
+	right : 0px;
+}
+#map_12 {
+	bottom: 57px;
+	right : 0px;
+}
+#map_13 {
+	bottom: 17px;
+	right : 0px;
+}
+#header, #footer {
+	width: 100%;
+	float: left;
+	background: black;
+	min-width: 1040px;
+	color: white;
+}
+#header a, #footer a {
+	color: white;
+	text-decoration: none;
+}
+#header_content, #footer_content {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+	background: black;
+	position: relative;
+}
+#map_block, #contentblock, #content {
+	width: 100%;
+	float: left;
+	background: white;
+}
+#map_block, #contentblock {
+}
+#contentblock {
+	padding-bottom: 10px;
+	margin: 0 0 10px 0;
+}
+#map_block {
+	margin: 10px 0;
+	border-bottom: 3px #eee dashed;
+	padding: 10px 0 15px 0;
+}
+#contentwrap {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+#youtube {
+	float: right;
+	margin-right: 20px;
+}
+
+#left {
+	float: left;
+	width: 440px;
+	padding: 0 20px;
+}
+#left h3 {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+#left a {
+	color: rgb(50,55,140)!important;
+}
+#left a:hover {
+	color: white!important;
+	background: rgb(50,55,140)!important;
+	text-decoration: none!important;
+}
+#left p {
+	margin-bottom: 10px;
+}
+#left ul, #left ol {
+	padding: 0 20px!important;
+	width: 400px;
+	float: left;
+}
+#left ul ul, #left ol ol, #left ul ol, #left ol ul {
+	padding: 0 20px!important;
+	width: 360px;
+	float: left;
+}
+#left ul ul ul, #left ol ol ol, #left ul ol ul, #left ol ul ol, #left ul ul ol, #left ol ol ul, #left ul ol ol, #left ol ul ul {
+	padding: 0 20px!important;
+	width: auto;
+	float: left;
+}
+#left ul li, #left ol li {
+	margin-left: 20px!important;
+	padding-left: 20px!important;
+	margin-bottom: 10px;
+	color: black!important;
+}
+#left ul li {
+	list-style: disc;
+}
+#footer_logos {
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.footerText{
+	float: left;
+	width: 100%;
+	font-size: 0.87em;
+	padding-bottom: 20px;
+}
+.floatleft { float: left; }
+.floatright { float: right; }
+.footLeft {
+	float: left;
+	width: 33%;
+	text-align: left;
+}
+.footCenter {
+	float: left;
+	width: 34%;
+	text-align: center;
+}
+.footRight {
+	float: right;
+	width: 33%;
+	text-align: right;
+	font-style: italic;
+}
+a#pdf_download, a#text_download {
+	display: block;
+	padding: 10px;
+	width: 460px;
+	text-align: center;
+	color: white;
+	float: right;
+	margin: 10px 20px 0 0;
+	text-decoration: none;
+}
+a#pdf_download strong, a#text_download strong {
+	font-size: 2em;
+	margin-bottom: -13px;
+	display: block;
+	width: 100%;
+	font-family: Rockwell, 'Josefin Slab', serif!important;
+	font-weight: normal;
+	line-height: 1em!important;	
+}
+a#pdf_download {
+	background-color: rgb(150,15,100);
+}
+a#pdf_download:hover {
+	background-color: rgb(120,15,75);
+	cursor: pointer;					  
+}
+a#text_download {
+	background-color: rgb(50,55,140);
+}
+a#text_download:hover {
+	background-color: rgb(25,40,110);
+}
+a#pdf_download:hover strong, a#text_download:hover strong {
+	text-decoration: underline;
+}
+.jisclogo { float: right; margin-top: 8px;}

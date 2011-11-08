@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>UCIAD: Using, refining, customising and reusing ontologies</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Projects.html">The JISC activity data projects</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="UCIAD.html">User-Centric Integration of Activity Data (UCIAD)</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   UCIAD: Using, refining, customising and reusing ontologies
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="UCIAD-Hypotheses.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="UCIAD_next_steps.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="UCIAD-Using-ontologies"><span class=outlineNumberFirst></span><span class=topicLineFirst>UCIAD: Using, refining, customising and reusing ontologies</span></h2>
+
+<div id="main_content"><div align="left">
+Ontology modelling is a never ending task. Elements constantly need to be corrected and added 
+to cover more and more cases in a way as generic as possible. It is even more the case in UCIAD 
+as the approach is to create the ontology depending on the data we need to treat. Therefore, as 
+we will progressively be adding more data from different sources, including server logs from 
+different types of web sites, activity logs from systems such as VLEs or video players, the 
+ontologies will evolve to include these cases. </div>
+<div align="left">
+Going a step further, what we want to investigate is the user-centric analysis of activity data. The 
+ontologies will be used to provide users with views and analysis mechanisms for the data that 
+concern their own activities. It therefore seems a natural next step to make it possible for the 
+users to extend the ontologies, to customize them, therefore creating their own view on their own 
+data.</div>
+<div align="left"><b>Reusing existing ontology</b></div>
+<div align="left">
+When dealing with data and ontologies, reuse is generally seen as a good practice. Apart from 
+saving time from not having to remodel things that have already been described elsewhere, it also 
+helps anticipating on future needs for interoperability by choosing well established ontologies that 
+are likely to have been employed elsewhere. We therefore investigated existing ontologies that 
+could help us define the notions mentioned above. Here are the ontology we reused:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The <a href="http://www.foaf-project.org/" target=
+"_blank"><span>Friend of a Friend (FOAF)</span></a><span>
+ ontology is commonly used to describe people, their 
+connections with other people, but also their connections with documents. We use FOAF in 
+the Actor Ontology for human users, and on the Sitemap Ontology for Web pages (as 
+Documents). </span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The <a href="http://www.w3.org/TR/owl-time/" target=
+"_blank"><span>Time Ontology</span></a><span> is a common ontology for representing time and temporal intervals. We 
+use it in the Trace Ontology.</span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The Action ontology defines different types of actions in a broad sense, and can be used as a 
+basis for representing elements of the requests in the Trace Ontology, but also as a base 
+typology for the Activity ontology. It itself imports a number of other ontologies, including its 
+own notion of actors. </li>
+</ul>
+<div align="left">
+The graph representing the dependencies between the UCIAD ontologies and others is 
+represented below.</div>
+<div align="center"><img src="NotesImages/Topic135NotesImage6.jpg"
+align="bottom" width="439" height="337" border="0" alt=
+"graphic" /></div>
+<div align="left">
+While not currently used in the base ontologies, other ontologies can be considered at a later 
+stage, for example to model specific types of activities. These include the <a href="http://online-presence.net/ontology.php"
+   target="_blank"><span>Online Presence Ontology (OPO)</span></a><span>, as well as the </span><a href="http://sioc-project.org/ontology"
+   target=
+   "_blank"><span>Semantically- Interlinked Online Communities ontology (SIOC)</span></a><span>
+.</span></div>
+<div align="left">
+<b>Identifying concepts and their relations</b></div>
+<div align="left">
+The first step in building our ontology is to identify the key concepts, i.e., the key notions, that 
+need to be tackled, bearing in mind that the ultimate goal is to understand activities. The main 
+concepts to be considered are therefore the ones that support the concept of activity. Activities 
+relate to users, but not only. The system relies extensively on website logs as sources of activity 
+data. In these cases, it is possible to investigate requests both from human users and from robots 
+automatically retrieving and crawling information from the websites. The server logs in question 
+represent collections can be seen as traces of activities that these users/robots are realising on 
+websites. therefore it is necessary to model these other aspects, which correspond to actions that 
+are realised by actors on particular resources. These are the three kinds of objects that, in the 
+context of Web platforms, the system to models, so that they can be interpreted and classified in 
+terms of activities. The project therefore proposes four ontologies to be used as the basis of the 
+work in UCIAD:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The <a href=
+"https://github.com/uciad/UCIAD-Ontologies/blob/master/actor.owl"
+target=
+"_blank"><span>Actor Ontology</span></a><span> is an ontology representing different types of actors (human users vs 
+robots), as well as the technical setting through which they realise online activities (computer 
+and user agent).</span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The <a href=
+"https://github.com/uciad/UCIAD-Ontologies/blob/master/sitemap.owl"
+target=
+"_blank"><span>Sitemap Ontology</span></a><span> is an ontology to represent the organisation of web pages in collections 
+and websites, and which is extensible to represent different types of web pages and websites.</span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The <a href=
+"https://github.com/uciad/UCIAD-Ontologies/blob/master/trace.owl"
+target=
+"_blank"><span>Trace Ontology</span></a><span> is an ontology to represent traces of activities, realised by particular 
+agents on particular web pages. As the current focus is on HTTP server logs, this ontology 
+contain specific sections related to traces as HTTP requests (e.g., methods as actions and 
+HTTP response code). It is however extensible to other types of traces, such as specific logs 
+for VLEs or search systems.</span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The Activity Ontology is intended to define particular classes of activities into which traces 
+can be classified, depending on their particular parameters (including actors and web pages). 
+The type of activities to consider highly depends on the systems considered and to a certain 
+extent on the user. The idea here is that specific versions of the ontology will be built that fit 
+the specific needs of particular systems. It is the possible to extract the generic and globally 
+reusable part of these ontologies to provide a base for an overarching activity ontology. 
+Ultimately, the idea in UCIAD is that individual users will be able to manipulate this ontology 
+to include their specific view on their own activities.</li>
+</ul></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Plotting Calendar Data with GNUplot</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Presenting_data.html">Presenting data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Plotting Calendar Data with GNUplot
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Producing_PDF_Reports_Programmatically.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Recipe_Gephi.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Plotting_Calendar_Data_with_GNUplot"><span class=outlineNumberFirst></span><span class=topicLineFirst>Plotting Calendar Data with GNUplot</span></h2>
+
+<div id="main_content"><div align="left"><b>Originators/Authors</b></div>
+<div align="left">James S Perrin</div>
+<div align="left"><a href=
+"AGtivity.html#AGtivity"><span>AGtivity</span></a><span>: University of Manchester, </span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+To display multiple discrete events which have a start and end time, such as meetings, in a 
+diary/calendar like plot.</div>
+<div align="left"><b>Background</b></div>
+<div align="left">
+The Access Grid activity data quite literally describes what a group of people were doing at 
+discrete periods of time i.e. have an Access Grid meetings. It is therefore of benefit to present this 
+data in a calendar or diary format to describe when the activities at virtual venue or physical node 
+were occurring. We could look at room booking data but this only shows what was proposed to 
+happen, meetings occur ad- hoc or cancelled without updating the system. The diary format allows 
+trends and patterns in actual room usage to be observed. We could go further and use cyclic plots 
+to compare activity on a week by week basis say.</div>
+<div align="left"><b>Ingredients</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+GNUplot</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Some data for events with start and end times</li>
+</ul>
+<div align="left"><b>Assumptions</b></div>
+<div align="left">
+We assume that each event occurs within one day ie starts after 00:00 and finishes before 24:00 
+the same day (we can clamp the data if necessary). The timestamps should be give the time and 
+date, UNIX timestamps (seconds since UNIX Epoch) are most easy to handle.</div>
+<div align="left">
+The user is already familiar with basic GNUplot commands and usage.</div>
+<div align="left"><b>Warnings</b></div>
+<div align="left">
+GNUplot has its own epoch value and Excel using a floating point number for timestamps.</div>
+<div align="left"><b>Method</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Define some new flat ended arrow styles in GNUplot</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Set up the data formats and axes to handle the time stamps correctly</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Plot data &#8216;with vectors&#8217;</li>
+</ul>
+<div align="left"><b>Individual Steps</b></div>
+<div align="left">Set Arrow Styles</div>
+<div align="left">
+We want to use flat headed arrows to show the extent of each event.</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+unset style arrow</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+set style arrow 1 heads back nofilled linetype 2 linewidth 2.000 size screen 
+0.001,90.000,90.000</li>
+</ul>
+<div align="left">
+Set Time Format and Axes</div>
+<div align="left">
+Tell GNUplot that time will be plotted on both X and Y axes:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+set xdata time</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+set ydata time</li>
+</ul>
+<div align="left">
+and let it know that the value will be in UNIX time:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+set timefmt x &#8220;%s&#8221;</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+set timefmt y &#8220;%s&#8221;</li>
+</ul>
+<div align="left">
+Then tell GNUplot how to format the axes, the date along the X and time along the Y axis:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+set format x "% g"</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+set format y "%H:%M"</li>
+</ul>
+<div align="left">
+of course we should label the axes too:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+set xlabel &#8220;Date&#8221;</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+set ylabel &#8220;Time&#8221;</li>
+</ul>
+<div align="left">
+Manipulating and Plotting the Data</div>
+<div align="left">
+Let&#8217;s assume the start and end times are in columns 1 and 2.</div>
+<div align="left">
+Multiple events occurring on the same day should be vertically aligned ie plotted at whole days 
+rather than at a day plus seven hours and fourteen minutes. The x values are therefore rounded 
+down using the following expression:</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>(floor($1)/86400)*86400)</span></div>
+</blockquote>
+<div align="left">
+Where 86400 is the number of seconds in day. The floor() function is used as a belt and braces 
+approach to convert the (by default) float value into an integer. Along the Y axis we just need the 
+time of day, using the modulus operator and the seconds per day we get the remainder:</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>(floor($1)%86400))</span></div>
+</blockquote>
+<div align="left">
+GNUplot vectors use a start point and a relative offset (x,y,dx,dy) so all we need to compute the 
+duration of the event is:</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>($2-$1)</span></div>
+</blockquote>
+<div align="left">
+Putting these expressions altogether in the plot command as follows:</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>plot mydata.csv using ((floor($1)/86400)*86400):(floor($1)%86400):(0):($2-$1) with vectors 
+as 1</span></div>
+</blockquote>
+<div align="left">
+The data is plotted with vectors using the arrowstyle (as) 1 that was defined earlier.</div>
+<div align="left">Output Data</div>
+<div align="center"><img src="NotesImages/Topic160NotesImage7.jpg"
+align="bottom" width="1183" height="753" border="0" alt=
+"graphic" /></div>
+<div align="left"><b>Resources</b></div>
+<div align="left">
+The batch_timetable.plt GNUplot script is available as part of our log parsing package:</div>
+<div align="left"><a href=
+"http://wiki.rcs.manchester.ac.uk/community/AGProjects?action=AttachFile&amp;do=get&amp;target=aglp.zip"
+   target=
+   "_blank"><span>http://wiki.rcs.manchester.ac.uk/community/AGProjects?action=AttachFile&amp;do=get&amp;target=aglp.zip</span></a></div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

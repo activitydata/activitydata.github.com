@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Search term based recommendations</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Processing_data.html">Processing data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Search term based recommendations
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="relationship_based_recommendations.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="How_to_Pivot_data_in_Open_Office_Spreads.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Search_term_recommendations"><span class=outlineNumberFirst></span><span class=topicLineFirst>Search term based recommendations</span></h2>
+
+<div id="main_content"><div align="left"><b>Authors</b></div>
+<div align="left">Paul Grand </div>
+<div align="left"><a href=
+"RISE.html#RISE"><span>RISE</span></a><span>, Open University</span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+To provide, given a searcher&#8217;s current search term, recommendations as to serial articles or other 
+e- resources that might be indexed in EBSCO EDS</div>
+<div align="left"><b>Background</b></div>
+<div align="left">
+To investigate the hypothesis that recommender systems can enhance the student experience in 
+new generation e-resource discovery services.</div>
+<div align="left"><b>Ingredients </b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>RISE database</li>
+<li>MyRecommendations web service</li>
+<li>User&#8217;s current search term</li>
+</ul>
+<div align="left"><b>Assumptions </b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>
+The user has entered a search with a non-null search term<br />
+
+One or more users has used the search term and subsequently viewed at least one 
+resource from the returned result set</li>
+</ul>
+<div align="left"><b>Warnings</b></div>
+<div align="left">
+If there are no records of the same search term with at least one resource having been access 
+from the search term results, then no recommendations will be returned.</div>
+<div align="left">
+This is entirely reliant on the MyRecommedations service, and does not draw on historic EZProxy 
+data.</div>
+<div align="left"><b>Method</b></div>
+<div align="left">
+MyRecommendations makes the following database queries</div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>
+Search the searches table for the terms used to get a numeric search ID, if there is no 
+search ID that already exists, then do not look for search related recommendations</li>
+<li>
+Select from the resource_views table according to a match on the search ID, order by 
+the most commonly viewed resources, limit 4.<br />
+
+<br />
+In actuality also a value field is used informing recommendations, where this set by 
+users making recommendations (+2 for useful, +1 for viewed, -1 for not useful).</li>
+</ul>
+</div>
+<div align="left"><b>Output data</b></div>
+<div align="left">
+Appears in every page, including search results page, up to the top the top four items most 
+accessed/rated by people who viewed the same items (now and historically)</div>
+<table border="1" bordercolor="#000000" width="566" cellpadding="0"
+cellspacing="0" style="border-collapse: collapse; border: none">
+<tr>
+<td valign="top" width="149" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">Title</div>
+</td>
+<td valign="top" width="222" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">alphanumeric</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="149" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">URL</div>
+</td>
+<td valign="top" width="222" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">
+http://.../.../.../</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="149" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">ISSN</div>
+</td>
+<td valign="top" width="222" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">12345678</div>
+</td>
+</tr>
+</table>
+<div align="left">
+<b>Appendix A: MyRecomendations web service source code</b></div>
+<div align="left">See location <a href=
+"http://code.google.com/p/rise-project/"><span>http://code.google.com/p/rise-project/</span></a></div>
+<div align="left">
+<b>Appendix B: ER diagram for RISE database</b></div>
+<div align="left"><img src="NotesImages/Topic155NotesImage9.jpg"
+align="bottom" width="967" height="494" border="0" alt=
+"graphic" /></div>
+<div align="left">source: <a href=
+"http://www.open.ac.uk/blogs/RISE/wp-content/uploads/2011/04/ERD1404111.png">
+<span>http://www.open.ac.uk/blogs/RISE/wp- content/uploads/2011/04/ERD1404111.png</span></a></div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

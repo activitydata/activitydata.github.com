@@ -1,0 +1,429 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Preparing attention data for processing by SPSS</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Processing_data.html">Processing data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Preparing attention data for processing by SPSS
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Recipe_Stitching_together_library_data_w.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Playing_With_Largeish_CSV_Files.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="LIDP_R_3"><span class=outlineNumberFirst></span><span class=topicLineFirst>Preparing attention data for processing by SPSS</span></h2>
+
+<div id="main_content"><div align="left"><b>Originators/Authors</b></div>
+<div align="left">
+Graham Stone and Dave Pattern</div>
+<div align="left"><a href=
+"LIDP.html#LIDP"><span>LIDP</span></a><span>, University of Huddersfield</span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+To merge the data extracted from the following systems:</div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>Student record system</li>
+<li>Library management system</li>
+<li>Authentication system</li>
+<li>Turnstile entry system</li>
+</ul>
+</div>
+<div align="left">
+In order to produce a single file that can be processed by SPSS or an equivalent system.</div>
+<div align="left"><b>Background</b></div>
+<div align="left">
+To investigate whether there is a statistically significant correlation across a number of universities 
+between library activity data and student attainment.</div>
+<div align="left"><b>Ingredients</b></div>
+<div align="left">
+File formats for the following are shown in Appendix C.</div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>
+Extract of Student Record System data</li>
+<li>
+Extract of data from Library Management System</li>
+<li>
+Extract of data from Authentication system</li>
+<li>
+Extract of data from Turnstile entry system</li>
+</ul>
+</div>
+<div align="left"><b>Assumptions</b></div>
+<div align="left">
+Data has previously been extracted from the student record system and one or more of the other 
+systems.</div>
+<div align="left">
+Student ID is of identical format in each of the files to be merged.</div>
+<div align="left"><b>Warnings</b></div>
+<div align="left">
+All files should be for the same period to ensure statistical validity.</div>
+<div align="left"><b>Method</b></div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>Run Perl script</li>
+<li>Follow prompts</li>
+</ul>
+</div>
+<div align="left"><b>Individual steps</b></div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>Run the Perl script </li>
+<li>
+When prompted select CSV files as appropriate</li>
+</ul>
+</div>
+<div align="left"><b>Output data</b></div>
+<div align="left">
+Information will be placed in a CSV file called LibraryImpactData.csv</div>
+<div align="left">File format</div>
+<table border="1" bordercolor="#000000" width="843" cellpadding="0"
+cellspacing="0" style="border-collapse: collapse; border: none">
+<tr>
+<td valign="top" width="25" style="border: solid 0.50pt;">
+<div align="left">UserID</div>
+</td>
+<td valign="top" width="71" style="border: solid 0.50pt;">
+<div align="left">academic  year of 
+graduation </div>
+</td>
+<td valign="top" width="35" style="border: solid 0.50pt;">
+<div align="left">course title </div>
+</td>
+<td valign="top" width="28" style="border: solid 0.50pt;">
+<div align="left">length of  course  in 
+years </div>
+</td>
+<td valign="top" width="28" style="border: solid 0.50pt;">
+<div align="left">type   of  course </div>
+</td>
+<td valign="top" width="58" style="border: solid 0.50pt;">
+<div align="left">Full  time/part  time</div>
+</td>
+<td valign="top" width="41" style="border: solid 0.50pt;">
+<div align="left">grade  achieved </div>
+</td>
+<td valign="top" width="83" style="border: solid 0.50pt;">
+<div align="left">school/academic  department</div>
+</td>
+<td valign="top" width="46">
+<div align="left">Count  of  items  borrowed</div>
+</td>
+<td valign="top" width="77">
+<div align="left">Count of  authentications</div>
+</td>
+<td valign="top" width="39">
+<div align="left">Count   of  times 
+entered  library</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="25" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">Xxx</div>
+</td>
+<td valign="top" width="71" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">2010</div>
+</td>
+<td valign="top" width="35" style="border: solid 0.50pt;">
+<div align="left">Nursing</div>
+</td>
+<td valign="top" width="28" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">3</div>
+</td>
+<td valign="top" width="28" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">UG</div>
+</td>
+<td valign="top" width="58" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">FT</div>
+</td>
+<td valign="top" width="41" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">2.1</div>
+</td>
+<td valign="top" width="83" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">Nursing</div>
+</td>
+<td valign="top" width="46">
+<div align="left" class="lastTableNotesDiv">17</div>
+</td>
+<td valign="top" width="77">
+<div align="left" class="lastTableNotesDiv">36</div>
+</td>
+<td valign="top" width="39">
+<div align="left" class="lastTableNotesDiv">77</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="25" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">Xxy</div>
+</td>
+<td valign="top" width="71" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">2010</div>
+</td>
+<td valign="top" width="35" style="border: solid 0.50pt;">
+<div align="left">Sociology</div>
+</td>
+<td valign="top" width="28" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">3</div>
+</td>
+<td valign="top" width="28" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">UG</div>
+</td>
+<td valign="top" width="58" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">FT</div>
+</td>
+<td valign="top" width="41" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">1</div>
+</td>
+<td valign="top" width="83" style="border: solid 0.50pt;">
+<div align="left">Social  sciences</div>
+</td>
+<td valign="top" width="46">
+<div align="left" class="lastTableNotesDiv">3</div>
+</td>
+<td valign="top" width="77">
+<div align="left" class="lastTableNotesDiv">3</div>
+</td>
+<td valign="top" width="39">
+<div align="left" class="lastTableNotesDiv">43</div>
+</td>
+</tr>
+</table>
+<div align="left"></div>
+<div align="left">
+<b>Appendix A: Sample output</b></div>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>UserID, academic year of graduation , course title , length of course in years , type of 
+course, Full time/part time, grade achieved, school/academic department, Count of items 
+borrowed, Count of authentications, Count of times entered library</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxx, 2010, Nursing, 3, UG, FT, 2.1, Nursing, 17, 36, 77</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxy, 2010, Sociology, 3, UG, FT, 1, Social sciences, 3, 3, 43</span></div>
+</blockquote>
+<div align="left"></div>
+<div align="left"><b>Appendix B: Scripts</b></div>
+<div align="left">
+Please email d.c.pattern at huddersfield.ac.uk for the script</div>
+<div align="left">
+<b>Appendix C: input file formats</b></div>
+<div align="left">Student Record System data</div>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>UserID, academic year of graduation , course title , length of course in years , type of 
+course, Full time/part time, grade achieved, school/academic department</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxx, 2010, Nursing, 3, UG, FT, 2.1, Nursing</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxy, 2010, Sociology, 3, UG, FT, 1, Social sciences</span></div>
+</blockquote>
+<div align="left"></div>
+<div align="left">
+Library management system data</div>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>UserID, Count of items borrowed </span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxx, 17</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxy, 3</span></div>
+</blockquote>
+<div align="left"></div>
+<div align="left">Authentication data</div>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>UserID, Count of authentications</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxx, 36</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxy, 3</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;"></div>
+</blockquote>
+<div align="left">Turnstile entry data</div>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>UserID, Count of times entered library</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxx, 77</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:13mm; margin-right:0mm; text-indent:0mm;">
+<span>Xxy, 43</span></div>
+</blockquote></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

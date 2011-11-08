@@ -1,0 +1,146 @@
+/* Cascading Style Sheet for HTML export */
+/* MODULE: DYNAMIC OUTLINE */
+
+/* This stylesheet expects the following HTML structure
+		  
+  left column in page body
+		  #pageBody .left
+		  
+		  td.outlineColumn
+		     div.dynamicOutline
+			     div.tree
+				     div.mout
+					  div.mover
+*/
+
+
+/* visual highlight the sidebar navigation */
+.dynamicOutline {
+	font-size: 15px;
+	letter-spacing: -0.3px;
+	float: left;
+	margin: 0;
+	pading: 0;
+	width: 250px;
+	overdflow: hidden;
+	color: white;
+}
+/* tree is the same as dynamicOutline, just nested */
+.tree a {
+	color: white!important;
+}
+.tree a:link {
+	text-decoration: none;
+}
+.tree a:active {
+	text-decoration: none;
+}
+.tree a:visited {
+	text-decoration: none;
+}
+.tree a:hover {
+	text-decoration: none;
+}
+.tree .mout {
+	text-decoration: none;
+}
+.tree .mover {
+	text-decoration: none;
+}
+
+.tree .tree_text:hover {
+	text-decoration: underline;
+}
+
+.tree li {
+list-style: none;
+display: block;
+float: left; 
+width: 220px;
+padding: 10px;
+line-height: 1.2em;
+border-top: 2px white solid;
+background-color: black;
+}
+
+.tree > li {
+background-color: black;
+}
+
+.tree_icons { width: 20px; float: left; text-align: right; overflow: hidden;  }
+.tree_text { width: 195px; float: right; overflow: hidden;}
+
+.tree_icons img { padding: 0 2px 0 0; }
+
+
+#c0_0 > li + div li .tree_icons {
+	width: 40px;
+}
+#c0_0 > li + div li + div li .tree_icons {
+	width: 60px;
+	}
+#c0_0 > li + div li + div li + div li .tree_icons {
+	width: 80px;
+}
+
+#c0_0 > li + div li .tree_text {
+	width: 175px;
+}
+#c0_0 > li + div li + div li .tree_text {
+	width: 155px;
+	}
+#c0_0 > li + div li + div li + div li .tree_text {
+	width: 135px;
+}
+
+
+
+/* Red */
+#c0_0 > li:nth-of-type(1), #c0_0 > li:nth-of-type(2), #c0_0 > li:nth-of-type(3), #c0_0 > li:nth-of-type(4) {
+	background-color: rgb(150,15,100);
+}
+#c0_0 > li:nth-of-type(1) + div li, #c0_0 > li:nth-of-type(2) + div li, #c0_0 > li:nth-of-type(3) + div li, #c0_0 > li:nth-of-type(4) + div li {
+	background-color: rgb(120,15,75);
+}
+#c0_0 > li:nth-of-type(1) + div li + div li, #c0_0 > li:nth-of-type(2) + div li + div li, #c0_0 > li:nth-of-type(3) + div li + div li, #c0_0 > li:nth-of-type(4) + div li + div li {
+	background-color: rgb(85,5,45);
+}
+#c0_0 > li:nth-of-type(1) + div li + div li + div li, #c0_0 > li:nth-of-type(2) + div li + div li + div li, #c0_0 > li:nth-of-type(3) + div li + div li + div li, #c0_0 > li:nth-of-type(4) + div li + div li + div li {
+	background-color: rgb(55,5,15);
+}
+/* Blue */
+#c0_0 > li:nth-of-type(5), #c0_0 > li:nth-of-type(6) {
+	background-color: rgb(50,55,140);
+}
+#c0_0 > li:nth-of-type(5) + div li, #c0_0 > li:nth-of-type(6) + div li {
+	background-color: rgb(25,40,110);
+}
+#c0_0 > li:nth-of-type(5) + div li + div li, #c0_0 > li:nth-of-type(6) + div li + div li{
+	background-color: rgb(5,15,75);
+}
+#c0_0 > li:nth-of-type(5) + div li + div li + div li, #c0_0 > li:nth-of-type(6) + div li + div li + div li {
+	background-color: rgb(0,2,35);
+}
+/* Green */
+#c0_0 > li:nth-of-type(9), #c0_0 > li:nth-of-type(8), #c0_0 > li:nth-of-type(10), #c0_0 > li:nth-of-type(7) {
+	background-color: rgb(145,200,70);
+}
+#c0_0 > li:nth-of-type(9) + div li, #c0_0 > li:nth-of-type(8) + div li, #c0_0 > li:nth-of-type(10) + div li, #c0_0 > li:nth-of-type(7) + div li {
+	background-color: rgb(100,150,50);
+}
+#c0_0 > li:nth-of-type(9) + div li + div li, #c0_0 > li:nth-of-type(8) + div li + div li, #c0_0 > li:nth-of-type(10) + div li + div li, #c0_0 > li:nth-of-type(7) + div li + div li  {
+	background-color: rgb(65,100,25);
+}
+#c0_0 > li:nth-of-type(9) + div li + div li + div li , #c0_0 > li:nth-of-type(8) + div li + div li + div li , #c0_0 > li:nth-of-type(10) + div li + div li + div li , #c0_0 > li:nth-of-type(7) + div li + div li  + div li  {
+	background-color: rgb(20,50,0);
+}
+/* Orange */
+#c0_0 > li:nth-of-type(12), #c0_0 > li:nth-of-type(13), #c0_0 > li:nth-of-type(11) {
+	background-color: rgb(240,145,50);
+}
+#c0_0 > li:nth-of-type(12) + div li, #c0_0 > li:nth-of-type(13) + div li, #c0_0 > li:nth-of-type(11) + div li {
+	background-color: rgb(185,110,20);
+}
+#c0_0 > li:nth-of-type(12) + div li + div li, #c0_0 > li:nth-of-type(13) + div li + div li, #c0_0 > li:nth-of-type(11) + div li + div li {
+	background-color: rgb(125,70,0);
+}

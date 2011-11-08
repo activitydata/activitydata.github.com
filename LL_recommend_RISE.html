@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Recommender systems: Recommendations Improve the Search Experience (RISE)</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Lessons_learnt.html">Lessons learnt</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Recommender systems: Recommendations Improve the Search Experience (RISE)
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="LL_recommend_AEIOU.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="LL_recommend_SALT.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="LL_recommend_RISE"><span class=outlineNumberFirst></span><span class=topicLineFirst>Recommender systems: Recommendations Improve the Search Experience (RISE)</span></h2>
+
+<div id="main_content"><div align="left">
+Here are a few things that we have learnt about EZProxy log files and how you can use them to 
+make recommendations.</div>
+<div align="left">
+<b>1. What is in the log file determines what you can do</b></div>
+<div align="left">
+You are restricted by what is stored within the log file as you need certain elements of data to be 
+able to make recommendations or even to get other data from elsewhere to improve the data you 
+collect. So you need user IDs to be able to get course information and you need bibliographic data 
+of some form (or at least a mechanism to get bibliographic data related to the data you have in the 
+log file). Essentially you need hooks that you can use to get other data.</div>
+<div align="left">
+<b>2. How you use EZProxy determines what you see in the log file</b></div>
+<div align="left">
+At the OU we link as many systems through EZProxy as we can. This includes our Discovery 
+Service from Ebsco. The big implication is that Discovery Services aggregate content so the 
+EZProxy log files show the Discovery Service as the provider. Our log files are full of Ebsco URLs 
+and have far fewer resource URLs from other providers.</div>
+<div align="left">
+<b>3. You can make basic recommendations from the proxy log files</b></div>
+<div align="left">
+You can make a very simple recommendation from a log file. There is a high chance that if a user 
+looks at two resources, one after the other, then there is a relationship between the resources. If 
+you store that connection as a relationship then that can form the basis of a recommendation 
+&#8216;These resources may be related to resources you have viewed&#8217;. The more people that look at 
+those two resources one after another the more that reinforces that relationship and 
+recommendation.</div>
+<div align="left">
+<b>4. You need some bibliographic data for your recommendations</b></div>
+<div align="left">
+To show a recommendation to a user you really need to have something like an article title to 
+display. Otherwise the user can't easily judge what the recommendation is about. For RISE we've 
+used the Ebsco Discovery API to retrieve some suitable metadata and then passed that to the 
+Crossref API to get bibliographic data that we can store in the system. The approach is to a great 
+extent determined by what you have in your log files and what systems you can access.</div>
+<div align="left">
+<b>5. You can get other data to make other types of recommendations</b></div>
+<div align="left">
+You can enhance your log file data as long as you have key bits of data you can use. So if you 
+have a user ID or logon that matches up with your student information system then you can relate 
+activity to other things such as the course being studied.</div>
+<div align="left">
+<b>Proxy log file flowchart</b></div>
+<div align="left">
+To summarise the things that we have found with our EZProxy log files RISE has put together the 
+following flowchart.</div>
+<div align="left"><img src="NotesImages/Topic33NotesImage4.jpg"
+align="bottom" width="568" height="428" border="0" alt=
+"graphic" /></div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

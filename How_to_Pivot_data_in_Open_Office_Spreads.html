@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>How to Pivot data in Open Office Spreadsheet</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Processing_data.html">Processing data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   How to Pivot data in Open Office Spreadsheet
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Search_term_recommendations.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Exploitable_artefact__UCIAD_Ontology.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="How_to_Pivot_data_in_Open_Office_Spreadsheet"><span class=outlineNumberFirst></span><span class=topicLineFirst>How to Pivot data in Open Office Spreadsheet</span></h2>
+
+<div id="main_content"><div align="left"><b>Originators/Authors</b></div>
+<div align="left">Anne Clarke </div>
+<div align="left"><a href=
+"Exposing_VLE_data.html#Exposing_VLE_data"><span>Exposing VLE activity data</span></a><span>
+, University of Cambridge</span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+Instructions on how to work with output stats data in an OpenOffice spreadsheet to create a Pivot 
+Table.</div>
+<div align="left"><b>Background</b></div>
+<div align="left">
+We have developed tools that can be run to extract various counts (unique logins, number of each 
+type of event) on a granular scale; for instance per month or per week. This allows investigation of 
+the fluctuation of these interactions.</div>
+<div align="left">
+However to see aggregated totals per Event Type or per Institution we can use the Pivot 
+functionality within a spreadsheet. This document gives instructions for OpenOffice.</div>
+<div align="left"><b>Ingredients</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+CSV file containing granular results of running Perl Stats routines on the</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+database eg total_events_by_week.csv, unique_instids_by_month.csv</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+This file should have appropriate column headings in the first row OpenOffice application</li>
+</ul>
+<div align="left"><b>Assumptions</b></div>
+<div align="left">
+The user has basic spreadsheet knowledge and some familiarity with OpenOffice.</div>
+<div align="left"><b>Method</b></div>
+<div align="left">
+You will first use OpenOffice to open the CSV file. Then you select the data, enter grouping 
+information and create a Pivot table giving an aggregated view of the data.</div>
+<div align="left"><b>Individual steps</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Open your results CSV file in OpenOffice:</li>
+</ul>
+<div align="center"><img src="NotesImages/Topic156NotesImage5.jpg"
+align="bottom" width="575" height="633" border="0" alt=
+"graphic" /></div>
+<div align="center">
+Illustration 1: Sample granular data</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Use short cut keys to select all the data (make sure you select just the data not the whole 
+spreadsheet).</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Data-&gt;DataPilot-&gt;Start</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Ok to using current selection</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Wait patiently for some time &#8211; you will see the Data Pilot window:</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Move the field names to the Rows and Columns as appropriate. Normally you will be putting a 
+numeric value in the data field.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The example below users Academic Year, Year, Month as the column headings for the 
+pivoted table and event type to aggregate values over. The sum of the counts form the data 
+fields.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on the More button</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Choose to display &#8220;Results to&#8221; in a new sheet (if you don't do this, the results will appear 
+below the current sheet. Click Ok.</li>
+</ul>
+<div align="center"><img src="NotesImages/Topic156NotesImage9.jpg"
+align="bottom" width="567" height="335" border="0" alt=
+"graphic" /></div>
+<div align="center">
+Illustration 2: Selecting the pivot data</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Now the pivot table is there.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Format columns etc to beautify. Select all the columns then</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Format&gt;Column&gt;Width</li>
+</ul>
+<div align="center"><img src="NotesImages/Topic156NotesImage10.jpg"
+align="bottom" width="698" height="437" border="0" alt=
+"graphic" /></div>
+<div align="center">
+Illustration 3: Setting the Column Width</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Format the left and rightmost columns &#8230; and here is the result:</li>
+</ul>
+<div align="center"><img src="NotesImages/Topic156NotesImage11.jpg"
+align="bottom" width="653" height="670" border="0" alt=
+"graphic" /></div>
+<div align="center">
+Illustration 4: Sample showing data pivoted for Academic Year 2005-06</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

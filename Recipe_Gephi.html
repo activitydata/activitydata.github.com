@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>How to work with Gephi to visualise a network of Sites connected by Users </title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Presenting_data.html">Presenting data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   How to work with Gephi to visualise a network of Sites connected by Users 
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Plotting_Calendar_Data_with_GNUplot.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Visualising_OpenURL_Referrals_Using_Gour.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Recipe_Gephi"><span class=outlineNumberFirst></span><span class=topicLineFirst>How to work with Gephi to visualise a network of Sites connected by Users </span></h2>
+
+<div id="main_content"><div align="left"><b>Originators/Authors</b></div>
+<div align="left">Anne Clarke </div>
+<div align="left"><a href=
+"Exposing_VLE_data.html#Exposing_VLE_data"><span>EVAD</span></a><span>
+, University of Cambridge</span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left"><font color=
+"#222222"><span>Instructions on how to import data from a list of sites and their active users and visualise the 
+network using Gephi.</span></font></div>
+<div align="left"><b>Background</b></div>
+<div align="left"><font color=
+"#222222"><span>We have developed tools that can be run to extract a given list of sites and their active users from 
+the VLE logging data. This gives us users that have actually visited the site as opposed to those 
+who have been given access to the site.</span></font></div>
+<div align="left"><b>Ingredients</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; color: #222222;">
+<font color=
+"#222222"><span>Perl statistics tool developed for this project (this may need customising to fit your version of 
+the VLE logging data).</span></font></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; color: #222222;">
+<font color=
+"#222222"><span>Gephi application</span></font></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; color: #222222;">
+<font color=
+"#222222"><span>Basic knowledge of speadsheets &#8211; OpenOffice was used here.</span></font></li>
+</ul>
+<div align="left"><b>Assumptions</b></div>
+<div align="left"><font color=
+"#222222"><span>The user has downloaded the current version of the Gephi application and worked through at least 
+the basic on-line tutorial. </span></font></div>
+<div align="left"><b>Method</b></div>
+<div align="left"><font color=
+"#222222"><span>You will first prepare the data for import into Gephi. After importing it, you will be able to visually 
+explore the network using Gephi</span></font></div>
+<div align="left"><b>Individual steps</b></div>
+<div align="left">
+<b>Prepare Data for Gephi:</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Create a list of sites and active users (eg all_active_users_for_sites.csv):<br />
+
+This can be done by inputting a list of sites to the perl stats.pl script and running this to 
+produce a list of active users for each site. Eg active_users_for_.csv</li>
+</ul>
+<div align="left">
+Join these files together: <i>cat act* &gt; all_active_users_for_sites.csv</i></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Use spreadsheet sort to sort in order of Site and remove all the heading lines (Site, User etc).</li>
+</ul>
+<div align="left">
+Check and correct the user ids at this point &#8211; I found some (eg thu21) which had been mangled by 
+the spreadsheet into date format.</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Run gephi perl script against this to produce list of nodes and edges for import into Gephi.</li>
+</ul>
+<div align="left">
+eg <i>perl gephi.pl -f all_active_users_for_sites.csv -w </i></div>
+<div align="left">
+This determines the number of active users for each site and the number of shared users between 
+any 2 sites. It will produce 'nodes.csv' and 'edges.csv' in the input file location.</div>
+<div align="left">
+<b>Importing Data into Gephi:</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Open up Gephi and select File &gt; New Project</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on the Data Laboratory Tab</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Import Spreadsheet and browse to the location of the nodes file that you created 
+above. </li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Make sure 'As Table' is set to Nodes Table </li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Next</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Set the Total Users field to Integer &#8211; choose from the drop down list (you may need to go up 
+though the list of options)</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Finish</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Nodes table should now be imported</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Repeat for Edges table</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Go to Overview tab</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+You should now see a network !</li>
+</ul>
+<div align="left"><b>Working with Gephi:</b></div>
+<div align="left">
+<b>(Please follow the Gephi Getting Started tutorial to learn the details for these steps)</b></div>
+<div align="left">
+Setting the node size to Number of Users:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Select the Ranking tab at the top right of the screen</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Choose Total Users as the Ranking Parameter</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on the colour wheel button</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Set the Colour range</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Apply</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The nodes will now have colour intensity linked to the number of users</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on the diamond icon </li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Set the Min Size (eg 10) and the Max Size (eg 100). The range should already be set to the 
+max and min no of users.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Apply</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The node sizes should now reflect the number of users.</li>
+</ul>
+<div align="left"></div>
+<div align="left">Changing the Network Layout:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+From the layout window on the bottom left of the page select Force Atlas</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Set Repulsion strength 10000, tick Adjust by sizes.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Run</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click Stop when it has stopped changing</li>
+</ul>
+<div align="left"></div>
+<div align="left">Showing the Labels</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on the black 'T' icon at the bottom of the Graph display</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+You should see the node labels</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+You can use the rightmost slider at the bottom of the the Graph display to change the text 
+size.</li>
+</ul>
+<div align="left">
+To stop the Labels overwriting each other:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+From the Layout tab &#8211; bottom of left hand side of page:</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Choose Label Adjust</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Run</li>
+</ul>
+<div align="left">
+To highlight clusters of nodes:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on the Statistics tab on the left hand panel.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click to run Modularity &#8211; this looks for clusters of nodes that are tightly associated with each 
+other and more loosely linked to other nodes.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on the Partition tab on the right hand panel.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Choose Modularity Class and click on Run</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+You should now see tightly associated nodes have the same colours.</li>
+</ul>
+<div align="left">Hiding Nodes</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Go to Filters menu</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Topology then drag 'Degree range' down to the Query section.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Use the slider to change the Degree range settings </li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Press filter</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+You should see that the less connected nodes have been hidden.</li>
+</ul>
+<div align="left"></div>
+<div align="left">Interaction with Gephi</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+If you click on one of the nodes in Overview mode you can see the linked nodes highlighted.</li>
+</ul>
+<div align="left"></div>
+<div align="left">Producing an output view</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on the Preview tab.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Refresh</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+If you don't see anything try clicking on the Reset Zoom button</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Use the Default preset with the following settings:  
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Show labels ticked</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Increase label font if needed</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Undirected Curved set</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Rescale weight ticked (this makes sure the connecting lines are not really thick)</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Thickness &#8211; maybe set to 4 &#8211; this thickens up the lines reduced above</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Proportional Label size un-ticked</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Click on Refresh  </li>
+</ul>
+</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+You can use the Preview ratio slider to filter out less active nodes.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Export to SVG/PDF to save a copy</li>
+</ul>
+<div align="left"><b>Output</b></div>
+<div align="left"><img src="NotesImages/Topic161NotesImage10.jpg"
+align="bottom" width="548" height="642" border="0" alt=
+"graphic" /></div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

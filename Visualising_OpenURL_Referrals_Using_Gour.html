@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Visualising OpenURL Referrals Using Gource</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Presenting_data.html">Presenting data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Visualising OpenURL Referrals Using Gource
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Recipe_Gephi.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Visualising_OpenURL_Total_Requests_by_Da.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Visualising_OpenURL_Referrals_Using_Gource"><span class=outlineNumberFirst></span><span class=topicLineFirst>Visualising OpenURL Referrals Using Gource</span></h2>
+
+<div id="main_content"><div align="left"><a href="http://blog.ouseful.info/" target=
+"_blank"><span>Tony Hirst</span></a><span> writing at </span><a href="http://blog.ouseful.info/"
+   target=
+   "_blank"><span>his blog</span></a><span> on visualising OpenURL Logs shows how this can be done using 
+   Gource:</span></div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Picking up on the OpenURL referrer data that I played with </span><a href="Playing_With_Largeish_CSV_Files.html#Playing_With_Largeish_CSV_Files">
+<span>here</span></a><span>, here&#8217;s a demo of how to 
+visualise it using </span><a href=
+"http://code.google.com/p/gource/" target=
+"_blank"><span>Gource </span></a><a href=
+"http://www.youtube.com/watch?v=U8XYEfNdxvk" target=
+"_blank">[video]</a><span>:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span> </span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>If you haven't come across it before, Gource is a repository visualiser (Code Swarm is 
+another one) that lets you visualise who has been checking documents into and out of a 
+code repository. As the documentation describes it, &#8220;software projects are displayed by 
+Gource as an animated tree with the root directory of the project at its centre. Directories 
+appear as branches with files as leaves. Developers can be seen working on the tree at the 
+times they contributed to the project.&#8221;</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>One of the nice things about Gource is that it accepts a simple custom log format that can 
+be used to visualise anything you can represent as a series of actors, doing things to 
+something that lives down a path, over time&#8230; (So for example, PyEvolve which visualises 
+Google Analytics data to show website usage.)</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>In the case of the EDINA OpenURL resolver, I mapped referring services onto the 
+&#8220;flower&#8221;/file nodes, and institutional IDs onto the people. (If someone could clarify what the 
+institutional IDs - column 4 of the log - actually refer to, I&#8217; d be really grateful?)</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>To generate the Gource log file - which needs to look like this:</span></div>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;">
+<span>timestamp - A Unix timestamp of when the update occurred.</span></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;">
+<span>username - The name of the user who made the update.</span></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;">
+<span>type - initial for the update type - (A)dded, (M)odified or (D)eleted. </span></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;">
+<span>file - Path of the file updated.</span></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>That is: 1275543595|andrew|A|src/main.cpp</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>I used a command line trick and a Python trick:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>cut -f 1,2,3,4,40 L2_2011-04.csv &gt; openurlgource.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>head -n 100 openurlgource.csv &gt; openurlgource100.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>(Taking the head of the file containing just columns 1,2,3,4 and 40 of the log data meant I 
+could try out my test script on a small file to start with&#8230;)</span></div>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>01 import csv</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>02 from time import *</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>03 f=open('openurlgource.csv', 'rb')</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>04 </span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>05 reader = csv.reader(f, delimiter='\t')</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>06 writer = 
+csv.writer(open('openurlgource.txt','wb'),delimiter='|')</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>07 headerline = reader.next()</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>08 for row in reader:</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>09 if row[4].strip() !='':</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>10 t=int(mktime(strptime(row[0]+" "+row[1], "%Y-%m- %d 
+%H:%M:%S")))</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>11 
+writer.writerow([t,row[3],'A',row[4].rstrip(':').replace(':','/')])</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>(Thanks to @quentinsf for the Python time handling crib:-)</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>This gives me log data of the required form:</span></div>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>1301612404|687369|A|www.isinet.com/WoK/UA</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1301612413|305037|A|www.isinet.com/WoK/WOS</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1301612414|117143|A|OVID/Ovid MEDLINE(R)</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1301612436|822542|A|mendeley.com/mendeley</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Running Gource uses commands of the form:</span></div>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>gource -s 1 --hide usernames --start-position 0.5 -- stop- 
+position 0.51 openurlgource.txt</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>The video was generated using ffmpeg with a piped command of the form:</span></div>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:22mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>gource -s 1 --hide usernames --start-position 0.5 -- stop- 
+position 0.51 -o - openurlgource.txt | ffmpeg - y -b 3000K - 
+ r 60 -f image2pipe -vcodec ppm -i - - vcodec libx264 - vpre 
+ slow - threads 0 gource.mp4</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Note that I had to compile ffmpeg myself, which required hunting down a variety of libraries 
+(e.g. Lame, the WebM encoder, and the x264 encoder library), compiling them as shared 
+resources (./configure -- enable-shared) and then adding them into the build (in the end, on 
+my Macbook Pro, I used<i> ./configure - enable- libmp3lame -enable- shared - enable-libvpx - 
+enable- libx264 -enable- gpl -disable- mmx - arch=x86_64</i> followed by the usual <i>
+make </i>and 
+then <i>sudo make install</i>).</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Getting <i>ffmpeg </i>and its dependencies configured and compiled was the main hurdle (I had 
+an older version installed for transforming video between formats, as described in </span><a href="http://blog.ouseful.info/2010/09/23/ffmpeg-handy-hints/"
+   target="_blank"><span>ffmpeg - 
+   Handy Hints</span></a><span>, but needed the update), but now it&#8217;s in place, it&#8217;s yet another toy in the 
+   toybox that can do magical things when given data in the right format: </span><a href="http://code.google.com/p/gource/"
+   target="_blank"><span>gource</span></a><span>:-)</span></div>
+</blockquote></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

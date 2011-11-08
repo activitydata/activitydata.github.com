@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Recommendations Improve the Search Experience (RISE)</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Data_protection_issues.html">Data protection issues</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Recommendations Improve the Search Experience (RISE)
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="DP_OpenURL.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="dataprotection_STAR-Trak.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="DP_RISE"><span class=outlineNumberFirst></span><span class=topicLineFirst>Recommendations Improve the Search Experience (RISE)</span></h2>
+
+<div id="main_content"><div align="left">
+Within the RISE database personal data is stored and processed in the form of the Open 
+University Computer User account name (OUCU). The OUCU is generally a 5 or 6 character 
+alphanumeric construction (e.g. ab1234) that is used as the login for access to OU systems. This 
+OUCU is stored within the EZProxy log files that are ingested into the RISE database and is also 
+tracked by the RISE interface to allow searches to be related to users.</div>
+<div align="left">
+This OUCU is used within the RISE system for two purposes: </div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+To be able to make a connection between a search and a module of study associated with the 
+searcher, to allow recommendations based on module; and, </li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+To be able to remove all searches for a particular user from the recommendations database at 
+their request.</li>
+</ul>
+<div align="left">
+Processing takes place using a file of data from internal systems to add the module(s) being 
+studied by matching the OUCU in the RISE database with the OUCU stored by internal systems. 
+The data on which module is being studied is added into the RISE database. As each new OUCU 
+is added to the database a numerical userID is assigned. This is a simple incremental integer.</div>
+<div align="left">
+The RISE database stores details of which electronic resources are accessed by the user and the 
+search terms used to retrieve that resource (for searches carried out through the RISE interfaces) 
+<img src="NotesImages/Topic52NotesImage2.jpg" align="bottom" width=
+"794" height="904" border="0" alt="graphic" /></div>
+<div align="left"><b>Privacy approach</b></div>
+<div align="left">
+The RISE project has developed a separate Privacy policy to cover use of activity data as it was 
+felt that the standard <a href=
+"http://www8.open.ac.uk/about/main/admin-and-governance/policies-and-statements/website-privacy-the-ou"
+   target=
+   "_blank"><span>OU Privacy policy</span></a><span> was not sufficiently explicit regarding the use of data for 
+   this purpose. The newly developed privacy policy is available at </span>
+   <a href="http://library.open.ac.uk/rise/?page=privacy" target=
+   "_blank"><span>http://library.open.ac.uk/rise/?page=privacy</span></a></div>
+<div align="left">
+One of the challenges with using EZProxy data is that the EZProxy log files contain records from 
+links in several different systems as we link as many systems as possible through EZProxy. So 
+this privacy policy has also been linked from the Library SFX and Ebsco Discovery Search 
+interfaces. </div>
+<div align="left">
+As well as explaining how their data will be used the policy provides a mechanism for users to ask 
+for their data to be removed from the system and for their data not to be recorded by the system. 
+This opt-out approach has been cleared by the Open University Data Protection team.</div>
+<div align="left">
+The EZProxy log files that are used within the system provide a particular challenge to an opt-in 
+approach. Access to this system is simply through expressing a URL with libezproxy.open.ac.uk 
+within the URL string e.g. <a href=
+"http://library.open.ac.uk/rise/?page=privacy" target=
+"_blank"><span>http://portal.acm.org.libezproxy.open.ac.uk/dl.cfm</span></a><span>
+ This URL then 
+redirects the user through the EZProxy system. These links can exist in many different systems. </span></div>
+<div align="left">
+Data on accesses to electronic resources is still required to be kept within log files to allow the 
+library to comply with licensing restrictions for the electronic resources to allow the library to track 
+any abuse of license conditions. An opt- out could only be applied to the usage data element of 
+the personal data.</div>
+<div align="left">
+Users do not login to the EZProxy system directly but are faced with a standard Open University 
+login screen to authenticate if they are not already recorded as being logged in.</div>
+<div align="left"><b>Future privacy changes</b></div>
+<div align="left">
+ An opt-in approach may be required to comply with the new EU directive on &#8216;cookies&#8217;. 
+Conceivably this may be achievable by redirecting all EZProxy links through an additional 
+authentication process and asking users to agree to storing their usage data. This acceptance 
+could be stored at the server- side although this introduces a further single-point of failure that 
+could block access to electronic resources. Alternatively a cookie approach could be taken along 
+with asking the user to accept the cookie.</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

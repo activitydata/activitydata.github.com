@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Extract anonymised loan data from Talis Alto</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Extracting_data.html">Extracting data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Extract anonymised loan data from Talis Alto
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Extract_from_CIRCE_MI.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Extract_trace_data_from_log_files.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Recipe_SALT_extract__Talis"><span class=outlineNumberFirst></span><span class=topicLineFirst>Extract anonymised loan data from Talis Alto</span></h2>
+
+<div id="main_content"><div align="left"><b>Originators/Authors</b></div>
+<div align="left">
+Andy Land and Steve Campbell</div>
+<div align="left"><a href=
+"SALT.html#SALT"><span>SALT</span></a><span>, University of Manchester</span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+To extract loan transactions from Talis Alto.</div>
+<div align="left">
+For each transaction (the borrowing of a physical item but not its renewal or return)the script 
+extracts data showing the item id, basic bibliographic details, borrower id and transaction date.</div>
+<div align="left"><b>Background</b></div>
+<div align="left">
+The loan transactions were needed to provide data for use in the SALT book recommender service. </div>
+<div align="left"><b>Ingredients</b></div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+Talis Alto Library Management System </li>
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+Perl</li>
+</ul>
+</div>
+<div align="left"><b>Assumptions</b></div>
+<div align="left">
+Select access to the Sybase database holding the loan data.</div>
+<div align="left"><b>Warnings</b></div>
+<div align="left">
+Has the potential to impact performance of the Talis system. The routine is best run on an 
+alternative instance of the database if available and/or scheduled at a time when performance is 
+less crucial.</div>
+<div align="left"><b>Method</b></div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+Run Perl script</li>
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+Set start date and end date (eg an academic year), or use a range of loan_id numbers</li>
+</ul>
+</div>
+<div align="left"><b>Individual steps</b></div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+Run the Perl script shown in Appendix B</li>
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+Put the start and finish LOAN_ID numbers into the relevant sql line and into the output file 
+name.</li>
+</ul>
+</div>
+<div align="left"><b>Output data</b></div>
+<div align="left">
+Information will be placed in a csv file called salt_data_xxxxxxx-yyyyyyy.out</div>
+<div align="left">
+<b>Appendix A: Sample output</b></div>
+<div align="left">
+This is a single line as might appear in the CSV output file</div>
+<div align="left">
+'Feb 29 2000','4000000','155567','39106','0416181902','Carsten, F. L., Francis Ludwig','. - The rise 
+of fascism','1970',' '</div>
+<div align="left"><b>Appendix B: Scripts</b></div>
+<div align="left"><font face=
+"Courier New"><span>salt_data_4000000-4250000.pl</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>#! /usr/local/bin/perl</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>$BLCMP_HOME=$ENV{"BLCMP_HOME"};</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>$TALIS_HOME=$ENV{"TALIS_HOME"};</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>$MIS_HOME="$TALIS_HOME/mis";</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>$LOCAL_MIS_HOME=$ENV{"LOCAL_MIS_HOME"};</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>require "sybperl.pl";</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>require "$TALIS_HOME/perl_tools/std_utils.pl";</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>require "$TALIS_HOME/perl_tools/mis_utils.pl";</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>$Database = "prod_talis";</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>&amp;Std_open_db();</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>open (LOG, "&gt; salt_data_4000000-4250000.out");</span></font></div>
+<div align="left"><font face=
+"Courier New"><span> ($result) = &amp;sql($d,"</span></font></div>
+<div align="left"><font face=
+"Courier New"><span> select getdate()</span></font></div>
+<div align="left"><font face=
+"Courier New"><span> ");</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>(@result) = &amp;sql($d,"</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>SELECT substring(L.CREATE_DATE,1,11), L.LOAN_ID, L.BORROWER_ID, 
+W.WORK_ID,</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>W.CONTROL_NUMBER, W.AUTHOR_DISPLAY, W.TITLE_DISPLAY, W.PUB_DATE, 
+W.EDITION_MAIN</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>from WORKS W, LOAN L, ITEM I, BORROWER B</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>WHERE L.LOAN_ID between 4000000 and 4250000 and L.STATE=0 and 
+L.ITEM_ID=I.ITEM_ID</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>AND I.WORK_ID=W.WORK_ID</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>and L.BORROWER_ID=B.BORROWER_ID AND B.TYPE_ID not in (7,17)</span></font></div>
+<div align="left"><font face=
+"Courier New"><span>");</span></font></div>
+<div align="left">foreach $result (@result)</div>
+<div align="left">{</div>
+<div align="left">
+ ($t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9)=split('~',$result);</div>
+<div align="left">
+ print LOG "'$t1','$t2','$t3','$t4','$t5','$t6','$t7','$t8','$t9'\n";</div>
+<div align="left">}</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

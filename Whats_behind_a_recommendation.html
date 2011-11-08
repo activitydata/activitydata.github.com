@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>What’s behind a recommendation?</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Guides.html">High level guidance</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   What’s behind a recommendation?
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Library_data_sources_guide.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Data_strategies__guide.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Whats_behind_a_recommendation"><span class=outlineNumberFirst></span><span class=topicLineFirst>What’s behind a recommendation?</span></h2>
+
+<div id="main_content"><div align="left"><b>Topic</b></div>
+<div align="left">
+This guide is about types of recommendations that might be desirable to use in different 
+situations, together with notes about the kinds of activity data needed to make the 
+recommendations</div>
+<div align="left"><b>The problem</b></div>
+<div align="left">
+Recommendations, such as those embedded in services like Amazon and iTunes, are typically 
+based on attention (navigation, search) and activity (transaction) data, though they may also take 
+account of user generated ratings. Different types of recommendation need different levels of data. </div>
+<div align="left">For example,</div>
+<blockquote>
+<div align="left" style="margin-left:11mm; margin-right:0mm; text-indent:0mm;"><span><i>&#8216;People who bought that also bought this&#8217; </i></span></div>
+</blockquote>
+<div align="left">
+requires less data to recommend than either </div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span><i>&#8216;People who bought that bought this next&#8217; </i></span></div>
+</blockquote>
+<div align="left">or </div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span><i>&#8216;People like you bought this&#8217;</i>.</span></div>
+</blockquote>
+<div align="left">
+The initial problem is to identify, for a given service what kind of recommendations might be 
+offered. </div>
+<div align="left">
+These recommendations will have particular activity data demands as to the activity data to be 
+collected, preserved, collated and processed. You should check availability of the data sources, 
+possibly using a pre-prepared list of activity data sources (as recommended elsewhere in these 
+guides). You should also check if you can use the data within the bounds of your corporate 
+Privacy Policy (again please see elsewhere in these guides).</div>
+<div align="left"><b>The solution</b></div>
+<div align="left">
+Services need to make a list of the recommendations that they would like to offer, identifying the 
+data required for each. </div>
+<div align="left">
+To save you doing that from scratch, here is a list of broad yet distinct recommendation types and 
+the generic data from which they might be derived.</div>
+<div align="left">
+<b>Generic recommendation types</b></div>
+<div align="left">
+<b>[A] People who did that also did this</b> &#8211; a list of all transactions (e.g. book circulation records) 
+with anonymised user IDs and no further user details </div>
+<div align="left">
+<b>[B] People who looked at that also looked at this </b>&#8211; a variation on [A] based on &#8216;attention&#8217;, 
+perhaps signified by retrievals of full details catalogue pages</div>
+<div align="left">
+<b>[C] People who did that did this next / first</b> &#8211; as per [A] but this will need a time stamp</div>
+<div align="left">
+<b>[D] - People like you also did this</b> - &#8216;Like you&#8217; can be in a different league of difficulty, depending 
+on how you define &#8216;like you&#8217;; you can cheat and treat it as a variation on [A] where likeness is 
+based on activity. However, in education we might expect &#8216;like you&#8217; to be based on a scholarly 
+context &#8211; such as a Course or even a Module or perhaps a discipline and a level (e.g. 
+Undergraduate Physicists, First Year Historians) &#8211; all of which implies personal data, with each 
+transaction linked to a user and their context.</div>
+<div align="left">
+<b>[E] - People like you rated this</b> &#8211; A variation on [D] that is possible if your system collects 
+ratings such as stars or a &#8216;liked&#8217; / &#8216;useful&#8217; indicator.</div>
+<div align="left">
+<b>[F] - New items that may interest you</b> &#8211; This &#8216;awareness&#8217; service requires no information about 
+other users, simply using a &#8216;precise-enough&#8217; catalogue code (e.g. Subject heading or Dewey class 
+in libraries) to link the user&#8217;s previous activity to new items. </div>
+<div align="left">
+<b>The following are particularly interesting in libraries, though they could be supported 
+elsewhere</b></div>
+<div align="left">
+<b>[G] People who searched using this term ended up viewing / borrowing in these subject 
+areas</b> &#8211; building a mapping from search terms to the eventual classification of choice may help 
+with accessing classifications that differ from the key words used in teaching; this does not need 
+data about individual users</div>
+<div align="left">
+<b>[H] The following alternative titles are available</b> &#8211; at its simplest, this can use such as 
+Dewey codes or reading lists to recommend alternatives; whilst this does not have to involve 
+individual user data, the recommendation could be enhanced based on &#8216;people like you&#8217;.</div>
+<div align="left"><b>Taking it further</b></div>
+<div align="left">
+The first steps are to determine </div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+What sort of recommendations you could offer in order to assess the user experience</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Which events you would need to capture in order to generate those recommendations</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+What the recommendation algorithm is, or how feasible it is to design an algorithm, possibly 
+experimentally</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+What supporting personal context data would be desirable</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Whether capturing additional data would enable to support a wider range of recommendation 
+types at a later stage</li>
+</ul>
+<div align="left"><b>Additional resources</b></div>
+<div align="left">
+As illustrated in Dave Pattern&#8217;s presentation, the University of Huddersfield has identified a range 
+of recommendation types that can be derived from library activity data &#8211; 
+<a href="http://www.slideshare.net/gregynog/bw-dave-pattern-lidp"
+target=
+"_blank"><span>http://www.slideshare.net/gregynog/bw-dave-pattern-lidp</span></a><span>
+ </span></div>
+<div align="left">The <a href=
+"RISE.html"><span>RISE</span></a><span> and </span><a href="SALT.html"><span>SALT</span></a><span> projects also 
+focused on recommender services based for library resources. The OpenURL project developed a 
+recommender as a by-product of other work (<a href="http://edina.ac.uk/cgi-bin/news.cgi?filename=2011-08-09-openurldata.txt">http://edina.ac.uk/cgi-bin/news.cgi?filename=2011-08-09-openurldata.txt</span></a>).</div>
+<div align="left">
+Websites such as Amazon illustrate a range of activity-based recommendations; you might 
+consider what data lies behind each type. For your own account, consider what they need to know 
+about you and about other users &#8211; <a href="http://www.amazon.co.uk">
+<span>www.amazon.co.uk</span></a><span> </span></div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

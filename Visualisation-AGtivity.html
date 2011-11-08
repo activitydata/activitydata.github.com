@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Exploiting Access Grid Activity Data (AGtivity)</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Computation.html">Collecting, processing and presenting activity data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Presentation.html">Presentation</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Presentation-visualisation.html">visualisation</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Exploiting Access Grid Activity Data (AGtivity)
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Presentation-visualisation.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Visualisation_EVAD.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Visualisation-AGtivity"><span class=outlineNumberFirst></span><span class=topicLineFirst>Exploiting Access Grid Activity Data (AGtivity)</span></h2>
+
+<div id="main_content"><div align="left">From <a href=
+"AGtivity.html#AGtivity"><span>AGtivity</span></a><span> we have a range of new results for the user communities. This is the start for visual 
+themes to create an &#8216;autobiography&#8217; for video conferencing room nodes: Initial linking to 
+attendance rates through remote lectures.</span></div>
+<div align="left">
+A virtual venue called &#8216;MAGIC&#8217; is used for postgraduate lectures. Two data mining views are shown 
+below that start to highlight individual course components. </div>
+<div align="left">
+The first shows duration values over time, allowing general usage to be considered (also 
+incorporating test periods and extra- curricular items that are seen in order to aid quality control):</div>
+<div align="left"><img src="NotesImages/Topic98NotesImage5.jpg"
+align="bottom" width="769" height="569" border="0" alt=
+"graphic" /></div>
+<div align="left">
+The second graph shows connection periods.</div>
+<div align="left"><img src="NotesImages/Topic98NotesImage6.jpg"
+align="bottom" width="781" height="582" border="0" alt=
+"graphic" /></div>
+<div align="left">
+Cancelled lectures, rapidly increasing and/or poor attendance, and extra lectures are visible.</div>
+<div align="left">
+<b>Examples of visualisation choices</b></div>
+<div align="left">
+Various visualisation styles are shown below for AGtivity data, produced using code written by 
+Stephen Longshaw. </div>
+<div align="left">
+The first graph shows duration mapped against date and time for a series of events. A single dot 
+represents a single event; either a lecture, or an associated course meeting. As shown semester 
+1 and 2 are clearly visible, separated by a gap.</div>
+<div align="center"><img src="NotesImages/Topic98NotesImage8.jpg"
+align="bottom" width="729" height="610" border="0" alt=
+"graphic" /></div>
+<div align="left">
+The elements in red indicate very short test sessions and were omitted from later analysis. </div>
+<div align="left">
+There are too many points to really make informed decisions; some could appear on top of others; 
+to help resolve this AGtivity used a technique called binning (i.e. clustering) the points shown by 
+the grid in the following graph. The dots are replaced by a single circle within each grid square with 
+a size that is proportional to the number of data points in that grid square.</div>
+<div align="center"><img src="NotesImages/Topic98NotesImage9.jpg"
+align="bottom" width="767" height="684" border="0" alt=
+"graphic" /></div>
+<div align="left">
+The colour also represents the number of points and from this some quantifiable statistics can be 
+estimated. This shows the majority of sites attended for about one hour, but a significant 
+proportion attended for multiple concurrent hour-long lectures. Note the graph stops after 3 hours.</div>
+<div align="left">
+An alternative technique to using coloured circles is to colour the boxes themselves according to 
+the occurrence values.</div>
+<div align="center"><img src="NotesImages/Topic98NotesImage10.jpg"
+align="bottom" width="765" height="687" border="0" alt=
+"graphic" /></div>
+<div align="left">
+There are many different options that could be considered. It is an open debate as to which style 
+of visualisation a particular user will prefer, but a key process is always to consider choice in 
+presentation and visualisation mode; and to see which method of presentation may provide the 
+best insight.</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

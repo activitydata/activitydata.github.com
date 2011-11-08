@@ -1,0 +1,968 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Manipulating activity data using Linux commands</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Processing_data.html">Processing data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Manipulating activity data using Linux commands
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="LIDP_R_3.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Playing_with_OpenURL_Router_Data_in_Ruby.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Playing_With_Largeish_CSV_Files"><span class=outlineNumberFirst></span><span class=topicLineFirst>Manipulating activity data using Linux commands</span></h2>
+
+<div id="main_content"><div align="left"><b>Author</b></div>
+<div align="left"><a href=
+"http://blog.ouseful.info/"><span>Tony Hirst </span></a><span>
+writing at </span><a href=
+"http://blog.ouseful.info/"><span>his blog </span></a></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+To demonstrate how Linux commands can be used to manipulate a activity data (in this case 
+OpenURL log file contents</div>
+<div align="left"><b>Description</b></div>
+<div align="left">
+{ ColorSyncTransformCreator = "Apple CMM"; ColorSyncTransformDestinationSpace = "RGB "; 
+ColorSyncTransformSourceSpace = "RGB "; "com.apple.cmm.TransformType" = NULLTransform; 
+"com.apple.cmm.cmmstorage" = &lt;a7abaa32&gt;; }You know those files that are too large for you to 
+work with, or even open? Maybe they &#8217;re not&#8230;.</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Picking up on </span><a href=
+"http://blog.ouseful.info/2011/06/03/postcards-from-a-text-processing-excursion/">
+<span>Postcards from a Text Processing Excursion </span></a><span>
+where I started dabbling with 
+Unix command line text processing tools (it sounds scarier than it is&#8230; err&#8230; maybe?!;-), I 
+thought it would make sense to have a quick play with them in the context of some &#8220;real&#8221; 
+data files.</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>The files I've picked are intended to be intimidating (maybe?) at first glance because of their 
+size: in this post I'll look at a set of </span><a href="http://openurl.ac.uk/doc/data/data.html">
+<span>OpenURL activity data from EDINA </span></a><span>
+(24.6MB download, 
+unpacking to 76MB), and for a future post, I thought it might to interesting to see whether 
+this approach would work with a dump of local council spending data from OpenlyLocal 
+(73.2MB download, unzipping to 1,011.9MB). </span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>To start with, let&#8217;s have a quick play with the OpenURL data: you can download it from 
+here: </span><a href=
+"http://openurl.ac.uk/doc/data/thedata.html"><span>OpenURL activity data (April 2011)</span></a></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>What I intend to do in this post is track my own preliminary exploration of the file using 
+what I learned in the &#8220;Postcards&#8221; post. I may also need to pick up a few new tricks along 
+the way&#8230; One thing I think I want to look for as I start this exploration is an idea of how 
+many referrals are coming in from particular institutions and particular sources&#8230;</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Let&#8217;s start at the beginning though by seeing how many lines/rows there are in the file, 
+which I downloaded as <i>L2_2011-04.csv</i> :</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>wc -l L2_2011-04.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>I get the result <i>289,691</i> ; older versions of Excel used to only support 65,536 rows per 
+sheet, though I believe more recent versions (Excel 2007, and Excel 2010) can support 
+over a million; Google Apps currently limits sheet sizes to up to 200,000 cells (max 256 
+columns), so even if the file was only one column wide, it would still be too big to upload 
+into a single Google spreadsheet. Google Fusion Tables can accept CSV files up to 
+100MB, so that would work (if we could actually get the file to upload&#8230; Spanish accent 
+characters seemed to break things when I tried&#8230; the workaround I found was to split the 
+original file, then separately upload and re-save the parts using Google Refine, before 
+uploading the files to Google Fusion tables (upload one to a new table, then import and 
+append the other files into the same table).</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>..which is to say: the almost 300,00 rows in the downloaded CSV file are probably too 
+many for many people to know what to do with, unless they know how to drive a 
+database&#8230; which is why I thought it might be interesting to see how far we can get with 
+just the Unix command line text processing tools.</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>To see what&#8217;s in the file, let&#8217;s see what&#8217;s in there (we might also look to the 
+documentation):</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>head L2_2011-04.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Column 40 looks interesting to me: <i>
+sid </i>(service ID); in the data, there&#8217;s a reference in there 
+to <i>mendeley</i> , as well as some other providers I recognise (EBSCO, Elsevier and so on), so 
+I <i>think </i>this refers to the source of the referral to the EDINA OpenURL resolver (@ostephens 
+and @lucask suggested they thought so too. Also, @lucask suggested &#8220;OpenUrl from 
+Endnote has ISIWOS as default SID too!&#8221;, so we may find that some sources either mask 
+their true origin to hide low referral numbers (maybe very few people ever go from endnote 
+to the EDINA OpenURL resolver?), or to inflate other numbers (Endnote inflating apparent 
+referrals from ISIWOS.)</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Rather than attack the rather large original file, let&#8217;s start by creating a smaller sample file 
+with a couple of hundred rows that we can use as a test file for our text processing 
+attempts:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>head -n 200 L2_2011-04.csv &gt; samp_L2_2011-04.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Let&#8217;s pull out column 40, sort, and then look for unique entries in the sample file we created:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>cut -f 40 samp_L2_2011-04.csv | sort | uniq -c</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>I get a response that starts:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>12</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1 CAS:MEDLINE</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1 EBSCO:Academic Search Premier</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 7 EBSCO:Business Source Premier</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1 EBSCO:CINAHL</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span> ...</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>so in the sample file there were 12 blank entries, 1 from <i>
+CAS:MEDLINE</i> , 7 from 
+<i>BSCO:Business Source Premier</i> and so on, so this appears to work okay. Let&#8217;s try it on 
+the big file (it may take a few seconds&#8230;) and save the result into a file 
+(<i>samp_uniqueSID.csv</i> :</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>cut -f 40 L2_2011-04.csv | sort | uniq -c &gt; uniqueSID.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>This results of the count will be in arbitrary order, so it&#8217;s possible to add a sort into the 
+pipeline in order to sort the entries according to the number of entries. The column we want 
+to sort on is column 1 (so we set the sort -k key to 1; and because <i>
+sort </i>sorts into 
+increasing order by default, we can reverse the order (-r) to get the most referenced entries 
+at the top (the following is NOT RECOMMENDED&#8230; read on to see why&#8230;):</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>cut -f 40 L2_2011-04.csv | sort | uniq -c | sort -k 1 -r &gt; 
+uniqueSID.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>We can now view the <i>uniqueSD.csv</i> file using the more command (more <i>
+uniqueSD.csv</i> ), r 
+look at the top 5 rows using the <i>
+head </i>command:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>head -n 5 uniqueSID.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Here&#8217;s what I get as the result (treat this with suspicion&#8230;):</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>9181 OVID:medline</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 9006 Elsevier:Scopus</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 7929 EBSCO:CINAHL</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 74740 www.isinet.com:WoK:UA</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 6720 EBSCO:jlh</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>If we look through the file, we actually see:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>1817 OVID:embase</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1720 EBSCO:CINAHL with Full Text</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 17119 mendeley.com:mendeley</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 16885 mendeley.com/mendeley:</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1529 EBSCO:cmedm</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1505 OVID:ovftdb</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span><i>I actually was alerted to this oops when looking to see how many referrals were from 
+mendeley, by using grep on the counts file (if grep complains about a &#8220;Binary file&#8221;, just use 
+the -a switch&#8230;)</i> :</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>grep mendeley uniqueSID.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>17119 mendeley.com:mendeley</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 16885 mendeley.com/mendeley </span></font>:</div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span><i>17119 beat the &#8220;top count&#8221; 9181 from OVID:medline &#8211; obviously I&#8217; d done something wrong!</i></span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Specifically, the sort had sorted <i>
+by character</i> <b>not </b>by numerical value&#8230; (17119 and 16885 
+are numerically grater than 1720, but 171 and 168 are less (in string sorting terms) than 
+172. The reasoning is the same as why we &#8217;d index aardman before aardvark).</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>To force sort to sort using numerical values, rather than string values, we need to use th - n 
+switch (so now I know!):</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>cut -f 40 L2_2011-04.csv | sort | uniq -c | sort -k 1 -r - n &gt; 
+uniqueSID.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Here&#8217;s what we get now:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>74740 www.isinet.com:WoK:UA</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 34186</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 20900 www.isinet.com:WoK:WOS</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 17119 mendeley.com:mendeley</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 16885 mendeley.com/mendeley:</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 9181 OVID:medline</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 9006 Elsevier:Scopus</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 7929 EBSCO:CINAHL</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 6720 EBSCO:jlh</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span> ...</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>To compare the referrals from the actual sources (e.g. the aggregated EBSCO sources, 
+rather than EBSCO:CINAHL, EBSCO:jlh and so on), we can split on the &#8220;:&#8221; character, to 
+create a two columns from one: the first containing the bit before the &#8216;:&#8217;, the second column 
+containing the bit after: </span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>sed s/:/'ctrl-v&lt;TAB&gt;'/ uniqueSD.csv | sort -k &gt; uniquerootSID.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>(Some versions of sed may let you identify the tab character as \t; I had to explicitly put in 
+a tab by using ctrl-V then tab.)</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>What this does is retain the number of lines, but sort the file so all the EBSCO referrals are 
+next to each other, all the Elsevier referrals are next to each other, and so on.</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Via an </span><a href=
+"http://stackoverflow.com/questions/3934423/awk-conditional-sum-from-a-csv-file/3934863#3934863">
+<span>answer on Stack Overflow </span></a><span>
+, I found this bit of voodoo that would then sum the 
+contributions from the same root referrers:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>cat uniquerootSID.csv | awk '{a[$2]+=$1}END{for(i in a ) print 
+i,a[i] }' | sort - k 2 -r -n &gt; uniquerootsumSID.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Using data from the file <i>uniquerootSID.csv</i> , the <i>
+awk </i>command sets up an array (a) that 
+has indices corresponding to the different sources (EBSCO, Elsevier, and so on). It then 
+runs an accumulator that sums the contributions from each unique source. After 
+processing all the rows (END), the routine then loops through all the unique sources in the 
+a array, and emits the source and the total. The sort command then sorts the output by 
+total for each source and puts the list into the file <i>
+uniquerootsumSID.csv</i> .</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Here are the top 15:</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>www.isinet.com 99453</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> EBSCO 44870</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> OVID 27545</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> mendeley.com 17119</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> mendeley.com/mendeley 16885</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> Elsevier 9446</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> CSA 6938</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> EI 6180</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> Ovid 4353</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> wiley.com 3399</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> jstor 2558</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> mimas.ac.uk 2553</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> summon.serialssolutions.com 2175</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> Dialog 2070</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> Refworks 1034</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>If we add the two Mendeley referral counts that gives ~34,000 referrals. How much are the 
+referrals from commercial databases costing, I wonder, by comparison? Of course, it may 
+be that the distribution of referrals from different institutions is different. Some institutions 
+may see all their traffic through EBSCO, or Ovid, or indeed Mendeley&#8230; If nothing else 
+though, this report suggests that Mendeley is generating a fair amount of EDINA OpenURL 
+traffic&#8230;</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Let&#8217;s use the <i>cut </i>command again to see how much traffic is coming from each unique 
+institution (not that I know how to decode these identifiers&#8230;); column 4 is the one we want 
+(remember, we use the <i>uniq </i>command to count the occurrences of each identifier):</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>cut -f 4 L2_2011-04.csv | sort | uniq -c | sort -k 1 -r -n &gt; 
+uniqueInstID.csv</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Here are the top 10 referrer institutions (columns are: no. of referrals, institution ID):</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>41268 553329</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 31999 592498</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 31168 687369</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 29442 117143</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 24144 290257</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 23645 502487</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 18912 305037</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 18450 570035</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 11138 446861</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 10318 400091</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>How about column 5, the <i>routerRedirectIdentifier</i> :</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>195499 athens</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 39381 wayf</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 29904 ukfed</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 24766 no identifier</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 140 ip</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>How about the publication year of requests (column 17):</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>45867</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 26400 2010</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 16284 2009</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 13425 2011</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 13134 2008</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 10731 2007</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 8922 2006</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 8088 2005</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 7288 2004</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>It seems to roughly follow year?!</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>How about unique journal title (column 15):</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>258740</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 277 Journal of World Business</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 263 Journal of Financial Economics</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 263 Annual Review of Nuclear and Particle Science</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 252 Communications in Computer and Information Science</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 212 Journal of the Medical Association of Thailand Chotmaihet 
+thangphaet</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 208 Scandinavian Journal of Medicine &amp; Science in Sports</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 204 Paleomammalia</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 194 Astronomy &amp; Astrophysics</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 193 American Family Physician</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>How about books (column 29 gives ISBN):</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span>278817</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 1695 9780470669303</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 750 9780470102497</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 151 0761901515</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font face=
+"Courier New"><span> 102 9781874400394</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>And so it goes..</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>What&#8217;s maybe worth remembering is that I haven't had to use any tools other than 
+command line tools to start exploring this data, notwithstanding the fact that the source file 
+may be too large to open in some everyday applications&#8230;</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>The quick investigation I was able to carry out on the EDINA OpenURL data also built 
+directly on what I&#8217; d learned in doing the Postcards post (except for the voodoo awk script 
+to sum similarly headed rows, and the sort switches to reverse the order of the sort, and 
+force a numerical rather than string based sort). Also bear in mind that three days ago, I 
+didn't know how to do any of this&#8230;</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>&#8230;but what I do suspect is that it&#8217;s the sort of thing that Unix sys admins play around with 
+all the time, e.g. in the context of log file hacking&#8230;</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>PS so what else can we do&#8230;? It strikes me that by using the date and timestamp, as well 
+as the institutional ID and referrer ID, we can probably identify searches that are taking 
+place: a) within a particular session, b) maybe by the same person over several days (e.g. 
+in the case of someone coming in from the same place within a short window of time (1-2 
+hours), or around about the same time on the same day of the week, from the same IDs 
+and searching around a similar topic).</span></div>
+</blockquote>
+<div align="left">See also <a href=
+"Playing_with_OpenURL_Router_Data_in_Ruby.html#Playing_with_OpenURL_Router_Data_in_Ruby">
+<span>Playing with OpenURL Router Data in Ruby</span></a></div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

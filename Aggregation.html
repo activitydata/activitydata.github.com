@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Aggregation of multiple data sets</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Computation.html">Collecting, processing and presenting activity data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Processing.html">Processing</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Aggregation of multiple data sets
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Processing.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Filtering.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Aggregation"><span class=outlineNumberFirst></span><span class=topicLineFirst>Aggregation of multiple data sets</span></h2>
+
+<div id="main_content"><div align="left">
+Aggregation of data from different sources to form useful records requires a common key between 
+records in order to determine a relationship.</div>
+<div align="left">The <a href=
+"STAR-Trak.html#STAR-Trak"><span>STAR-Trak project</span></a><span>
+ looked in some detail at the data that it would extract from each source 
+and produced the </span><a href=
+"LinkedDocuments/star-trak-data-warehouse-schema-v1-draft.pdf"><span>
+STAR-Trak Data Warehouse Schema</span></a><span> which describes each source and the data 
+that should be used. The diagram below shows the way in which the sources are aggregated using 
+an enterprise service bus (and then presented to the user). 
+th</span><img src="NotesImages/Topic88NotesImage4.jpg" align=
+"bottom" width="712" height="819" border="0" alt="graphic" /></div>
+<div align="left">The <a href=
+"RISE.html#RISE"><span>RISE Projec</span></a><span>t took the approach of using the log files to provide the base layer of data and 
+then queried other systems to pull in further information to enhance this data. Through a 
+combination of ISSNs, DOIs and other techniques they are able to add in data such as journal 
+tiles and article titles.</span></div>
+<div align="left">The <a href=
+"SALT.html#SALT"><span>SALT Project</span></a><span> aggregated their data as follows:</span></div>
+<div align="left">
+The process begins with data extracted from the Talis library management system (LMS) at JRUL 
+in CSV format. This data is parsed by a PHP script, which separates the data into two tables in a 
+MySQL database: </div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>
+face="Cambria"The bibliographic details describing an item go into a table called &#8216;items&#8217;. </li>
+<li>
+face="Cambria"The loan specific data, including borrower ID, goes into a table called &#8216;loans&#8217;.</li>
+</ul>
+<div align="left">
+ A further PHP script then processes the data into two additional MySQL tables:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>
+face="Cambria"&#8216;nloans&#8217; contains the total number of times each item has been borrowed.</li>
+<li>
+face="Cambria"&#8216;nborrowers&#8217; contains, for each combination of two items, a count of the 
+unique number of library users to have borrowed both items.</li>
+</ul>
+<div align="left">
+Additional processing is performed on demand by the web API:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>
+face="Cambria"When called for a given item, say item_1, the API returns a list of items for 
+suggested reading, where this list is derived as follows. </li>
+<li>
+face="Cambria"From the &#8216;nborrowers&#8217; table a list of items is compiled from all combinations 
+featuring item_1. </li>
+<li>
+face="Cambria"For each item in this list the number of unique borrowers, from the 
+&#8216;nborrowers&#8217; table, is divided by the total number of loans for that item, from the &#8216;nloans&#8217; 
+table, following the logic used by Dave Pattern at the University of Huddersfield. </li>
+<li>
+face="Cambria"The resulting values are ranked in descending order and the details 
+associated with each suggested item are returned by the API.</li>
+</ul>
+<div align="left">The <a href=
+"LIDP.html#LIDP"><span>LIDP</span></a><span> project aggregated data from a wide variety of sources, varying with what each 
+participating university was able to provide. This has already been discussed under </span><a href="Collecting_LIDP.html#Collecting_LIDP"
+   id="LIDP"><span>collecting data for the LIDP project</span></a><span>.</span></div>
+<div align="left"><b>Recipes</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href=
+"Recipe_Stitching_together_library_data_w.html#Recipe_Stitching_together_library_data_with_Excel">
+<span>Stitching together library data with Excel</span></a></li>
+</ul></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

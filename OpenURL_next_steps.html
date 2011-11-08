@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>OpenURL: next steps</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Projects.html">The JISC activity data projects</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="OpenURL.html">Using OpenURL Activity Data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   OpenURL: next steps
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="OpenURL.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Recipes.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="OpenURL_next_steps"><span class=outlineNumberFirst></span><span class=topicLineFirst>OpenURL: next steps</span></h2>
+
+<div id="main_content"><div align="left">
+During the course of the project many interesting areas of research surfaced, which we were not 
+able to pursue due to time constraints.</div>
+<div align="left">
+<b>Making Further Data Reliably Available</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The information in the Level 2 data made available relates only to &#8216;redirect to resolver&#8217; 
+requests. There is further information in the Level 0 logs that may be of use to others. We 
+noted a Level 1 data set that would include as much of the data as possible while not 
+identifying institutions. A brief analysis and a small amount of development would be needed 
+to make this available.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Several institutions indicated that they would be willing to share data from their resolvers. 
+Further legal work would be required to enable this as well as a solution to the challenge of de- 
+duplicating the data that would appear both in the OpenURL Router and institutional resolver 
+logs. Making this expanded data set available in the same way as the files released during 
+this project would likely be very useful to others.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Manual steps are currently involved in producing the data files. It would be valuable to invest 
+effort to fully automate monthly production of the data files and include this as part of the 
+OpenURL Router service so that others could rely upon regular production of the data.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Not all UK Higher Education Institutions (HEIs) that have an OpenURL resolver are registered 
+with the OpenURL Router service. Working with these institutions to facilitate their registration 
+and encouraging them to participate in the data aggregation would expand the data set 
+available.</li>
+</ul>
+<div align="left">
+<b>Develop Services Based on the Data</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Based on the data from 2) above develop a reporting service for institutions to give them 
+statistics about what journals are sought via the OpenURL Router for their institution 
+compared with a) all UK institutions b) some grouping eg Russell Group. This depends on 
+whether they pass all information via the OpenURL Router, but for those that do it will enable 
+them to compare publisher data on statistics with an independent source, and to determine 
+the value for money of the packages that are sold by the publishers. </li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Develop a method for an institution to take the data set and integrate it with existing 
+recommenders (possibly working with the RISE Project). This is likely to involve further work 
+with vendors.</li>
+</ul>
+<div align="left">
+<b>Develop the Prototype Recommender</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Develop the prototype recommender into a service producing relevant recommendations via 
+machine interface that could be integrated into any of the existing library systems.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+One of the OpenURL resolver vendors indicated that they would be willing to share a large 
+volume of data; inclusion of this in the data set for the prototype recommender would enable a 
+significantly greater number of links to be made, thus improving the recommendations for end 
+users.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Develop a journal-level recommender for undergraduates, ideally with a visual interface to allow 
+them to explore the network of journals that may interest them. </li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Explore the use of content filtering in combination with collaborative filtering (or adding session 
+identifiers) to enable use of the whole data set, and not just the proxy free data set.</li>
+</ul>
+<div align="left">
+<b>Investigate the Data Files Made Available During this Project</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Determine whether the data held by the OpenURL Router is just the same as citation data, or 
+whether it holds links that are not obvious from citation data. </li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Enable visualisation of the data set, such as with a Force Directed Graph for displaying links 
+between the articles based on the recommendation data, or adapting technology from the 
+MOSAIC Book Galaxy project</li>
+</ul>
+<div align="left">
+<b>Explore Potential Uses for the Data</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+As indicated elsewhere we expect use of the data that we cannot anticipate. Nevertheless, 
+some ideas have emerged within the community which are listed here:  
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Analysis to identify patterns of requests for journals or articles;</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Use by students learning to analyse large data sets;</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Use by researchers as the basis for a thesis;</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Use by publishers to compare their listings of journals and articles with those sought 
+by users;</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Linking with other data sets for analysis of wider activity.</li>
+</ul>
+</li>
+</ul></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

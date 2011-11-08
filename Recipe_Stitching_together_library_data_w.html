@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Stitching together library data with Excel</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Processing_data.html">Processing data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Stitching together library data with Excel
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Processing_data.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="LIDP_R_3.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Recipe_Stitching_together_library_data_with_Excel"><span class=outlineNumberFirst></span><span class=topicLineFirst>Stitching together library data with Excel</span></h2>
+
+<div id="main_content"><div align="left"><b>Author</b></div>
+<div align="left">Philip Adams,</div>
+<div align="left"><a href="LIDP.html#LIDP"><span>LIDP</span></a><span>, De Montfort University</span></div>
+<div align="left"><b>Introduction</b></div>
+<div align="left">
+Part of my contribution to the Library Impact Data Project has been compiling the data from 
+different sources into a single spreadsheet. We have been able to gather data on items borrowed 
+in a given year, visits to the Kimberlin library building, logins to the network in the libraries and use 
+of an Athens account to access electronic resources. Some of the techniques used were new to 
+me, and may be worth knowing about (or remembering if I have to run the same jobs again next 
+year).</div>
+<div align="left"><b>Data merging scenario</b></div>
+<div align="left">
+You have two spreadsheets, one with data about items loaned from the library and one from the 
+Access Control system showing who entered the building. Both cover the same date range and 
+are organised by some kind of user ID.</div>
+<div align="left"><i>Loans file</i></div>
+<table border="1" bordercolor="#000000" width="697" cellpadding="1"
+cellspacing="0" style="border-collapse: collapse; border: none">
+<tr>
+<td valign="top" width="123" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">p123456</div>
+</td>
+<td valign="top" width="172" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">17</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="123" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">p098765 </div>
+</td>
+<td valign="top" width="172" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">12</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="123" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">p456098 </div>
+</td>
+<td valign="top" width="172" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">6</div>
+</td>
+</tr>
+</table>
+<div align="left"></div>
+<div align="left"><i>Visits file</i></div>
+<table border="1" bordercolor="#000000" width="697" cellpadding="1"
+cellspacing="0" style="border-collapse: collapse; border: none">
+<tr>
+<td valign="top" width="124" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">123456 </div>
+</td>
+<td valign="top" width="170" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">45</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="124" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">098765 </div>
+</td>
+<td valign="top" width="170" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">20</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="124" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">674523 </div>
+</td>
+<td valign="top" width="170" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">23</div>
+</td>
+</tr>
+</table>
+<div align="left"></div>
+<div align="left">
+To match the two spreadsheets, we need a common field. The first column in each nearly does 
+this, but we need to fix the missing 'p' from the start of each ID number. There is a <a href="http://www.msexcel07.com/excel-merge-columns.htm">
+<span>merge columns 
+function in Excel </span></a><span>, so you could create a new first column, copy 'p's into each cell and then merge 
+the two columns into one in Column C. This is a bit tedious if you have thousands of lines of data. 
+Another way of achieving the same results would be to adapt another function, using concatenate 
+to add a prefix letter to each cell, e.g. =CONCATENATE("p",A1). Copy this formula into the cells 
+in the inserted B column to populate with the correct ID data that we can use to match with the 
+other spreadsheet.</span></div>
+<div align="left"><b>Column format</b></div>
+<div align="left">
+At this point you might complain that nothing of the sort happens, that all you get is a repeated 
+view of the formula itself and not its result. Most likely this is because the column you want to use 
+to create the merged data has been set to be in text format. Quite rightly, at least in its own 
+terms, Excel it treating what you type in a text, rather than instruction. Change the format to 
+'General' and the formula will perform its magic.</div>
+<div align="left">
+There may be a good reason why you set the column to text though. Excel generally expects to 
+be working with numbers, rather than strings. Unless the column is set to 'text' it is likely to 
+quietly amend an ID like '098765' to '98765'.</div>
+<div align="left">
+When importing .csv files this kind of change is carried out automatically, so a way round this is to 
+change the file format to .txt and then when you import it, you get more control over how each 
+column is to be handled.</div>
+<div align="left">
+<b>Merging spreadsheets with VLOOKUP</b></div>
+<div align="left">
+If you don't already have sensible labels for your columns, here is a good moment to put them in.</div>
+<div align="left">
+ With both speadsheets open you can begin to merge the data. In the first cell of the column 
+where the data is to be inserted, click on the fx button. A popup list of functions will appear. 
+Search through the list until you see 'VLOOKUP'. Select that and a new menu appears which 
+enables you to set how the process is to work. The four values required are for: Lookup_value; 
+Table- array; Col_index_num; Range_lookup. There is more on these fields on the <a href="http://office.microsoft.com/en-us/excel-help/vlookup-HP005209335.aspx">
+<span>Microsoft Excel 
+site </span></a><span>, but basically:</span></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>
+Lookup_value is the identifier common to both spreadsheets. In the spreadsheet to which 
+you want to bring the new data, click on the first relevant cell (A2).</li>
+<li>
+In the spreadsheet that you want to collect the new data from, click on the top left and 
+bottom right cells to highlight the relevant data.</li>
+<li>
+The data that you want to import is in the second, right hand column, so type '2' into the 
+Col_index_num field</li>
+<li>
+Some of the rows will not produce matches. Someone could regularly visit the library 
+without borrowing anything. In that case we only want the exact matches, so 'false' is the 
+correct answer for this field.</li>
+</ul>
+<div align="left">
+Apply this with 'OK' and you should get either a value inserted into your cell, or an 'N/A' if there is 
+no match. Copying and dragging this formula into the rest of the cells for the column should bring 
+in the remaining data. This can be the most tedious part of the process if you have thousands of 
+rows to copy into.</div>
+<div align="left">
+ So now you should have:</div>
+<div align="left"><u>Loans file</u></div>
+<table border="1" bordercolor="#000000" width="697" cellpadding="1"
+cellspacing="0" style="border-collapse: collapse; border: none">
+<tr>
+<td valign="top" width="124" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">Identifier </div>
+</td>
+<td valign="top" width="175" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">
+Loans for year</div>
+</td>
+<td valign="top" width="173" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">
+Visits for year</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="124" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">p123456 </div>
+</td>
+<td valign="top" width="175" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">17 </div>
+</td>
+<td valign="top" width="173" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">45</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="124" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">p098765 </div>
+</td>
+<td valign="top" width="175" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">12 </div>
+</td>
+<td valign="top" width="173" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">20</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="124" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">p456098 </div>
+</td>
+<td valign="top" width="175" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">6</div>
+</td>
+<td valign="top" width="173" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">N/A</div>
+</td>
+</tr>
+</table>
+<div align="left"> <b>Checking your merges</b></div>
+<div align="left">
+For the sake of data integrity and general peace of mind you will want to check that the data has 
+been correctly carried across. You can use VLOOKUP again to check on the merge, but this time 
+reverse the spreadsheets so that you are copying back data from the original destination sheet.</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

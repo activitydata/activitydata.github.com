@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Library Impact Data Project (LIDP)</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Computation.html">Collecting, processing and presenting activity data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Processing.html">Processing</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recommendation_algorithms.html">Recommendation algorithms</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Library Impact Data Project (LIDP)
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Processing_AEIOU.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Processing_RISE.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Processing_LIDP"><span class=outlineNumberFirst></span><span class=topicLineFirst>Library Impact Data Project (LIDP)</span></h2>
+
+<div id="main_content"><div align="left">
+The Huddersfield team have also been developing recommender systems to generate the "people 
+who borrowed this, also borrowed&#8230;" suggestions in our OPAC and whether or not there are 
+privacy issues with generating them. As Dave Pattern wrote:</div>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;">
+&#8220;To generate recommendations for book A, we find every person who's borrowed that book. 
+Just to simply things, let's say only 4 people have borrowed that book. We then find every 
+book that those 4 people have borrowed. As a Venn diagram, where each set represents 
+the books borrowed by that person, it'd look like&#8230;</div>
+<div align="center"><img src="NotesImages/Topic92NotesImage3.jpg"
+align="bottom" width="553" height="553" border="0" alt=
+"graphic" /></div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span> &#8220;To generate useful and relevant recommendations (and also to help protect privacy), we 
+set a threshold and ignore anything below that. So, if we decide to set the threshold at 3 or 
+more, we can ignore anything in the red and orange segments, and just concentrate on the 
+yellow and green intersections&#8230;</span></div>
+</blockquote>
+<div align="center"><img src="NotesImages/Topic92NotesImage6.jpg"
+align="bottom" width="510" height="510" border="0" alt=
+"graphic" /></div>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;">
+&#8220;There'll always be at least one book in the green intersection &#8212; the book we're generating 
+the recommendations for, so we can ignore that.</div>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;"> </div>
+<div align="center" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;"><img src=
+"NotesImages/Topic92NotesImage7.jpg" align="bottom" width="480"
+height="250" border="0" alt="graphic" /></div>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;"> </div>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;">
+&#8220;If we sort the books that appear in those intersections by how many borrowers they have in 
+common (in descending order), we should get a useful list of recommendations. For 
+example, if we do this for "<a href=
+"http://library.hud.ac.uk/catlink/bib/505399/cls/" target=
+"_blank"><span>Social determinants of health</span></a><span>
+ (ISBN 9780198565895), we get the 
+following titles (the figures in square brackets is the number of people who borrowed both 
+books and the total number of loans for the suggested book)&#8230;</span></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/336530" target=
+"_blank"><span>Health promotion: foundations for practice</span></a><span>
+ [43 / 1312]</span></li>
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/497237" target=
+"_blank"><span>The helping relationship: process and skills</span></a><span>
+ [41 / 248]</span></li>
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/430029" target=
+"_blank"><span>Skilled interpersonal communication: research, theory and practice</span></a><span>
+ [31 / 438]</span></li>
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/498880" target=
+"_blank"><span>Public health and health promotion: developing practice</span></a><span>
+ [29 / 317]</span></li>
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/513658" target=
+"_blank"><span>sociology of health and illness</span></a><span>
+ [29 / 188]</span></li>
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/427239" target=
+"_blank"><span>Promoting health: a practical guide</span></a><span>
+ [28 / 704]</span></li>
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/420820" target=
+"_blank"><span>Sociology: themes and perspectives</span></a><span>
+ [28 / 612]</span></li>
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/363756" target=
+"_blank"><span>Understanding social problems: issues in social policy</span></a><span>
+ [28 / 300]</span></li>
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/494308" target=
+"_blank"><span>Psychology: the science of mind and behaviour</span></a><span>
+ [27 / 364]</span></li>
+<li style=
+"margin-left: 21mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/435117" target=
+"_blank"><span>Health policy for health care professionals</span></a><span>
+ [25 / 375]</span></li>
+</ul>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;">
+&#8220;When we trialled generating suggestions this way, we found a couple of issues: </div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+More often than not, the suggested books tend to be ones that are popular and 
+circulate well already &#8212; is there a danger that this creates a closed loop, where more 
+relevant but less popular don't get recommended?</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+The suggested books are often more general &#8212; eg the suggestions for a book on 
+MySQL might be ones that cover databases in general, rather than specifically just 
+MySQL</li>
+</ul>
+</div>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;">
+&#8220;To try and address those concerns, we tweaked the sorting to take into account the total 
+number of times the suggested book has been borrowed. So, if 10 people have borrowed 
+book A and book B, and book B has only been borrowed by 12 people in total, we could 
+imply that there's a strong link between both books.</div>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;">
+&#8220;If we divide the number of common borrowers (10) with the total number of people who've 
+borrowed the suggested book (12), we'll end up with a figure between 0 and 1 that we can 
+use to sort the titles. Here's a list that uses 15 and above as the threshold&#8230;</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/524921" target=
+"_blank"><span>Status syndrome : how your social standing directly affects your health</span></a><span>
+ [15 / 33]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/587845" target=
+"_blank"><span>Values for care practice</span></a><span>
+ [15 / 61]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/542471" target=
+"_blank"><span>The study of social problems: seven perspectives</span></a><span>
+ [18 / 90]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/490264" target=
+"_blank"><span>Essentials of human anatomy &amp; physiology</span></a><span>
+ [15 / 81]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/352854" target=
+"_blank"><span>Human health and disease</span></a><span>
+ [15 / 88]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/543017" target=
+"_blank"><span>Social problems: an introduction to critical constructionism</span></a><span>
+ [15 / 90]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/542446" target=
+"_blank"><span>Thinking about social problems: an introduction to constructionist perspectives</span></a><span>
+ [21 /  127]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/497237" target=
+"_blank"><span>The helping relationship: process and skills</span></a><span>
+ [41 / 248]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/505397" target=
+"_blank"><span>Health inequality: an introduction to theories, concepts and methods</span></a><span>
+ [20 / 122]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/513658" target=
+"_blank"><span>The sociology of health and illness</span></a><span>
+ [29 / 188]</span></li>
+</ul>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>"&#8230;and if we used a lower threshold of 5, we'd get&#8230;</span></div>
+</blockquote>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/524921" target=
+"_blank"><span>Status syndrome : how your social standing directly affects your health</span></a><span>
+ [15 / 33]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/544711" target=
+"_blank"><span>What is the real cost of more patient choice?</span></a><span>
+ [5 / 12]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/546370" target=
+"_blank"><span>Interpersonal helping skills</span></a><span>
+ [5 / 12]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/546518" target=
+"_blank"><span>Coaching and mentoring in higher education : a learning-centred approach</span></a><span>
+ [6 / 15]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/626160" target=
+"_blank"><span>Understanding social policy</span></a><span>
+ [5 / 13]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/582135" target=
+"_blank"><span>Managing and leading in inter-agency settings</span></a><span>
+ [11 / 29]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/549645" target=
+"_blank"><span>Read, reflect, write : the elements of flexible reading, fluent writing, independent 
+learning</span></a><span> [5 / 14]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/538154" target=
+"_blank"><span>Community psychology : in pursuit of liberation and well-being</span></a><span>
+ [6 / 20]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/578425" target=
+"_blank"><span>Communication skills for health and social care</span></a><span>
+ [9 / 32]</span></li>
+<li style=
+"margin-left: 11mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://webcat.hud.ac.uk/b/586396" target=
+"_blank"><span>How effective have National Healthy School Standards and the National Healthy 
+School programme been, in contributing to improvements in children's health?</span></a><span>
+ [5 /  18]</span></li>
+</ul>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;">
+&#8220;If you think of the 3 sets of suggestions in terms of the Long Tail, the first set favours 
+popular items that will mostly appear in the green ("head") section, the second will be 
+further along the tail, and the third, even further along.</div>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;">
+&#8220;As we move along the tail, we begin to favour books that haven't been borrowed as often 
+and we also begin to see a few more eclectic suggestions appearing (eg the "How effective 
+have National Healthy School Standards&#8230;" literature based study).</div>
+<div align="left" style=
+"margin-left:10mm; margin-right:0mm; text-indent:0mm;">
+&#8220;One final factor that we include in our OPAC suggestions is whether or not the suggested 
+book belongs to the same stock collection in the library &#8212; if it does, then the book gets a 
+slight boost.&#8221;</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

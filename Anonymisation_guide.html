@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Anonymising data</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Guides.html">High level guidance</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Anonymising data
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Data_strategies__guide.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Visualisation_guide.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Anonymisation_guide"><span class=outlineNumberFirst></span><span class=topicLineFirst>Anonymising data</span></h2>
+
+<div id="main_content"><div align="left"><b>Topic</b></div>
+<div align="left">
+This guide discusses anonymisation of activity data. This is required before activity data can be 
+distributed to others..</div>
+<div align="left"><b>The problem</b></div>
+<div align="left">
+The Data Protection Act legislates that one cannot release personal data to other people without 
+the data subjects' permission. Much of the activity data that is collected and used contains 
+information which can identify the person responsible for its creation. Examples of personal 
+information are username, library number, IP address of the computer that a user is using, or other 
+information including patterns of behaviour that can identify individual users.</div>
+<div align="left">
+Therefore where information is to be released as open data, consideration needs to be given to 
+anonymising the data. This may also be required for sharing data with partners in a closed manner 
+depending on the reasons for sharing and the nature of the data, together with any consent 
+provided by the user.</div>
+<div align="left"><b>The options</b></div>
+<div align="left">
+Two main options exist if you want to share data. </div>
+<div align="left">
+The first is to <b>only share statistical data</b> . As the Information commissioner recently wrote 
+"Some data sharing doesn't involve personal data, for example where only statistics that cannot 
+identify anyone are being shared. Neither the Data Protection Act (DPA), nor this code of practice, 
+apply to that type of sharing."</div>
+<div align="left">
+The second is to <b>anonymise the personal data</b> so that it cannot be traced back to an individual. 
+This can take a number of forms. For instance, some log files store user names while other log 
+files may store IP addresses, where a user uses a fixed IP address these could be traced back to 
+them. anonymising the user name or IP address through a purpose-specific algorithm would 
+prevent this. A further problem may arise where rare occurrences might be able to be used to 
+identify an individual. For instance a pattern of accessing some rare books could be linked to 
+someone with a particular research interest. Small counts are often omitted, e.g. loans made by a 
+people attending a course with a low class size.</div>
+<div align="left"><b>Taking it further</b></div>
+<div align="left">
+If you want to take it further then you will need to consider the following as a starting point:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Does the data you are considering releasing contain any personal information?</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Are the people that you are sharing the data with already covered by the purpose the data was 
+collected for (eg a student&#8217;s tutor)?</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Is the personal information directly held in the data (user name, IP address)?</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Does the data enable one to deduce a user identity (only x could have borrowed those two 
+rare books &#8211; so what else have they borrowed)?</li>
+</ul>
+<div align="left"><b>Additional resources</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+See also <a href=
+"Guide_legal.html#Guide_legal"><span>Sharing activity data: Legal issues</span></a><span>
+.</span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Data sharing code of practice, the Information Commissioner's office, 2011 
+<a href=
+"http://www.ico.gov.uk/~/media/documents/library/Data_Protection/Detailed_specialist_guides/data_sharing_code_of_practice.pdf">
+<span>http://www.ico.gov.uk/~/media/documents/library/Data_Protection/Detailed_specialist_guides/data_sharing_code_of_practice.pdf</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Three of the projects have also been addressing this issue:  
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"LIDP.html#LIDP"><span>Library Impact Data Project (LIDP)</span></a></li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"SALT.html#SALT"><span>Surfacing the Academic Long Tail (SALT)</span></a></li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"OpenURL.html#OpenURL"><span>Using OpenURL Activity Data</span></a></li>
+</ul>
+</li>
+</ul></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

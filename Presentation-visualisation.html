@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>visualisation</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Computation.html">Collecting, processing and presenting activity data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Presentation.html">Presentation</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   visualisation
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Presentation.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Visualisation-AGtivity.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Presentation-visualisation"><span class=outlineNumberFirst></span><span class=topicLineFirst>visualisation</span></h2>
+
+<div id="main_content"><div align="left">
+Because activity data is relatively hard to interpret in its raw forms, it may be necessary to use 
+visualization tools to make sense of activity data. This is particularly true when exploring activity 
+data to see what it contains during the early stages of designing and building a recommender or 
+learning analytics system.</div>
+<div align="left">
+Some of the necessity for visualisations becomes apparent when we think about the properties of 
+activity data: It is potentially large scale, and may combine data from a variety of sources (eg 
+library management systems, virtual learning environments, access management systems) and 
+events (turnstile entries, system authentication actions, searches, downloads, etc.). </div>
+<div align="left">
+In the Programme, some projects used or considered using visualisation tools. Tools used or 
+considered by the projects include:</div>
+<div align="left">
+<b>Business intelligence tools</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://www.eclipse.org/birt/phoenix/"><span>Business Intelligence and Reporting Tools</span></a><span>
+ (BIRT) is an Eclipse-based open source reporting 
+system for web applications, especially those based on Java and Java EE. BIRT has two main 
+components: A report designer based on Eclipse, and a runtime component that you can add 
+to your application server. BIRT also offers a charting engine that lets you add charts to your 
+own application.</span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://www.pentaho.com/"><span>Pentaho</span></a><span> is an open source Business Intelligence suite. So far impressions are not good: 
+EVAD say of Pentaho "[Have] been working on setting up a Pentaho instance for most of the 
+last week, and hasn't yet [sic] managed to get a significant improvement on what Excel 
+provides, though it's taken considerable effort to get this far. Pentaho requires various modules 
+to be installed, but its documentation is rather incomplete, especially the documentation for 
+creating aggregate tables. Aggregate tables are essential when dealing with large volumes of 
+data - we have over 10M rows of Sakai event data, so without aggregate tables, every time we 
+try to look at a large section of the dataset, we run out of resources. So thus far, our 
+suggestion would be that if you want business information software, you may be better off 
+paying for a commercial product."</span></li>
+</ul>
+<div align="left"><b>Projects</b></div>
+<div align="left">
+Several of the projects made effective use of visualisation; details of what projects did can be found 
+below:</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href="Visualisation-AGtivity.html#Visualisation-AGtivity" id=
+"AGtivity"><span>AGtivity</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href=
+"Visualisation-LIDP.html#Visualisation-LIDP"><span>LIDP</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href="Visualisation_EVAD.html#Visualisation_EVAD"><span>EVAD</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href="Visualisation_OpenURL.html#Visualisation_OpenURL">OpenURL</a></li>
+</ul>
+<div align="left">
+<b>General visualisation tools</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://www.gnuplot.info"><span>Gnuplot</span></a><span> is a portable command-line driven graphing utility for linux, OS/2, MS Windows, OSX, 
+VMS, and many other platforms.</span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://gephi.org"><span>Gephi</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://www.graphviz.org"><span>GraphViz</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"http://www.visualcomplexity.com/" target=
+"_blank"><span>Visual Complexity</span></a><span> offers links to a comprehensive set of visualisation tools</span></li>
+</ul>
+<div align="left"><b>General tools</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Excel pivot tables</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Open office pivot tables</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+noSQL databases for custom programs include BigTable, Cassandra cluster, MongoDB</li>
+</ul>
+<div align="left"><b>See also:</b></div>
+<div align="left"><b>Guides</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;"><a href=
+"Visualisation_guide.html#Visualisation_guide"><span>Bringing activity data to life</span></a></li>
+</ul>
+<div align="left"><b>Recipes </b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href=
+"How_to_Pivot_data_in_Open_Office_Spreads.html#How_to_Pivot_data_in_Open_Office_Spreadsheet">
+<span>How to Pivot data in Open Office Spreadsheet</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href=
+"Visualising_OpenURL_Referrals_Using_Gour.html#Visualising_OpenURL_Referrals_Using_Gource">
+<span>Visualising OpenURL Referrals Using Gource</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href=
+"Producing_PDF_Reports_Programmatically.html#Producing_PDF_Reports_Programmatically">
+<span>Producing PDF Reports Programmatically</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href=
+"Plotting_Calendar_Data_with_GNUplot.html#Plotting_Calendar_Data_with_GNUplot">
+<span>Plotting Calendar Data with GNUplot</span></a></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; font-decoration: underline; color: #0000ff;">
+<a href=
+"Visualising_OpenURL_Total_Requests_by_Da.html#Visualising_OpenURL_Total_Requests_by_Date">
+<span>OpenURL Router Data: Total Requests by Date</span></a></li>
+</ul></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

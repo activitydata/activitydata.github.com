@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>OpenURL Router Data: Total Requests by Date</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Presenting_data.html">Presenting data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   OpenURL Router Data: Total Requests by Date
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Visualising_OpenURL_Referrals_Using_Gour.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Other_recipes.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Visualising_OpenURL_Total_Requests_by_Date"><span class=outlineNumberFirst></span><span class=topicLineFirst>OpenURL Router Data: Total Requests by Date</span></h2>
+
+<div id="main_content"><div align="left"><b>Originators/Authors</b></div>
+<div align="left">Sheila Fraser</div>
+<div align="left"><a href=
+"OpenURL.html#OpenURL"><span>OpenURL</span></a><span>, EDINA, University of Edinburgh</span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+To display a graph of the OpenURL Router data total requests by date as one example of how the 
+data can be used</div>
+<div align="left"><b>Background</b></div>
+<div align="left"><font color=
+"#010101"><span>All OpenURL requests made by end users via the Router at openurl.ac.uk are logged, and (subject 
+to the metadata included by the referring service) provide a record of the article that user was 
+attempting to find via their local resolver. A subset of the log has recently been released as open 
+data and this can be analysed in a variety of ways. This example gives the count of the total 
+number of requests on each date, which shows a weekly usage pattern.</span></font></div>
+<div align="left"><font color=
+"#010101"><span>Other related data and visualisations, such as a weekly cycle chart, can be found together with 
+the scripts to generate them from </span></font><a href="http://figshare.com/figures/index.php/Openurl">
+<span>http://figshare.com/figures/index.php/Openurl</span></a></div>
+<div align="left"><b>Ingredients</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -3mm; margin-right: 0mm; padding-left: -7mm; color: #010101;">
+<font color=
+"#010101"><span>OpenURL Router data (</span></font><a href="http://openurl.ac.uk/doc/data/data.html">
+<span>http://openurl.ac.uk/doc/data/data.html</span></a><font color="#010101">
+<span>) </span></font></li>
+<li style=
+"margin-left: -3mm; margin-right: 0mm; padding-left: -7mm; color: #010101;">
+<font color=
+"#010101"><span>R (free software from </span></font><a href="http://cran.r-project.org/">
+<span>http://cran.r-project.org/</span></a><font color=
+"#010101"><span>)</span></font></li>
+</ul>
+<div align="left"><b>Assumptions</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Availability of OpenURL Router data</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Knowledge of how to run Perl scripts on the downloaded file</li>
+</ul>
+<div align="left"><b>Warnings</b></div>
+<div align="left">
+The data is being regularly published, but may be a little out of date following the end of the project.</div>
+<div align="left"><b>Individual steps</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; color: #010101;">
+<font color=
+"#010101"><span>Download the OpenURL Router data</span></font></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; color: #010101;">
+<font color=
+"#010101"><span>Run the script to pre-process the data</span></font></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm; color: #010101;">
+<font color=
+"#010101"><span>Run the R script to generate the graph</span></font></li>
+</ul>
+<div align="left"><b>Intermediate data</b></div>
+<table border="1" bordercolor="#000000" width="200" cellpadding="0"
+style="border-collapse: collapse; border: none">
+<tr>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><b>date</b></div>
+</td>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><b>no_reqs</b></div>
+</td>
+<td valign="top" width="34%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><b>day</b></div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">01/04/11</div>
+</td>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">11836</div>
+</td>
+<td valign="top" width="34%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">Friday</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">02/04/11</div>
+</td>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">7894</div>
+</td>
+<td valign="top" width="34%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">Saturday</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">03/04/11</div>
+</td>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">9399</div>
+</td>
+<td valign="top" width="34%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">Sunday</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">04/04/11</div>
+</td>
+<td valign="top" width="33%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">14719</div>
+</td>
+<td valign="top" width="34%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv">Monday</div>
+</td>
+</tr>
+</table>
+<div align="left"></div>
+<div align="left">
+<b>Appendix A: Sample output</b></div>
+<div align="left"><img src="NotesImages/Topic163NotesImage9.jpg"
+align="bottom" width="500" height="255" border="0" alt=
+"graphic" /></div>
+<div align="left">
+<b>Appendix B: Pre-processing script</b><font color=
+"#4F81BD"><span><b> </b></span></font></div>
+<div align="left"><font color=
+"#010101"><span>#!/usr/local/bin/perl</span></font></div>
+<div align="left"><font color=
+"#010101"><span>use strict;</span></font></div>
+<div align="left"><font color=
+"#010101"><span>use Data::Dumper;</span></font></div>
+<div align="left"></div>
+<div align="left"></div>
+<div align="left"><font color=
+"#010101"><span>my $logDir = "../logs/2011_raw/rotated/"; # change to the Level 0 log file name to read from my 
+$fileName = "2011-08-01_Router.log";</span></font></div>
+<div align="left"></div>
+<div align="left"><font color=
+"#010101"><span>open LOGFILE, $logDir."$fileName" or die "cannot open file for reading\n"; my $line; my %dates;</span></font></div>
+<div align="left"></div>
+<div align="left"><font color=
+"#010101"><span>while (my $line = &lt;LOGFILE&gt;){</span></font></div>
+<div align="left"><font color=
+"#010101"><span> chomp($line);</span></font></div>
+<div align="left"></div>
+<div align="left"><font color=
+"#010101"><span> # if it's a request to a resolver then count it in</span></font></div>
+<div align="left"><font color=
+"#010101"><span> if($line =~ "redirect.resolver"){</span></font></div>
+<div align="left"><font color=
+"#010101"><span> my $dateTime = (split(/\t/,$line))[0];</span></font></div>
+<div align="left"><font color=
+"#010101"><span> (my $date, my $time) = split(/T/, $dateTime);</span></font></div>
+<div align="left"><font color=
+"#010101"><span> my $hour = (split(/:/, $time))[0];</span></font></div>
+<div align="left"><font color=
+"#010101"><span> $dates{"$date"}++;</span></font></div>
+<div align="left"><font color=
+"#010101"><span> }</span></font></div>
+<div align="left"><font color="#010101"><span>}</span></font></div>
+<div align="left"></div>
+<div align="left"><font color=
+"#010101"><span># print the counts on the terminal</span></font></div>
+<div align="left"><font color=
+"#010101"><span>foreach my $key (sort keys %dates) {</span></font></div>
+<div align="left"><font color=
+"#010101"><span> print "$key\t".$dates{$key}."\n";</span></font></div>
+<div align="left"></div>
+<div align="left">
+<b>Appendix C: R script to generate the graph</b></div>
+<div align="left">
+Using R to generate this example graph, the script is:</div>
+<div align="left">
+filepath &lt;- system.file("ourldata", "no_of_reqs_csv_dates_Apr_Jul.csv", package="datasets") </div>
+<div align="left">
+inp &lt;- read.csv(filepath, header=TRUE) </div>
+<div align="left">
+inp$date &lt;- factor(inp$date) </div>
+<div align="left">
+datelist &lt;- as.Date(inp$date, "%d/%m/%Y") </div>
+<div align="left">
+plot(datelist, inp$no_reqs, pch=".") </div>
+<div align="left">lines(datelist, inp$no_reqs)</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

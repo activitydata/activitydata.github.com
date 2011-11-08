@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Extract trace data from log files</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Extracting_data.html">Extracting data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Extract trace data from log files
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Recipe_SALT_extract__Talis.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Processing_data.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Extract_trace_data_from_log_files"><span class=outlineNumberFirst></span><span class=topicLineFirst>Extract trace data from log files</span></h2>
+
+<div id="main_content"><div align="left"><b>Originators/Authors</b></div>
+<div align="left">
+Salman Elahi and Mathieu d&#8217;Aquin</div>
+<div align="left"><a href=
+"UCIAD.html#UCIAD"><span>UCIAD</span></a><span>, Open University</span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+To extract activity data from log files in a flexible way in order to deal with a multiplicity of log file 
+formats.</div>
+<div align="left"><b>Background</b></div>
+<div align="left">
+To integrate log file data from diverse systems.</div>
+<div align="left"><b>Ingredients</b></div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>Log files</li>
+<li>UCIAD Parderer</li>
+</ul>
+</div>
+<div align="left"><b>Assumptions</b></div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+Log files relate to online resources</li>
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+Parderer is parameterised with a parameter for the specific parser class applicable to the 
+log file format</li>
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+A parser class can have specific parameters, notably a regular expression describing log 
+file entries</li>
+<li style=
+"margin-left: -5mm; margin-right: 0mm; padding-left: 0mm;">
+Output from Parderer is in RDF</li>
+</ul>
+</div>
+<div align="left"><b>Warnings</b></div>
+<div align="left">
+A specific Parderer for a particular log file format needs to be deployed on the server where the log 
+file (or a copy) is stored</div>
+<div align="left"><b>Method</b></div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>
+Edit configuration file to specify the parameter class for Parderer and information about 
+the server, eg where the log files are stored, the URI to describe the server in the RDF</li>
+<li>
+Run Parderer via cron jobs, currently always daily</li>
+</ul>
+</div>
+<div align="left"><b>Individual steps</b></div>
+<div style="margin-left: 2em; margin-top: 0pt; margin-bottom: 0pt">
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li>
+By default Parderer runs automatically (thanks to cron), but it can be run manually for 
+specific dates via command line parameters</li>
+</ul>
+</div>
+<div align="left"><b>Output data</b></div>
+<div align="left">
+Information will be placed in a RDF output file as specified in the configuration files</div>
+<div align="left">
+File contents are in RDF XML format and comply with the ontology at available at 
+<a href="http://github.com/uciad"><font color=
+"#0000EE"><span>http://github.com/uciad </span></font></a><span>
+- see </span><a href=
+"http://uciad.info/ub/2011/03/uciad-ontologies-a-starting-point/"><font color="#0000EE">
+<span>http://uciad.info/ub/2011/03/uciad-ontologies-a- starting-point/ </span></font></a><span>
+for  initial documentation.</span></div>
+<div align="left">
+<b>Appendix A: Sample output</b></div>
+<div align="left">RDF for the trace</div>
+<div align="left">
+ GET request to the URI http://data.open.ac.uk/resource/person/ext- 
+718a372e10788bb58d562a8bf6fb864e </div>
+<div align="left">&lt;rdf:RDF&gt;</div>
+<div align="left">
+&lt;rdf:Description rdf:about="http://uciad.info/trace/kmi- 
+web13/ede2ab38da27695eec1e0b375f9b20da"&gt;</div>
+<div align="left">
+ &lt;rdf:type rdf:resource="http://uciad.info/ontology/trace/Trace"/&gt; </div>
+<div align="left">
+ &lt;hasAction rdf:resource="http://uciad.info/action/GET"/&gt; </div>
+<div align="left">
+ &lt;hasPageInvolved rdf:resource="http://uciad.info/page/0b9abc62fcf90afc53797b938af435dd"/&gt;</div>
+<div align="left">
+ &lt;hasResponse rdf:resource="http://uciad.info/response/ea95add1414aba134ff9e0482b921a33"/&gt;</div>
+<div align="left">
+ &lt;hasSetting rdf:resource="http://uciad.info/actorsetting/119696ec92c5acec29397dc7ef98817f"/&gt;</div>
+<div align="left"> &lt;hasTime 
+rdf:datatype="http://www.w3.org/2001/XMLSchema#string"&gt;13/Jun/2011:01:37:23+0100&lt;/hasTime&gt;</div>
+<div align="left">&lt;/rdf:Description&gt;</div>
+<div align="left">&lt;/rdf:RDF&gt;</div>
+<div align="left"></div>
+<div align="left"></div>
+<div align="left">&lt;rdf:RDF&gt;</div>
+<div align="left">
+&lt;rdf:Description rdf:about="http://uciad.info/page/0b9abc62fcf90afc53797b938af435dd"&gt;</div>
+<div align="left">
+ &lt;rdf:type rdf:resource="http://uciad.info/ontology/sitemap/WebPage"/&gt;</div>
+<div align="left">
+ &lt;isPartOf rdf:resource="http://uciad.info/ontology/test1/dataopenacuk"/&gt;</div>
+<div align="left">
+ &lt;onServer rdf:resource="http://kmi-web13.open.ac.uk"/&gt;</div>
+<div align="left">
+ &lt;url rdf:datatype="http://www.w3.org/2001/XMLSchema#string"&gt;</div>
+<div align="left">
+ /resource/person/ext-718a372e10788bb58d562a8bf6fb864e</div>
+<div align="left"> &lt;/url&gt;</div>
+<div align="left">&lt;/rdf:Description&gt;</div>
+<div align="left"></div>
+<div align="left"></div>
+<div align="left"></div>
+<div align="left">&lt;rdf:RDF&gt;</div>
+<div align="left">
+&lt;rdf:Description rdf:about="http://uciad.info/ontology/test1/dataopenacuk"&gt;</div>
+<div align="left">
+ &lt;rdf:type rdf:resource="http://uciad.info/ontology/sitemap/Website"/&gt;</div>
+<div align="left">
+ &lt;rdf:type rdf:resource="http://uciad.info/ontology/test1/LinkedDataPlatform"/&gt;</div>
+<div align="left">
+ &lt;onServer rdf:resource="http://kmi-web13.open.ac.uk"/&gt;</div>
+<div align="left">
+ &lt;urlPattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string"&gt;/*&lt;/urlPattern&gt;</div>
+<div align="left"></div>
+<div align="left"></div>
+<div align="left"></div>
+<div align="left">&lt;/rdf:Description&gt;</div>
+<div align="left">
+ &lt;rdf:Description rdf:about="http://uciad.info/response/ea95add1414aba134ff9e0482b921a33"&gt;</div>
+<div align="left">
+ &lt;rdf:type rdf:resource="http://uciad.info/ontology/trace/HTTPResponse"/&gt;</div>
+<div align="left">
+ &lt;hasResponseCode rdf:resource="http://uciad.info/ontology/trace/200"/&gt;</div>
+<div align="left"> &lt;hasSizeInBytes 
+rdf:datatype="http://www.w3.org/2001/XMLSchema#int"&gt;1085&lt;/hasSizeInBytes&gt;</div>
+<div align="left">&lt;/rdf:Description&gt;</div>
+<div align="left"></div>
+<div align="left"></div>
+<div align="left"></div>
+<div align="left">
+&lt;rdf:Description rdf:about="http://uciad.info/actorsetting/119696ec92c5acec29397dc7ef98817f"&gt;</div>
+<div align="left">
+ &lt;rdf:type rdf:resource="http://uciad.info/ontology/actor/ActorSetting"/&gt;</div>
+<div align="left">
+ &lt;fromComputer rdf:resource="http://uciad.info/computer/7587772edef21a8461f6af0efaf150fc"/&gt;</div>
+<div align="left">
+ &lt;hasAgent rdf:resource="http://uciad.info/actor/ceec6f92bcc8167cbb665f7e51b2a6b3"/&gt;</div>
+<div align="left">&lt;/rdf:Description&gt;</div>
+<div align="left"></div>
+<div align="left">
+&lt;rdf:Description rdf:about="http://uciad.info/computer/7587772edef21a8461f6af0efaf150fc"&gt;</div>
+<div align="left">
+ &lt;rdf:type rdf:resource="http://uciad.info/ontology/actor/Computer"/&gt;</div>
+<div align="left"> &lt;hasIPAddress 
+rdf:datatype="http://www.w3.org/2001/XMLSchema#string"&gt;129.13.186.4&lt;/hasIPAddress&gt;</div>
+<div align="left">&lt;/rdf:Description&gt;</div>
+<div align="left"></div>
+<div align="left">
+&lt;rdf:Description rdf:about="http://uciad.info/actor/ceec6f92bcc8167cbb665f7e51b2a6b3"&gt;</div>
+<div align="left">
+ &lt;rdf:type rdf:resource="http://uciad.info/ontology/actor/ActorAgent"/&gt;</div>
+<div align="left">
+ &lt;agentId rdf:datatype="http://www.w3.org/2001/XMLSchema#string"&gt;</div>
+<div align="left">
+ldspider (BTC 2011 crawl, harth@kit.edu, http://code.google.com/p/ldspider/wiki/Robots)</div>
+<div align="left"> &lt;/agentId&gt;</div>
+<div align="left">&lt;/rdf:Description&gt;</div>
+<div align="left"></div>
+<div align="left"></div>
+<div align="left">
+<b>Appendix B: Documentation to describe Parderer configuration</b></div>
+<div align="left">
+Here is an example Parderer configuration with comments</div>
+<div align="left"></div>
+<div align="left">
+# the regular expression for a line of log when parsing apache logs</div>
+<div align="left">
+logPattern = ^([\\d.]+) (\\S+) (\\S+) \\[([\\w:/]+\\s[+\\-]\\d{4})\\] \"(.+?)\" (\\d{3}) (\\S+) \"(.*)\" 
+\"([^\"]+)\"</div>
+<div align="left">
+# the URI of the server which logs are being considered</div>
+<div align="left">serverURI = <a href=
+"http://kmi-web13.open.ac.uk/"><font color=
+"#0000EE"><span>http://kmi-web13.open.ac.uk</span></font></a></div>
+<div align="left">
+# name of the server as it will appear in the data</div>
+<div align="left">serverName = kmi-web13</div>
+<div align="left">
+# local path to the log file</div>
+<div align="left">
+logFileDirectory = /web/logs/lucero.open.ac.uk</div>
+<div align="left">
+# pattern of the log file name</div>
+<div align="left">
+logFileNamePattern = access_log_%Y-%m.log</div>
+<div align="left">
+# number of variables in the regular expression</div>
+<div align="left">numberOfFields = 9</div>
+<div align="left">
+# URI of the SESAME triple store where the data should be uploaded </div>
+<div align="left">
+repURI = http://kmi-web01.open.ac.uk:8080/openrdf-sesame</div>
+<div align="left">
+# name of the repository in the SESAME triple store</div>
+<div align="left">repID = UCIADAll</div>
+<div align="left">
+# directory where the data dumps (in zipped RDF) should be placed</div>
+<div align="left">
+zippedFileOutPutDir = /web/lucero.open.ac.uk/applications/parsedLogs</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Recommendations Improve the Search Experience (RISE)</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Licensing_and_sharing_activity_data.html">Licensing and sharing activity data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Licensing_of_data.html">Licensing of data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Licenses_used.html">Licenses used</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Recommendations Improve the Search Experience (RISE)
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Licensing_EVAD.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Licensing_SALT.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Licensing_RISE"><span class=outlineNumberFirst></span><span class=topicLineFirst>Recommendations Improve the Search Experience (RISE)</span></h2>
+
+<div id="main_content"><div align="left"><b>Project code licensing</b></div>
+<div align="left">
+By the end of the project the RISE code, covering the data ingestion processes and 
+recommendation code will be made available via Google Code at <a href="http://code.google.com/p/rise-project/"
+   target="_blank"><span>http://code.google.com/p/rise- 
+   project/</span></a><span>. After consideration of suitable open source licenses it has been decided to use the 
+   standard license for Google Code GNU GPL v3 </span><a href="http://www.gnu.org/licenses/gpl.html"
+   target=
+   "_blank"><span>http://www.gnu.org/licenses/gpl.html</span></a><span>
+. This has 
+previously successfully been used to release previous project code created by the OU for JISC 
+projects.</span></div>
+<div align="left"><b>Open data licensing</b></div>
+<div align="left">
+Discussions with the Open University Rights team have identified that we are able to release data 
+from EZProxy, from search terms used within RISE, and covering the general subjects covered by 
+OU courses. An appropriate license for this content would be <a href="http://creativecommons.org/publicdomain/zero/1.0/"
+   target=
+   "_blank"><span>CCZero</span></a><span>. This owes much to the 
+   previous work of the </span><a href=
+   "http://lucero-project.info/lb/" target=
+   "_blank"><span>Lucero</span></a><span> project in paving the way for the open release of data. </span></div>
+<div align="left">
+<b>What data could be included?</b></div>
+<div align="left">
+What became apparent during the project was that most of the EZProxy request URLs linked 
+through to EBSCO (the reason being that we link our EBSCO Discovery Solution through 
+EZProxy) and that there was very little bibliographic data within the log files. We discovered that 
+we could use the EBSCO accession number to retrieve bibliographic data but that we weren't 
+licensed to store that data in the RISE database yet alone release it openly. We found an 
+alternative source of article level metadata (from Crossref) that we could store locally, but again 
+licensing terms prohibit its inclusion within an open data set. </div>
+<div align="left">
+A conversation was had with JISC Legal, who advised that if restrictions are placed on database 
+vendors, these are usually passed on to subsequent users. Restrictions may not necessarily be 
+just in relation to copyright. If the database vendor is using third party material ( i.e. obtained from 
+elsewhere) there will very likely be a purchasing agreement/contract/ as well as a licensing 
+agreement (where the copyright position is stated) between the parties stating what the vendor 
+may do with the data. The vendor would then need to impose the same conditions on the 
+customer, so as not to breach their agreements with the party from where they obtained the 
+material. So it could be breach of contract terms as well as breach of copyright depending on the 
+agreements.</div>
+<div align="left">
+There is some difference of opinion between Rights experts about the position with article level 
+metadata about whether it could be used and released. Commercial providers assert in their terms 
+and conditions that you cannot reuse it or share it and libraries are in a position where they have 
+signed license agreements that contain those clauses. This is an area where agreement about the 
+exact legal position with regards to article level metadata should be established. Not having openly 
+available and reusable article level metadata would be a distinct barrier to establishing useful and 
+usable datasets of article level activity data.</div>
+<div align="left">
+Advice from JISC Legal on the copyright issues around metadata, directed us to a quote from their 
+paper Licensing Open Data: </div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>&#8220; Where there has been substantial investment in the selection and or presentation of the 
+content of datasets they may attract copyright as well as database right if it was created 
+after 27 March 1996 and if there has been evidence of creative effort in selecting or 
+arranging the data. A database might have copyright protection in its structure if, by reason 
+of the selection or arrangement of its contents, the database constitutes the author&#8217;s own 
+intellectual creation. Copyright protection of individual data, including records and metadata 
+that have been &#8220;expressively&#8221; written or enriched may also subsist in the structure of the 
+database if that structure has been the subject of creativity.&#8221;</span></div>
+</blockquote>
+<div align="left">
+So in terms of what we could release openly we are left with a dataset that contains URLs that link 
+to EBSCO, search terms entered through RISE and course subjects. </div>
+<table border="1" bordercolor="#000000" width="503" cellpadding="0"
+style="border-collapse: collapse; border: none">
+<tr>
+<td valign="top" width="37%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><font color=
+"#010101"><span><b>Type</b></span></font></div>
+</td>
+<td valign="top" width="63%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><font color=
+"#010101"><span><b>Data</b></span></font></div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="37%" height="32" style=
+"border: solid 0.50pt;">
+<div align="left"><font color=
+"#010101"><span><b>Basic data: Institution, year 
+and dates</b></span></font></div>
+</td>
+<td valign="top" width="63%" height="32" style=
+"border: solid 0.50pt;">
+<div align="left"><font color=
+"#010101"><span>institution name<br /></span></font>
+academic Year<br />
+extracted date<br />
+source</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="37%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><font color=
+"#010101"><span><b>Resource data </b></span></font></div>
+</td>
+<td valign="top" width="63%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><font color=
+"#010101"><span>Resource URL</span></font></div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="37%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><font color=
+"#010101"><span><b>U</b></span></font><b>ser context data</b></div>
+</td>
+<td valign="top" width="63%" style="border: solid 0.50pt;">
+<div align="left"><font color=
+"#010101"><span>anonymised User ID<br /></span></font>
+timestamp<br />
+Students subject<br />
+Students level eg [FE, UG1, UG2, UG3, UG4, M, 
+PhD1, PhD2, PhD3+<br />
+Staff</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="37%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><font color=
+"#010101"><span><b>Retrieved from</b></span></font></div>
+</td>
+<td valign="top" width="63%" style="border: solid 0.50pt;">
+<div align="left" class="lastTableNotesDiv"><font color=
+"#010101"><span>SearchTerm</span></font></div>
+</td>
+</tr>
+</table>
+<div align="left"></div>
+<div align="left">
+The dataset includes relationships between resource records in the dataset but there is no easy 
+way of being able to relate that resource to a DOI or article title. And that leaves the dataset as 
+being potentially of use to other EBSCO Discovery Solution customers but no one else. <b>
+So at this 
+stage we have reluctantly decided that we won't be able to release the data before the 
+RISE project ends.</b> Further work would be needed to review other data sources such as the 
+Mendeley or OpenURL router data to see if they could provide some relevant article level metadata.</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

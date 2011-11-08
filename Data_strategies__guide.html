@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Strategies for collecting and storing activity data</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Guides.html">High level guidance</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Strategies for collecting and storing activity data
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Whats_behind_a_recommendation.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Anonymisation_guide.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Data_strategies__guide"><span class=outlineNumberFirst></span><span class=topicLineFirst>Strategies for collecting and storing activity data</span></h2>
+
+<div id="main_content"><div align="left"><b>Topic</b></div>
+<div align="left">
+This guide discusses factors which impinge on what activity data to gather and if it should be 
+aggregated before storage. </div>
+<div align="left"><b>The problem</b></div>
+<div align="left">
+Activity data sets are typically large and require processing to be useful. Decisions that need to be 
+made when processing large data sets include selecting what data to retain (e.g. to analyse 
+student transactions and not staff) and what data to aggregate (e.g. for the purposes in hand do 
+we require records of all books or simply a count of books borrowed by each student).</div>
+<div align="left">
+If we are being driven by information requests or existing performance indicators, we will typically 
+manipulate (select, aggregate) the raw data early. Alternatively, if we are searching for whatever 
+the data might tell us then maintaining granularity is essential (e.g. if you aggregate by time 
+period, by event or by cohort, you may be burying vital clues). However, there is the added 
+dimension of data protection &#8211; raw activity datasets probably contain links to individuals and 
+therefore aggregation may be a good safeguard (though you may still need to throw away low 
+incidence groupings that could betray individual identity).</div>
+<div align="left"><b>The options</b></div>
+<div align="left">
+It is therefore important to consider the differences between two approaches to avoid, on one hand, 
+loosing useful data by aggregation, or, on the other hand, unnecessarily using terabytes of storage.</div>
+<div align="left"><b><i>Directed approach</i></b></div>
+<div align="left">
+Start with a pre-determined performance indicator or other statistical requirement and therefore 
+selectively extract, aggregate and analyse a subset of the data accordingly; for example</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Analyse library circulation trends by time period or by faculty or &#8230;</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Analyse VLE logs to identify users according to their access patterns (time of day, length of 
+session).</li>
+</ul>
+<div align="left">
+<b><i>Exploratory approach</i></b><i> </i></div>
+<div align="left">
+Analyse the full set (or sets) of available data in search of patterns using data mining and 
+statistical techniques. This is likely to be an iterative process involving established statistical 
+techniques (and tools), leading to cross- tabulation of discovered patterns, for example</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Discovery 1 &#8211; A very low proportion of lecturers never post content in the VLE</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Discovery 2 &#8211; A very low proportion of students never download content </li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Discovery 3 &#8211; These groups are both growing year on year</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Pattern &#8211; The vast majority of both groups are not based in the UK (and the surprise is very 
+low subject area or course correlation between the lecturers and the students)</li>
+</ul>
+<div align="left"><b>Additional resources</b></div>
+<div align="left">
+<b>Directed approach</b> &#8211; <a href=
+"LIDP.html#LIDP"><span>Library Impact Data Project (LIDP) </span></a><span>
+had a hypothesis and went about 
+collecting data to test it</span></div>
+<div align="left">
+<b>Exploratory approach</b> - <a href=
+"Exposing_VLE_data.html#Exposing_VLE_data"><span>Exposing VLE data </span></a><span>
+was faced with the availability of around 40 million 
+VLE event records covering 5 years and decided to investigate the patterns. </span></div>
+<div align="left">
+<b>Recommender systems</b> (a particular form of data mining used by such as supermarkets and 
+online stores) typically adopt Approach 2, looking for patterns using established statistical 
+techniques - <a href=
+"http://en.wikipedia.org/wiki/Recommender_system"><span>http://en.wikipedia.org/wiki/Recommender_system </span></a><span>
+and </span> <a href=
+"http://en.wikipedia.org/wiki/Data_Mining"><span>http://en.wikipedia.org/wiki/Data_Mining </span></a></div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

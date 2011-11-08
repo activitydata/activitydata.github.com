@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>AGtivity: Technologies and Standards</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Projects.html">The JISC activity data projects</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="AGtivity.html">Exploiting Access Grid Activity Data (AGtivity)</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   AGtivity: Technologies and Standards
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="AGtivity.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Agtivity_Wins_and_fails.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Agtivity_Technologies_and_Standards"><span class=outlineNumberFirst></span><span class=topicLineFirst>AGtivity: Technologies and Standards</span></h2>
+
+<div id="main_content"><div align="left"><b>Technologies</b></div>
+<div align="left">
+C++ using Standard Template Library- used to code the primary log parsers and produce 
+<a href="http://www.cplusplus.com/reference/stl/map/" target=
+"_blank"><span>mappings</span></a><span> of hashed strings which allowed quick matching of a lot of textural information.</span></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+C++ was used due to developer&#8217;s familiarity and allow us to quickly get a first look at the data.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+The type of data available to the logging process meant that a number of hash tables are 
+needed to correlate the different type of entries.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Complicated by the lack of unique identifies for devices and sources.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+These could be rewritten in Python to ease maintenance.</li>
+</ul>
+<div align="left"><a href="http://www.python.org/" target=
+"_blank"><span>Python</span></a><span> + </span><a href=
+"http://www.reportlab.com/software/opensource/rl-toolkit/" target=
+"_blank"><span>ReportLab Toolkit (PDF module)</span></a><span>
+ - looking for a simple and effective way to quickly 
+produce PDF files with text, tables and images programmatically led us to look at Python as there 
+were a number of PDF modules available.</span></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+ReportLab appears to be the most widely used and allows production of reports with a few 
+simple function calls.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+ReportLab requires the <a href=
+"http://www.pythonware.com/products/pil/" target=
+"_blank"><span>Python Image Library</span></a><span> for image support.</span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Look out for our PDF creation recipe!</li>
+</ul>
+<div align="left"><a href="http://gnuplot.sourceforge.net/" target=
+"_blank"><span>Gnuplot</span></a><span> - this portable and scriptable graphing package provides the features and flexibility to 
+produce the graphs required for reporting.</span></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+We are using the <a href=
+"http://gnuplot.sourceforge.net/development/index.html" target=
+"_blank"><span>development version 4.5</span></a><span> as we had a found a bug in the &#8216;with circle&#8217; 
+rendering feature in the stable release.</span></li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+For data that clusters together in an otherwise sparse plot using transparency allows us to 
+observe the density of plot points.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Gnuplot can also plot vectors which meant we could show the when and how meetings were 
+occurring in the form of a &#8216;timetable&#8217;.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Gnuplot scripts were created that are used to batch process data for each node and venue.</li>
+</ul>
+<div align="left"><a href="http://netbeans.org/" target=
+"_blank"><span>NetBeans IDE</span></a><span> - supports a number of programming environments which has allowed it to be used 
+for both C++ and Python developments.</span></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Especially useful for the integrated debugging tools and function/object completion tools when 
+using new APIs.</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Main issue is the lack of support for Microsoft Visual Studio C++ compilers.</li>
+</ul>
+<div align="left"><a href=
+"http://code.google.com/apis/maps/documentation/staticmaps/"
+target="_blank"><span>GoogleMaps API</span></a><span> - easy to use but the restrictions on usage and number of requests made it 
+unsuitable for calculating the distances between locations.</span></div>
+<div align="left">
+Though not intended as an outcome to this 6month project we also looked at web technologies 
+that could provide interactive data presentation to allow users explore their own data. In addition to 
+the popular <a href="http://jquery.com/" target=
+"_blank"><span>JQuery</span></a><span> and </span><a href="http://jqueryui.com/"
+   target=
+   "_blank"><span>JQuery UI</span></a><span> toolkits we are very interested in providing graphs using </span>
+   <a href="http://www.highcharts.com/" target=
+   "_blank"><span>Highcharts</span></a><span>. Of several graphing toolkits this appears to be the most useful as it can handle 
+   dynamic data easily therefore affording the user greater control and flexibility.</span></div>
+<div align="left"><b>Standards</b></div>
+<div align="left">
+PDF - for end user report production</div>
+<div align="left">
+CSV (Comma Separated Variable) - The log files are CSV and this format is also used as output 
+after parsing and filtering since the data needs to be able to be processed by spreadsheet and 
+graphing software. Though we could create yet another XML format we &#8217;d still need to covert that to 
+CSV for process by existing desktop software.</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+

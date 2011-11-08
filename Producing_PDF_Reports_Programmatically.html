@@ -1,0 +1,550 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Producing PDF Reports Programmatically</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+
+<div id="header">
+  <div id="header_content"> <a class="noHover" href="index.html" target="_parent">
+    <h1>Exploiting activity data in the academic environment</h1>
+    </a> <a class="jisclogo" href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/logo_jisc.jpg" width="138" height="70" border="0" /></a> </div>
+</div>
+<!-- END PAGE HEADER --> 
+
+<!-- BEGIN PAGE BODY-->
+<div id="contentblock">
+<div id="contentwrap">
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+<div id="main">
+<!-- BEGIN BREADCRUMBS-->
+<div id="breadcrumb_bar">
+  <div class="breadcrumbs">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Recipes.html">Technical recipes</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="Presenting_data.html">Presenting data</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   Producing PDF Reports Programmatically
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </div>
+  <div  class="pageNavigation">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="Presenting_data.html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="Plotting_Calendar_Data_with_GNUplot.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+</div>
+</div>
+<!-- END BREADCRUMBS-->
+
+<!--right body column empty-->
+
+<!--BEGIN PAGE BODY ITEM-->
+
+<h2 id="Producing_PDF_Reports_Programmatically"><span class=outlineNumberFirst></span><span class=topicLineFirst>Producing PDF Reports Programmatically</span></h2>
+
+<div id="main_content"><div align="left"><b>Originators/Authors</b></div>
+<div align="left">James S Perrin</div>
+<div align="left"><a href=
+"AGtivity.html#AGtivity"><span>AGtivity</span></a><span>, University of Manchester</span></div>
+<div align="left"><b>Purpose</b></div>
+<div align="left">
+To automatically produce a report for end users in charge of a physical Access Grid Node or a 
+Virtual Venue, showing usage statistics and patterns by combining images and data in PDF 
+document. A complete report based on usage data should be produced without manual 
+intervention.</div>
+<div align="left"><b>Background</b></div>
+<div align="left">
+Programs and scripts had been developed that would parse the usage logs from the Access Grid 
+servers and generate graphs from the processed and filtered output. This works fine for the AG 
+support staff, but there was a need to combine the data, graphs and other information into a report 
+for the end- user so they could make their own decisions from how their node or venue was being 
+utilised. The scripts can be run automatically for all nodes (&gt; 400) and virtual venues (&gt;50) as 
+manual compilation of these reports would be laborious.</div>
+<div align="left">
+We describe the basic elements needed to produce a PDF document using Python. There are 
+PDF libraries for other scripting languages such as PERL but Python was chosen as it considered 
+easier to learn and understand.</div>
+<div align="left"><b>Ingredients</b></div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Python</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Reportlab Toolkit (PDF module)</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Python Image Library (to load</li>
+<li style=
+"margin-left: -4mm; margin-right: 0mm; padding-left: 0mm;">
+Data sources e.g.  
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Graphing software (GNUplot)</li>
+<li style=
+"margin-left: 1mm; margin-right: 0mm; padding-left: 0mm;">
+Log file and log parser (C++ executable in this case)</li>
+</ul>
+</li>
+</ul>
+<div align="left"><b>Assumptions</b></div>
+<div align="left">
+Some programming knowledge. Python specific knowledge is a bonus, however this was my first 
+Python project.</div>
+<div align="left"><b>Method</b></div>
+<div align="left">
+Install Python, Reportlab Toolkit and Python Image Library. Write a Python script that can call 
+your log parser, generate graphs and then combine the results into a PDF.</div>
+<div align="left">
+Run the Python script with the name of the node (or venue) of interest. Optionally filter for a range 
+of dates. Email the PDF to the end user.</div>
+<div align="left"><b>Individual Steps</b></div>
+<div align="left"><i>Installation</i></div>
+<div align="left">
+If not already available install Python <a href="http://www.python.org/">
+<font color=
+"#0000EE"><span>http://www.python.org</span></font></a></div>
+<div align="left">
+Install the following modules (check the versions are compatible with the version of Python 
+installed e.g.</div>
+<div align="left">2.7)</div>
+<ul style="margin-top: 0pt; margin-bottom: 0pt">
+<li style=
+"margin-left: 3mm; margin-right: 0mm; padding-left: 0mm;">
+Reportlab ToolKit http://www.reportlab.com/software/opensource/rl- toolkit/</li>
+<li style=
+"margin-left: 3mm; margin-right: 0mm; padding-left: 0mm;">
+Python Image Library http://www.pythonware.com/products/pil/</li>
+</ul>
+<div align="left" style=
+"margin-left:8mm; margin-right:0mm; text-indent:0mm;"></div>
+<div align="left"><i>Reading Script Arguments</i></div>
+<div align="left">
+We need to import the sys module so we can reading values passed to the script</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># add this at the top of the script</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>import sys</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># get the venue the report will be produced for</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>venue = sys.argv[1]</span></div>
+</blockquote>
+<div align="left">
+<i>Executing External Commands</i></div>
+<div align="left">
+If you want to run external commands such as your log parser or graphing tool you need the 
+following</div>
+<div align="left">code:</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># add this at the top of the script</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>import os</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># then you can execute a command like this</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>os.system(&#8216;mylogparser &#8211;option foo.log &gt; bar.csv&#8217;)</span></div>
+</blockquote>
+<div align="left"><i>Reading CSV Files</i></div>
+<div align="left">
+Python has support for reading CVS files as a core module:</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># add this at the top of the script</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>import cvs</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># open a file</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>csvfile = open(venue+&#8216;.csv', 'rb')</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>reader = csv.reader(csvfile)</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># read in rows</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>total = 0</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>for row in reader:</span></div>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:21mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># skip header</span></font></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:21mm; margin-right:0mm; text-indent:0mm;">
+<span>if(reader.line_num &gt; 1):</span></div>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:45mm; margin-right:0mm; text-indent:0mm;">
+<span>total += float(row[2]) </span><font color=
+"#FF0000"><span># sum the 3 rd column</span></font></div>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<div align="left"><i>Setting up a PDF</i></div>
+<div align="left">
+There is very little to set up, it is just a matter of importing all the right modules. The following 
+allows a</div>
+<div align="left">
+PDF with text, images and tables to be created:</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>from reportlab.lib.styles import getSampleStyleSheet</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>from reportlab.lib.pagesizes import A4</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>from reportlab.lib.units import inch</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>from reportlab.platypus import SimpleDocTemplate, Paragraph, Image,</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Spacer, PageBreak, Table, TableStyle</span></div>
+</blockquote>
+<div align="left">
+Some different text style would be nice. We can grab these from SampleStyleSheet that Reportlab</div>
+<div align="left">
+provides. We can use these as is or modify them:</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>styles = getSampleStyleSheet()</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>styleNormal = styles['Normal']</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>styleHeading = styles['Heading1']</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>styleHeading.alignment = 1 </span><font color=
+"#FF0000"><span># centre text (TA_CENTRE)</span></font></div>
+</blockquote>
+<div align="left">
+<i>Creating a PDF &#8216;Story</i><font color=
+"#4F82BE"><span><i>&#8217;</i></span></font></div>
+<div align="left">
+Reportlab has a few different ways to construct a PDF, the easiest is to create a story. This is 
+simply a list</div>
+<div align="left">
+of objects that will be rendered into a PDF:</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>story = []</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># Text is added using the Paragraph class</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>story.append(Paragraph(&#8216;AGtivity Report&#8217;, styleHeading))</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>story.append(Paragraph(&#8216;This report describes the usage of the AG venue</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>&#8217;+venue, styleNormal))</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># Images just need a filename and dimensions it should be printed at</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>story.append(Image(&#8216;graph-&#8216;+venue+&#8217;.png&#8217;, 6*inch, 4*inch))</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># Spacers and pagebreaks help with presentation e.g.</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>story.append(Spacer(inch, .25*inch))</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>&#8230;</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>story.append(PageBreak())</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span># Data can be best presented in a table. A list of lists needs to</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;"><font color=
+"#FF0000"><span>declared first</span></font></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>tableData = [ [&#8216;Value 1&#8217;, &#8216;Value 2&#8217;, &#8216;Sum&#8217;],</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>[34, 78, 112],</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>[67,56, 123]</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>[75,23, 98]]</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>story.append(Table(tableData))</span></div>
+</blockquote>
+<div align="left">
+Tables have their own TableStyle class which can set fonts, alignment and boxes. The Reportlab</div>
+<div align="left">
+documentation covers this in detail.</div>
+<div align="left"><i>Creating the PDF File</i></div>
+<div align="left">
+The SimpleDocTemplate class takes care of most of the work for a straight forward document.</div>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>doc = SimpleDocTemplate(&#8216;report.pdf', pagesize = A4, title = "Access</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>Grid Venue Usage Report &#8220;+venue, author = "AGSC")</span></div>
+</blockquote>
+<blockquote>
+<div align="left" style=
+"margin-left:11mm; margin-right:0mm; text-indent:0mm;">
+<span>doc.build(story)</span></div>
+</blockquote>
+<div align="left"><i>Output Data</i></div>
+<div align="left">
+A PDF report is produced with graphs of meeting durations and timetable. For venues, occupancy 
+is also</div>
+<div align="left">
+plotted. A table of statistics for venues attended by the node, or nodes attending the venue is</div>
+<div align="left">
+generated, as well as supporting data on average, minimum/maximum meeting durations.</div>
+<div align="center"> <img src=
+"NotesImages/Topic159NotesImage17.jpg" align="bottom" width="543"
+height="401" border="0" alt="graphic" /></div>
+<div align="center"></div>
+<div align="center"><img src="NotesImages/Topic159NotesImage18.jpg"
+align="bottom" width="555" height="413" border="0" alt=
+"graphic" /></div>
+<div align="center"></div>
+<div align="center"><img src="NotesImages/Topic159NotesImage19.jpg"
+align="bottom" width="416" height="586" border="0" alt=
+"graphic" /></div>
+<div align="center"><img src="NotesImages/Topic159NotesImage20.jpg"
+align="bottom" width="476" height="675" border="0" alt=
+"graphic" /></div>
+<div align="center">
+Example Report for &#8216;MAGIC&#8217; virtual venue</div></div>
+
+
+
+
+
+
+<!--right body column empty-->
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+          <a href="javascript:scroll(0,0)">
+            <img src="Res/images/top_button.gif" alt="" /> 
+             
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+
+<!--right body column empty-->
+
+<!-- END TOP BUTTON -->
+
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+
+<!-- END SIDE NAVIGATION WRAPPER-->
+</div>
+</div>
+</div>
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+
+<div id="footer">
+  <div id="footer_content">
+<div id="footer_logos"><a href="http://www.jisc.ac.uk/" target="_blank"><img src="Res/images/jisc.jpg" alt="JISC" width="96" height="65" border="0" /></a><a href="http://www.manchester.ac.uk/" target="_blank"><img src="Res/images/logo_manc.jpg" alt="The University of Manchester " width="145" height="65" border="0" /></a><a href="http://www.sero.co.uk" target="_blank"><img src="Res/images/logo_sero.jpg" alt="Sero Consulting" width="201" height="65" border="0" /></a><a href="http://franklin-consulting.co.uk/" target="_blank"><img src="Res/images/logo_fc.jpg" alt="Franklin Consulting" width="249" height="65" border="0" /></a><a href="http://hedtek.com/" target="_blank"><img src="Res/images/logo_hedtek.jpg" alt="hedtek" width="173" height="65" border="0" /></a></div>    
+ <div class="footerText">
+    <p class="footLeft">
+    
+    </p>
+    <p class="footCenter">
+	<strong style="text-transform:capitalize">contact</strong>&nbsp;&nbsp;<a href="mailto:tom@franklin-consulting.co.uk">tom@franklin-consulting.co.uk</a>
+	</p>
+    <p class="footRight">
+<strong>Last updated:</strong> 02/11/2011
+    </p>
+</div>
+</div>
+</div>
+<!---END FOOTER--> 
+
+
+</body>
+</html>
+
